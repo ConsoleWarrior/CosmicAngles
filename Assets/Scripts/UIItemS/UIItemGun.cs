@@ -59,7 +59,7 @@ public class UIItemGun : UIItem
                         var cell = eventData.pointerEnter.gameObject.GetComponent<UISlot>().cell;
                         GameObject c = (GameObject)Instantiate(itemPrefab, cell.transform.position, cell.transform.rotation);
                         c.transform.SetParent(cell.transform);
-                        cell.module = c.GetComponent<Guns>();
+                        cell.module = c.GetComponent<Modulus>();
                         Debug.Log("переместили в корабль");
                         ClearOldSlot();
                     }
@@ -155,7 +155,7 @@ public class UIItemGun : UIItem
         //itemPrefab.GetComponent<Guns>().GetCharacter();
         //characteristics += itemPrefab.GetComponent<Guns>().GetCharacter();
 
-        return "character: " + itemPrefab.GetComponent<Guns>().GetCharacter();
+        return "character: " + itemPrefab.GetComponent<Modulus>().GetCharacter();
     }
 }
 

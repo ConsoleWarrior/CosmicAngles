@@ -80,7 +80,7 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
                 {
                     Destroy(startSlotTransform.GetComponent<UISlot>().cell.module.gameObject);
                     startSlotTransform.GetComponent<UISlot>().currentItem = null;// ошибка ребута пушек
-                    Debug.Log("переместили из корабля");
+                    Debug.Log("переместили из корабля, старый слот чист");
                 }
                 else
                 {

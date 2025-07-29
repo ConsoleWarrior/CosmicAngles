@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2214711393272280619}
   - component: {fileID: 5689309813514210700}
   - component: {fileID: 3173293611500705406}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 657875423164100234}
   - component: {fileID: 7488590319778090962}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: GunSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6344218776680865069, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8730798503886144483, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: m_LocalPosition.x

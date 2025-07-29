@@ -27,7 +27,7 @@ public class MapSector : MonoBehaviour
         else if (count < maxPopulation * 0.5f) time = 5;
         else if (count < maxPopulation * 0.7f) time = 7;
         else if (count > maxPopulation) time = 60;
-        Debug.Log(nameSector+" time " + time);
+        //Debug.Log(nameSector+" time " + time);
     }
     IEnumerator RespawnCoro()
     {

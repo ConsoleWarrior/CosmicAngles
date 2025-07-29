@@ -43,7 +43,7 @@ public class LazerGun : LazerGuns
     void Update()
     {
         line.SetPosition(0, transform.position);
-
+        if(!flag) line.SetPosition(1, transform.position);
         //RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, transform.up, range);
 
         //if (raycastHit)
@@ -73,7 +73,20 @@ public class LazerGun : LazerGuns
         //    StopAllCoroutines();
         //}
     }
-    IEnumerator Fire(Transform c)
+    void FixedUpdate()
+    {
+        if (flag)
+        {
+            Vector2 direction = (target.position - transform.position).normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            sprite.rotation = Quaternion.Euler(0, 0, angle - 90);
+
+            line.SetPosition(1, target.position);
+            LLHitEffect.transform.position = new Vector3(target.position.x, target.position.y,-1);
+            if (!LLHitEffect.isPlaying) LLHitEffect.Play();
+        }
+    }
+    IEnumerator Fire()
     {
         flag = true;
         while (targets.Count > 0)
@@ -91,39 +104,38 @@ public class LazerGun : LazerGuns
                 }
             }
 
-            Vector2 direction = (target.position - transform.position).normalized;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+            //Vector2 direction = (target.position - transform.position).normalized;
+            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            //sprite.rotation = Quaternion.Euler(0, 0, angle - 90);
 
-            RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, transform.up, range);
-            if (raycastHit)
-            {
-                if (!flag)
-                {
-                    var b = raycastHit.transform;
-                    Debug.Log("raycastHit:" + b.name);
-                    if (b.CompareTag("Enemy"))
-                    {
-                        line.SetPosition(1, b.position);
-                        LLHitEffect.transform.position = b.position;
-                        LLHitEffect.Play();
-                        //c.GetComponent<Enemy>().TakeDamage(damage);
-                        //StartCoroutine(Fire(c));
-                    }
-                }
+            //RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, transform.up, range);
+            //if (raycastHit)
+            //{
+            //    if (!flag)
+            //    {
+            //        var b = raycastHit.transform;
+            //        Debug.Log("raycastHit:" + b.name);
+            //        if (b.CompareTag("Enemy"))
+            //        {
+            //line.SetPosition(1, target.position);
+            //LLHitEffect.transform.position = target.position;
+            //            //c.GetComponent<Enemy>().TakeDamage(damage);
+            //            //StartCoroutine(Fire(c));
+            //        }
+            //    }
 
-            }
+            //}
             audioManager.SoundPlay0();
             //GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
             //bullet.GetComponent<Bullet>().damage = damage;
             //bullet.GetComponent<Rigidbody2D>().AddForce((target.position - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse); // ѕридать пуле скорость
             //Destroy(bullet, 2f);
-            c.GetComponent<Enemy>().TakeDamage(damage);
+            target.GetComponent<Enemy>().TakeDamage(damage);
             yield return new WaitForSeconds(reload);
         }
-        transform.rotation = Quaternion.Euler(0, 0, 0);
+        //sprite.rotation = Quaternion.Euler(0,0,0);
         flag = false;
-        Debug.Log("нет попадани€ вообще");
+        Debug.Log("таргетов нет, корутина кончилась, смотрю в ноль");
         line.SetPosition(1, transform.position);
         LLHitEffect.transform.position = transform.position;
         LLHitEffect.Pause();//if (LLHitEffect.isPlaying) 
@@ -135,13 +147,11 @@ public class LazerGun : LazerGuns
         if (other.CompareTag("Enemy"))
         {
             targets.Add(other.transform);
-            Vector2 direction = (other.transform.position - transform.position).normalized;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle - 90);
-            //if (targets.Count == 1 && !flag)
-            //{
-            StartCoroutine(Fire(other.transform));
-            //}
+            //Vector2 direction = (other.transform.position - transform.position).normalized;
+            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            //transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+            if (targets.Count == 1 && !flag)
+            StartCoroutine(Fire());
         }
     }
     void OnTriggerExit2D(Collider2D other)

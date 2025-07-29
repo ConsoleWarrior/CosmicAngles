@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7133518151095434170}
   - component: {fileID: 4976409600925371744}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: GunSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1605380433390908489}
   - component: {fileID: 1223240849407657828}
   - component: {fileID: 7133036474129661963}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: MachineGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6344218776680865069, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8730798503886144483, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: m_LocalPosition.x
