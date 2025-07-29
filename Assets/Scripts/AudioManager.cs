@@ -19,11 +19,16 @@ public class AudioManager : MonoBehaviour
     public void SoundPlay2()
     {
         a.clip = sound[2];
-        a.Play();
+        a.PlayOneShot(a.clip);
+        //a.Play();
     }
     public void SoundPlay3()
     {
         a.clip = sound[3];
         a.Play();
+    }
+    public void Stop()
+    {
+        a.Stop();
     }
 }

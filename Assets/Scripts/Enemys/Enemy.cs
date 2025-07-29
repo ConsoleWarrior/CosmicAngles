@@ -110,7 +110,7 @@ public class Enemy : MonoBehaviour
         currentHp -= damage;
         if (currentHp < 0) currentHp = 0;
         hpBar.fillAmount = currentHp / maxHp;
-        audioManager.SoundPlay1();
+        //audioManager.SoundPlay1();
     }
     void OnTriggerEnter2D(Collider2D other)
     {

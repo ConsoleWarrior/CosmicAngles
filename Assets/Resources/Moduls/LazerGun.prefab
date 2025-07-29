@@ -5198,14 +5198,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 804536778726274497}
     m_Modifications:
+    - target: {fileID: 4916845144204500388, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4916845144204500388, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: m_Pitch
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4916845144204500388, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: BypassEffects
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4916845144204500388, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: BypassReverbZones
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4946381566672173599, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: sound.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4946381566672173599, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: sound.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 0c0729538b81bc54781cd892c612f69d, type: 3}
+      objectReference: {fileID: 8300000, guid: 36afbec5b64e9404287b5c22ab549bcd, type: 3}
+    - target: {fileID: 4946381566672173599, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: sound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 36afbec5b64e9404287b5c22ab549bcd, type: 3}
+    - target: {fileID: 4946381566672173599, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: sound.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 73027457a9d5b3d4eadab8d80b305c00, type: 3}
     - target: {fileID: 6344218776680865069, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: m_Name
       value: AudioManager

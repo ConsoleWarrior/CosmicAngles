@@ -80,7 +80,7 @@ public class LazerGun : LazerGuns
             Vector2 direction = (target.position - transform.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             sprite.rotation = Quaternion.Euler(0, 0, angle - 90);
-
+            //audioManager.SoundPlay2();
             line.SetPosition(1, target.position);
             LLHitEffect.transform.position = new Vector3(target.position.x, target.position.y,-1);
             if (!LLHitEffect.isPlaying) LLHitEffect.Play();
@@ -125,7 +125,7 @@ public class LazerGun : LazerGuns
             //    }
 
             //}
-            audioManager.SoundPlay0();
+            audioManager.SoundPlay2();
             //GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
             //bullet.GetComponent<Bullet>().damage = damage;
             //bullet.GetComponent<Rigidbody2D>().AddForce((target.position - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse); // ѕридать пуле скорость
@@ -136,6 +136,7 @@ public class LazerGun : LazerGuns
         //sprite.rotation = Quaternion.Euler(0,0,0);
         flag = false;
         Debug.Log("таргетов нет, корутина кончилась, смотрю в ноль");
+        audioManager.Stop();
         line.SetPosition(1, transform.position);
         LLHitEffect.transform.position = transform.position;
         LLHitEffect.Pause();//if (LLHitEffect.isPlaying) 
