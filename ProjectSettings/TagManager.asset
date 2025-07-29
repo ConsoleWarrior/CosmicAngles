@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Food
+  - Enemy
+  - Cell
+  - Inventory
+  - Scrap
+  - Shield
+  - Port
+  - Drop
+  - ItemInfo
+  - ShipGrid
+  - StartPlayer
   layers:
   - Default
   - TransparentFX
