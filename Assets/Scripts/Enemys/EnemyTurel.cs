@@ -21,8 +21,10 @@ public class EnemyTurel : Enemy
         }
         catch { Debug.Log("player is not active"); }
         animator = GetComponent<Animator>();
-        target = new Vector3(Random.Range(-7, 8), Random.Range(-157, -142), 0);
+        target = transform.position;
+            //new Vector3(Random.Range(-10, 10), Random.Range(-160, -140), 0);
         audioManager.a.volume = 0.7f;
+        StartRepair();
     }
     void FixedUpdate()
     {
@@ -31,12 +33,11 @@ public class EnemyTurel : Enemy
             player = GameObject.FindGameObjectWithTag("Player").transform;
 
         }
-        if (player != null)
-            dist = Vector3.Distance(player.position, transform.position);
+        else dist = Vector3.Distance(player.position, transform.position);
         if (dist != 0 && dist < 13)
             Atack();
         else
-            Eating();
+            if(target != transform.position) Eating();
     }
     public override void Eating()
     {

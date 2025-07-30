@@ -29,15 +29,15 @@ public class Inventory : MonoBehaviour
                     if (((UIItemScrap)inventoryCellUISlot.currentItem).scrapItemCount + value <= 100)
                     {
                         ((UIItemScrap)inventoryCellUISlot.currentItem).scrapItemCount += value;
-                        Debug.Log("collect scrap value - " + value);
+                        Debug.Log("collect scrap value : " + value);
                         return;
                     }
                 }
             }
-            else
-            {
-                Debug.Log("inventoryCellUISlot == null" + value);
-            }
+            //else
+            //{
+            //    Debug.Log("inventoryCellUISlot == null" + value);
+            //}
         }
 
         for (int j = 0; j < inventoryGrid.childCount; j++)
@@ -52,8 +52,8 @@ public class Inventory : MonoBehaviour
                 inventoryCellUISlot2.currentItem = newStack.GetComponent<UIItem>();
                 ((UIItemScrap)inventoryCellUISlot2.currentItem).scrapItemCount = value;
                 inventoryCellUISlot2.isFree = false;
-                Debug.Log("collect scrap good in new stack");
-                break;
+                //Debug.Log("collect scrap good in new stack");
+                return;
             }
         }
     }
@@ -74,11 +74,11 @@ public class Inventory : MonoBehaviour
                 newItem.GetComponent<CanvasGroup>().enabled = true;//  затычка для бага с некликабельностью
 
                 inventoryCellUISlot.isFree = false;
-                Debug.Log("collect drop good");
+                Debug.Log("collected successfully : "+ newItem.name);
                 return true;
             }
         }
-        Debug.Log("свободных слотов нет");
+        Debug.Log("свободных слотов нет, ДРОП НЕ СОБРАТЬ");
         return false;
     }
 }

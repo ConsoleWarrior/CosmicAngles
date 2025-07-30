@@ -144,7 +144,7 @@ public class UIItemGun : UIItem
         {
             GameObject c = (GameObject)Instantiate(itemPrefab, cell.transform.position, cell.transform.rotation);
             c.transform.SetParent(cell.transform);
-            cell.module = c.GetComponent<Guns>();
+            cell.module = c.GetComponent<Modulus>();
             Debug.Log("Итем вызвал новый ствол");
             return c;
         }

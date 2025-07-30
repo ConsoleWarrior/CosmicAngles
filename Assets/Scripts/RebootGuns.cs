@@ -47,6 +47,7 @@ public class RebootGuns : MonoBehaviour
             {
                 Destroy(cell.module.gameObject);
                 cell.module = null;
+                Debug.Log("очистил " + cell.gameObject.name);
             }
         }
     }
@@ -58,6 +59,7 @@ public class RebootGuns : MonoBehaviour
             {
                 cell.slot.GetComponent<UISlot>().currentItem.CallNewModule(cell);
                 //cell.slot.GetComponent<UISlot>().currentItem = cell.slot.GetComponent<UISlot>().currentItem.CallNewModule(cell);
+                Debug.Log("вызвал " + cell.slot.GetComponent<UISlot>().currentItem.gameObject.name);
             }
         }
     }
