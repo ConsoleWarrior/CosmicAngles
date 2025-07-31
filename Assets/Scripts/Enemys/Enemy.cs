@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
-        catch { Debug.Log("player is not active"); }
+        catch { }//Debug.Log("player is not active"); }
         animator = GetComponent<Animator>();
         target = new Vector3(Random.Range(-100, 100), Random.Range(-100, 100), 0);
         audioManager.a.volume = 0.5f;
@@ -55,20 +55,20 @@ public class Enemy : MonoBehaviour
         if (xp == 4 && !evolved)
         {
             Evolve();
-            Debug.Log("Эволюционировал");
+            //Debug.Log("Эволюционировал");
             evolved = true;
         }
         if (xp == 8 && evolved)
         {
             EvolveLevel2();
-            Debug.Log("Эволюционировал второй раз");
+            //Debug.Log("Эволюционировал второй раз");
             evolved = false;
         }
     }
     void FixedUpdate()
     {
-        if (player != null) dist = Vector3.Distance(player.position, transform.position);
-        else player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (player == null) player = GameObject.FindGameObjectWithTag("Player").transform;
+        dist = Vector3.Distance(player.position, transform.position);
         if (dist != 0 && dist < 10)
             Atack();
         else

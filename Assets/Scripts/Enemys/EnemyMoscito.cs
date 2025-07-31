@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemyMoscito : Enemy
 {
-    private bool flag = false;
+    public bool flag = false;
     [SerializeField] float reloadTime;
     [SerializeField] float damage;
+    [SerializeField] LazerGunEnemy gun;
 
     void Start()
     {
@@ -23,11 +24,14 @@ public class EnemyMoscito : Enemy
     {
         if (!flag && dist < 8)
         {
+            //gun.StartFire();
             flag = true;
             //StartCoroutine(Fire()); !!!!!!!!!!!!!!!!!!!!!!!
         }
         else if (dist >= 8)
         {
+            //gun.StopFire();
+            flag = false;
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
         Vector2 direction = (player.position - transform.position).normalized;
@@ -56,7 +60,7 @@ public class EnemyMoscito : Enemy
         transform.localScale = new Vector3(0.7f, 0.7f, 1);
         speed += speed * 0.2f;
         reloadTime -= reloadTime * 0.2f;
-        dropScrapCount = 6;
+        dropScrapCount = 10;
     }
     public override void EvolveLevel2()
     {
@@ -65,7 +69,7 @@ public class EnemyMoscito : Enemy
         transform.localScale = new Vector3(1, 1, 1);
         speed += speed * 0.2f;
         reloadTime -= reloadTime * 0.2f;
-        dropScrapCount = 10;
+        dropScrapCount = 12;
     }
     public override void Eating()
     {

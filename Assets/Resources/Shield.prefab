@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4105994862360237347}
   - component: {fileID: 4757379491850030136}
   - component: {fileID: 5913060800061364375}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 913772498992589955}
   - component: {fileID: 5379152002688089132}
   - component: {fileID: 7468111215716596374}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Collider
   m_TagString: Shield
   m_Icon: {fileID: 0}
@@ -419,7 +419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6344218776680865069, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8730798503886144483, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: m_LocalPosition.x
