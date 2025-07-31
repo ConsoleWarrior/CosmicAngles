@@ -17,6 +17,10 @@ public class Armor : Modulus
     {
 
     }
+    void OnDestroy()
+    {
+        DisconnectFromShip();
+    }
     public void ConnectToShip()
     {
         RememberCell();
@@ -26,7 +30,7 @@ public class Armor : Modulus
             Debug.Log("+updategood+");
         }
     }
-    public void DisconnectOffShip()
+    public void DisconnectFromShip()
     {
         RememberCell();
         foreach (Cell cell in cells)

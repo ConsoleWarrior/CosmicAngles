@@ -99,7 +99,7 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
             startShop.currentItem.transform.localPosition = Vector3.zero;
             if(startShop.currentItem.GetComponent<CanvasGroup>() == null) { Debug.Log("нет канваса у кьюрент итема"); }
             startShop.currentItem.GetComponent<CanvasGroup>().blocksRaycasts = true;
-            Debug.Log("Instantiate in shop new "+ startShop.currentItem.gameObject.name);
+            //Debug.Log("Instantiate in shop new "+ startShop.currentItem.gameObject.name);
         }
     }
     public void ReturnBack()

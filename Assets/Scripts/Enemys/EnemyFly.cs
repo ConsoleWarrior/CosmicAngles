@@ -58,14 +58,14 @@ public class EnemyFly : Enemy
         reloadTime -= reloadTime * 0.3f;
         dropScrapCount = 8;
     }
-    public override void CalculateAndCallDrop()
-    {
-        if (xp > 8 && Random.Range(0, 25) == 0)
-        {
-            Instantiate(Resources.Load("DropItems/DropGunBlue", typeof(GameObject)), new(transform.position.x + 0.5f, transform.position.y + 0.5f), Quaternion.identity);
-        }
-        GameObject c = (GameObject)Instantiate(Resources.Load("Scrap", typeof(GameObject)), transform.position, Quaternion.identity);
-        c.GetComponent<Scrap>().value = Random.Range(dropScrapCount / 2, dropScrapCount * 2);
-        c.transform.localScale = new Vector3(0.6f, 0.6f, 1);
-    }
+    //public override void CalculateAndCallDrop()
+    //{
+    //    if (xp > 8 && Random.Range(0, 25) == 0)
+    //    {
+    //        Instantiate(Resources.Load("DropItems/DropGunBlue", typeof(GameObject)), new(transform.position.x + 0.5f, transform.position.y + 0.5f), Quaternion.identity);
+    //    }
+    //    GameObject c = (GameObject)Instantiate(Resources.Load("Scrap", typeof(GameObject)), transform.position, Quaternion.identity);
+    //    c.GetComponent<Scrap>().value = Random.Range(dropScrapCount / 2, dropScrapCount * 2);
+    //    c.transform.localScale = new Vector3(0.6f, 0.6f, 1);
+    //}
 }

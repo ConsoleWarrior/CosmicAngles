@@ -110,6 +110,9 @@ MonoBehaviour:
   xp: 1
   speed: 2
   dropScrapCount: 2
+  dropPrefabs:
+  - {fileID: 2419404699181782293, guid: 753448205cf54e54bae5f305ce4cd96f, type: 3}
+  dropChance: 05000000
 --- !u!58 &7119116970208504180
 CircleCollider2D:
   m_ObjectHideFlags: 0

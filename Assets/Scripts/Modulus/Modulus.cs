@@ -33,8 +33,6 @@ public class Guns : Modulus
 
 public class LazerGuns : Modulus
 {
-    //[SerializeField] protected GameObject bulletPrefab;
-    //[SerializeField] protected float bulletSpeed;
     [SerializeField] protected float reload;
     [SerializeField] protected float damage;
     protected Transform target;

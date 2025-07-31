@@ -84,20 +84,6 @@ public class EnemyTurel : Enemy
             other.gameObject.GetComponent<Cell>().TakeDamage(currentHp);
         }
     }
-    public override void CalculateAndCallDrop()
-    {
-        if (Random.Range(0, 5) == 0)
-        {
-            Instantiate(Resources.Load("DropItems/DropMachineGunBlue", typeof(GameObject)), new(transform.position.x + 0.5f, transform.position.y + 0.5f), Quaternion.identity);
-        }
-        if (Random.Range(0, 10) == 0)
-        {
-            Instantiate(Resources.Load("DropItems/DropRocketGun", typeof(GameObject)), new(transform.position.x + 0.5f, transform.position.y + 0.5f), Quaternion.identity);
-        }
-        GameObject c = (GameObject)Instantiate(Resources.Load("Scrap", typeof(GameObject)), transform.position, Quaternion.identity);
-        c.GetComponent<Scrap>().value = Random.Range(dropScrapCount / 2, dropScrapCount * 2);
-        c.transform.localScale = new Vector3(1f, 1f, 1);
-    }
     public void StartRepair()
     {
         StartCoroutine(RepairTic());

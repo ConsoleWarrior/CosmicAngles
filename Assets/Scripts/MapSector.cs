@@ -9,10 +9,10 @@ public class MapSector : MonoBehaviour
     [SerializeField] int maxPopulation;
     float time = 1;
     [SerializeField] List<GameObject> enemyPrefabs = new();
-    [SerializeField] int minX;
-    [SerializeField] int maxX;
-    [SerializeField] int minY;
-    [SerializeField] int maxY;
+    public int minX;
+    public int maxX;
+    public int minY;
+    public int maxY;
 
 
     void RespawnSector()

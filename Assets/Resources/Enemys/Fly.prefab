@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1518333895789308286}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.64, y: 2.36, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -110,6 +110,9 @@ MonoBehaviour:
   xp: 1
   speed: 3
   dropScrapCount: 2
+  dropPrefabs:
+  - {fileID: 2419404699181782293, guid: 753448205cf54e54bae5f305ce4cd96f, type: 3}
+  dropChance: 05000000
   bulletPrefab: {fileID: 3984394470041740971, guid: d139fe15cdcbcba4d9dbdc6fefd6e344, type: 3}
   bulletSpeed: 5
   reloadTime: 1

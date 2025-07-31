@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     public void SoundPlay0()
     {
         a.clip = sound[0];
+        //a.PlayOneShot(a.clip);
         a.Play();
     }
     public void SoundPlay1()

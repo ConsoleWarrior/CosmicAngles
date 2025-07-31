@@ -254,7 +254,11 @@ MonoBehaviour:
   audioManager: {fileID: 1052212022246652714}
   xp: 1
   speed: 1
-  dropScrapCount: 750
+  dropScrapCount: 1000
+  dropPrefabs:
+  - {fileID: 2917612651126115316, guid: 30795022603951d49954cb15914d2d24, type: 3}
+  - {fileID: 3787300834446268226, guid: abe7a56e8211edf49bb00f7ef956b058, type: 3}
+  dropChance: 3200000019000000
   bulletPrefab: {fileID: 3984394470041740971, guid: d139fe15cdcbcba4d9dbdc6fefd6e344, type: 3}
   bulletSpeed: 10
   reloadTime: 1.5

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class Enemy : MonoBehaviour
@@ -12,9 +13,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float xp;
     [SerializeField] protected float speed;
     [SerializeField] protected int dropScrapCount;
+    [SerializeField] protected List<GameObject> dropPrefabs;
+    [SerializeField] protected List<int> dropChance;
+
     protected float dist;
     protected Vector3 target;
     protected bool evolved = false;
+    protected MapSector sector;
+
 
 
     void Start()
@@ -25,20 +31,11 @@ public class Enemy : MonoBehaviour
         }
         catch { }//Debug.Log("player is not active"); }
         animator = GetComponent<Animator>();
-        target = new Vector3(Random.Range(-100, 100), Random.Range(-100, 100), 0);
+        sector = transform.parent.GetComponent<MapSector>();
+        target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
         audioManager.a.volume = 0.5f;
     }
-    //protected void Starting()
-    //{
-    //    try
-    //    {
-    //        player = GameObject.FindGameObjectWithTag("Player").transform;
-    //    }
-    //    catch { Debug.Log("player is not active"); }
-    //    animator = GetComponent<Animator>();
-    //    target = new Vector3(Random.Range(-100, 100), Random.Range(-100, 100), 0);
-    //    audioManager.a.volume = 0.5f;
-    //}
+
     void Update()
     {
         if (currentHp <= 0 && !animator.GetBool("Destroy"))
@@ -48,8 +45,6 @@ public class Enemy : MonoBehaviour
             audioManager.SoundPlay0();
             transform.GetComponent<CircleCollider2D>().enabled = false;
             CalculateAndCallDrop();
-
-            //GameObject c = (GameObject)Instantiate(Resources.Load("Scrap", typeof(GameObject)), transform.position, Quaternion.identity);
             Destroy(this.gameObject, 0.5f);
         }
         if (xp == 4 && !evolved)
@@ -77,9 +72,7 @@ public class Enemy : MonoBehaviour
     public virtual void Atack()
     {
     }
-    public virtual void CalculateAndCallDrop()
-    {
-    }
+
     public virtual void Evolve()
     {
     }
@@ -102,7 +95,7 @@ public class Enemy : MonoBehaviour
 
         if (transform.position == target)
         {
-            target = new Vector3(Random.Range(-100, 100), Random.Range(-100, 100), 0);
+            target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
         }
     }
     public void TakeDamage(float damage)
@@ -124,5 +117,20 @@ public class Enemy : MonoBehaviour
             other.gameObject.GetComponent<Cell>().TakeDamage(currentHp);
             currentHp = 0;
         }
+    }
+    public virtual void CalculateAndCallDrop()
+    {
+        if (dropPrefabs != null)
+            for (int i = 0; i < dropPrefabs.Count; i++)
+            {
+                if (dropChance[i] >= Random.Range(1, 101) && xp > 8)//&& xp > 8
+                {
+                    Instantiate(dropPrefabs[i], new(transform.position.x + 0.5f, transform.position.y + 0.5f), Quaternion.identity);
+                }
+            }
+
+        GameObject c = (GameObject)Instantiate(Resources.Load("Scrap", typeof(GameObject)), transform.position, Quaternion.identity);
+        c.GetComponent<Scrap>().value = Random.Range(dropScrapCount / 2, dropScrapCount * 2);
+        c.transform.localScale = new Vector3(0.6f, 0.6f, 1);
     }
 }
