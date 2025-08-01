@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class LazerGunEnemy : MonoBehaviour
 {
-    EnemyMoscito enemy;
-    [SerializeField] float range;
+    //[SerializeField] float range;
     [SerializeField] LineRenderer line;
     [SerializeField] ParticleSystem LLHitEffect;
     [SerializeField] AudioManager audioManager;
     [SerializeField] float damage;
     [SerializeField] float reload;
     Transform temp;
+    EnemyMoscito enemy;
     public bool coroIsWorkNow = false;
 
     void Start()

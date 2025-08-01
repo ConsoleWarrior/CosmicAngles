@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd72feb5057c5146ad2d0fcdd898446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 200
-  currentHp: 200
+  maxHp: 180
+  currentHp: 180
   hpBar: {fileID: 6347079244391649674}
   hpBarCanvas: {fileID: 4146785028725198410}
   audioManager: {fileID: 2051228060596244335}
@@ -113,10 +113,8 @@ MonoBehaviour:
   dropScrapCount: 8
   dropPrefabs:
   - {fileID: 4854596453853521963, guid: c98b4b85b91ca81439a9cf7174dc254a, type: 3}
-  dropChance: 03000000
+  dropChance: 02000000
   flag: 0
-  reloadTime: 0.1
-  damage: 0.2
   gun: {fileID: 897086974167819299}
 --- !u!58 &3578079715457257352
 CircleCollider2D:
@@ -5078,11 +5076,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ad13a4a2a14cc47bcb335c8ef7b73e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 0
   line: {fileID: 1099217951968419389}
   LLHitEffect: {fileID: 799717672652009318}
   audioManager: {fileID: 4203049675146151135}
-  damage: 2.5
+  damage: 1.5
   reload: 0.1
   coroIsWorkNow: 0
 --- !u!120 &1099217951968419389

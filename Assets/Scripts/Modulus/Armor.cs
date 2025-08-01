@@ -1,4 +1,4 @@
-
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,7 +27,7 @@ public class Armor : Modulus
         foreach (Cell cell in cells)
         {
             cell.UpdateArmor(bonus);
-            Debug.Log("+updategood+");
+            //Debug.Log("+updategood+");
         }
     }
     public void DisconnectFromShip()
@@ -36,21 +36,26 @@ public class Armor : Modulus
         foreach (Cell cell in cells)
         {
             cell.UpdateArmor(-(bonus));
-            Debug.Log("-updategood-");
+            //Debug.Log("-updategood-");
         }
     }
     void RememberCell()
     {
         cells = new();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        for (int i = 0; i < player.childCount; i++)
+        try
         {
-            var cell = player.GetChild(i).GetComponent<Cell>();
-            if (cell != null)//вместе с ядром
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+            for (int i = 0; i < player.childCount; i++)
             {
-                cells.Add(cell);
+                var cell = player.GetChild(i).GetComponent<Cell>();
+                if (cell != null)//вместе с ядром
+                {
+                    cells.Add(cell);
+                }
             }
         }
+        catch (NullReferenceException) { Debug.Log("поймал нуль эксепшн, все ок"); }
+
     }
     public override string GetCharacter()
     {

@@ -52,10 +52,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reload: 0.1
-  damage: 2.5
+  damage: 3
   audioManager: {fileID: 5025438257432692754}
   sprite: {fileID: 5322963518748689238}
-  range: 10
   line: {fileID: 422051894580435769}
   LLHitEffect: {fileID: 6397728826115355584}
 --- !u!212 &328504839462281540
@@ -275,7 +274,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 8
 --- !u!1 &4960016332647698257
 GameObject:
   m_ObjectHideFlags: 0

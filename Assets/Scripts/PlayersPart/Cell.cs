@@ -92,6 +92,7 @@ public class Cell : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHp -= damage;
+        if (currentHp < 0) currentHp = 0;
         transform.GetComponent<SpriteRenderer>().color = Color.red;
         Invoke("ReturnColor", 0.12f);
         //hpBar.fillAmount = currentHp / maxHp;

@@ -4,21 +4,10 @@ using UnityEngine;
 public class EnemyMoscito : Enemy
 {
     public bool flag = false;
-    [SerializeField] float reloadTime;
-    [SerializeField] float damage;
+    //[SerializeField] float reloadTime;
+    //[SerializeField] float damage;
     [SerializeField] LazerGunEnemy gun;
 
-    //void Start()
-    //{
-    //    try
-    //    {
-    //        player = GameObject.FindGameObjectWithTag("Player").transform;
-    //    }
-    //    catch { Debug.Log("player is not active"); }
-    //    animator = GetComponent<Animator>();
-    //    target = new Vector3(Random.Range(-200, -100), Random.Range(-100, 100), 0);
-    //    audioManager.a.volume = 0.5f;
-    //}
     public override void Atack()
     {
         if (!flag && dist < 8)
@@ -39,20 +28,20 @@ public class EnemyMoscito : Enemy
 
     public override void Evolve()
     {
-        maxHp += maxHp * 0.3f;
-        currentHp += currentHp * 0.3f;
+        maxHp += maxHp * 0.25f;
+        currentHp += currentHp * 0.25f;
         transform.localScale = new Vector3(0.7f, 0.7f, 1);
-        //speed += speed * 0.2f;
-        reloadTime -= reloadTime * 0.2f;
+        speed += speed * 0.1f;
+        //reloadTime -= reloadTime * 0.2f;
         dropScrapCount = 10;
     }
     public override void EvolveLevel2()
     {
-        maxHp += maxHp * 0.2f;
-        currentHp += currentHp * 0.2f;
+        maxHp += maxHp * 0.25f;
+        currentHp += currentHp * 0.25f;
         transform.localScale = new Vector3(1, 1, 1);
         speed += speed * 0.1f;
-        reloadTime -= reloadTime * 0.2f;
+        //reloadTime -= reloadTime * 0.2f;
         dropScrapCount = 12;
     }
     //public override void Eating()
