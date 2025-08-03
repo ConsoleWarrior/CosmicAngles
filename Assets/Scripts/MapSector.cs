@@ -13,20 +13,24 @@ public class MapSector : MonoBehaviour
     public int maxX;
     public int minY;
     public int maxY;
+    bool overflow = false;
 
 
     void RespawnSector()
     {
-        foreach (var prefab in enemyPrefabs)
-        {
-            GameObject c = (GameObject)Instantiate(prefab, new Vector2(Random.Range(minX, minX), Random.Range(minY, maxY)), Quaternion.identity);
-            c.transform.SetParent(transform, true);
-        }
+        if (!overflow)
+            foreach (var prefab in enemyPrefabs)
+            {
+                GameObject c = (GameObject)Instantiate(prefab, new Vector2(Random.Range(minX, minX), Random.Range(minY, maxY)), Quaternion.identity);
+                c.transform.SetParent(transform, true);
+            }
         var count = transform.childCount;
-        if (count < maxPopulation * 0.3f) time = 1.5f;
-        else if (count < maxPopulation * 0.5f) time = 5;
-        else if (count < maxPopulation * 0.7f) time = 7;
-        else if (count > maxPopulation) time = 60;
+        overflow = false;
+        if (count < maxPopulation * 0.3f) time = 2f;
+        else if (count < maxPopulation * 0.5f) time = 10;
+        else if (count < maxPopulation * 0.7f) time = 15;
+        else if (count < maxPopulation) time = 20;
+        else if (count > maxPopulation) overflow = true;
         //Debug.Log(nameSector+" time " + time);
     }
     IEnumerator RespawnCoro()

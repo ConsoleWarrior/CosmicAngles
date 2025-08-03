@@ -22,8 +22,7 @@ public class EnemyTurel : Enemy
         catch { Debug.Log("player is not active"); }
         animator = GetComponent<Animator>();
         target = transform.position;
-            //new Vector3(Random.Range(-10, 10), Random.Range(-160, -140), 0);
-        audioManager.a.volume = 0.7f;
+        audioManager.a.volume = 0.3f;
         StartRepair();
     }
     void FixedUpdate()

@@ -17,7 +17,6 @@ public class Cell : MonoBehaviour
     void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
-        //player = transform.parent.GetComponent<Player>();
         try
         {
             player = transform.parent.GetComponent<Player>();
@@ -40,9 +39,6 @@ public class Cell : MonoBehaviour
                 }
             }
         }
-        //slot = shipGrid.GetChild(number).gameObject;
-        //slot.GetComponent<UISlot>().cell = this;
-        //ReturnColor();
     }
 
     void Update()
@@ -91,12 +87,11 @@ public class Cell : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        audioManager.SoundPlay1();
         currentHp -= damage;
         if (currentHp < 0) currentHp = 0;
         transform.GetComponent<SpriteRenderer>().color = Color.red;
         Invoke("ReturnColor", 0.12f);
-        //hpBar.fillAmount = currentHp / maxHp;
-        //audioManager.SoundPlay1();
     }
     void ReturnColor()
     {

@@ -17,25 +17,24 @@ public class UIItemScrap : UIItem
     {
         if (eventData != null)
         {
-            if (eventData.pointerEnter.gameObject.GetComponent<CosmoportPanel>() != null || eventData.pointerEnter.gameObject.GetComponent<UISlotShop>() != null)
+            var target = eventData.pointerEnter.gameObject;
+            if (target.GetComponent<CosmoportPanel>() != null || target.GetComponent<UISlotShop>() != null)
             {
                 SellScrap();
                 return;
             }
-            if (eventData.pointerEnter.gameObject.GetComponent<UISlot>() != null)
+            if (target.GetComponent<UISlot>() != null)
             {
-                if (eventData.pointerEnter.gameObject.GetComponent<UISlot>().isFree)
+                if (target.GetComponent<UISlot>().isFree && target.GetComponent<UISlot>().cell == null)
                 {
-                    eventData.pointerEnter.gameObject.GetComponent<UISlot>().isFree = false;
+                    target.GetComponent<UISlot>().isFree = false;
                     startSlotTransform.GetComponent<UISlot>().isFree = true;
                     Debug.Log("переместили scrap");
-
-
                 }
                 else
                 {
                     ReturnBack();
-                    Debug.Log("занят");
+                    Debug.Log("занят или слот корабля");
                 }
             }
             else
@@ -58,9 +57,11 @@ public class UIItemScrap : UIItem
         slot.isFree = true;
         slot.currentItem = null;
         inventory.UpdateKredit(scrapItemCount * 5);
-        //inventory.kredit += scrapItemCount * 10;
-        //inventory.tmpKredit.text = inventory.kredit.ToString();
         Debug.Log("продал scrap");
         Destroy(gameObject);
+    }
+    public override string ReturnCharacter()
+    {
+        return "character: For sale in ports";
     }
 }

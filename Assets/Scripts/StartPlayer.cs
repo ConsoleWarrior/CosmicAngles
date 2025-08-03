@@ -7,12 +7,14 @@ public class StartPlayer : MonoBehaviour
     Player player;
     public Camera playerCamera;
     [SerializeField] GameObject gameOver;
+    [SerializeField] AudioManager audioManager;
     public Transform shipGrid;
     public RepairBlok[] repairBloks;
     Inventory inventory;
     public GameObject buyButton;
     public GameObject buyButton2;
     int shipLevel = 0;
+    //[SerializeField] RebootGuns reboot;
 
     void Start()
     {
@@ -22,6 +24,7 @@ public class StartPlayer : MonoBehaviour
         player.playerCamera = playerCamera;
         playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
         player.gameOver = gameOver;
+        player.audioManager = audioManager;
         for (int i = 0; i < player.transform.childCount; i++)
         {
             if (player.transform.GetChild(i).GetComponent<Cell>() != null)
@@ -36,9 +39,10 @@ public class StartPlayer : MonoBehaviour
 
     public void CallNewShipPrefab1()
     {
-        if(inventory.kredit >= 25000 && shipLevel == 0)
+        if (inventory.kredit >= 25000 && shipLevel == 0)
         {
             inventory.UpdateKredit(-25000);
+            player.isDestroing = true;
             Destroy(player.gameObject);
 
             var obj = Instantiate(playerPrefabs[1], gameObject.transform);
@@ -46,6 +50,7 @@ public class StartPlayer : MonoBehaviour
             player.playerCamera = playerCamera;
             playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
             player.gameOver = gameOver;
+            player.audioManager = audioManager;
             foreach (var blok in repairBloks)
             {
                 blok.cells = new();
@@ -89,6 +94,7 @@ public class StartPlayer : MonoBehaviour
         if (inventory.kredit >= 50000 && shipLevel == 1)
         {
             inventory.UpdateKredit(-50000);
+            player.isDestroing = true;
             Destroy(player.gameObject);
 
             var obj = Instantiate(playerPrefabs[2], gameObject.transform);
@@ -96,6 +102,8 @@ public class StartPlayer : MonoBehaviour
             player.playerCamera = playerCamera;
             playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
             player.gameOver = gameOver;
+            player.audioManager = audioManager;
+
             foreach (var blok in repairBloks)
             {
                 blok.cells = new();

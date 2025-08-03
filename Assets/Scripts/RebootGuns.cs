@@ -8,13 +8,13 @@ public class RebootGuns : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        try
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        catch { Debug.Log("no player"); }
     }
 
-    void Update()
-    {
-
-    }
     public void RefreshCells()
     {
         cells = new();
@@ -58,8 +58,7 @@ public class RebootGuns : MonoBehaviour
             if (cell.slot.GetComponent<UISlot>().currentItem != null)
             {
                 cell.slot.GetComponent<UISlot>().currentItem.CallNewModule(cell);
-                //cell.slot.GetComponent<UISlot>().currentItem = cell.slot.GetComponent<UISlot>().currentItem.CallNewModule(cell);
-                Debug.Log("вызвал " + cell.slot.GetComponent<UISlot>().currentItem.gameObject.name);
+                //Debug.Log("вызвал " + cell.slot.GetComponent<UISlot>().currentItem.gameObject.name);
             }
         }
     }

@@ -15,10 +15,8 @@ public class Pause : MonoBehaviour
         }
         foreach (var i in cosmoPorts)
         {
-            i.GetComponent<CosmoPort>().ColliderActivate();
+            i.GetComponent<Cosmoport>().ColliderActivate();
         }
-        //CosmoPortPanel.SetActive(false);
-        //cosmoPort.GetComponent<CosmoPort>().ColliderActivate();
         Time.timeScale = 1f;
     }
     public void PauseOpenInventory()

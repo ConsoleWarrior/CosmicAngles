@@ -1,12 +1,11 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public string itemName;
     public string type;
     public int price;
-    //public string characteristics;
     protected RectTransform rectTransform;
     protected Canvas canvas;
     public CanvasGroup group;
@@ -15,7 +14,6 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
     protected Inventory inventory;
     public GameObject itemPrefab;
     [SerializeField] Color itemColor;
-
 
 
     void Start()
@@ -33,12 +31,7 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
         currentSlotTransform = rectTransform.parent;
         currentSlotTransform.SetAsLastSibling();
         group.blocksRaycasts = false;
-        //if (slotTransform.GetComponent<UISlot>().cell != null)
-        //{
-        //    Destroy(slotTransform.GetComponent<UISlot>().cell.module.gameObject);
-        //}
     }
-
     public void OnDrag(PointerEventData eventData)
     {
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
@@ -50,24 +43,21 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
         }
 
     }
-
     public virtual void OnEndDrag(PointerEventData eventData)
     {
 
     }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        ShowInfo();
+    }
+
     public virtual void SellScrap()
     {
-        //var slot = startSlotTransform.GetComponent<UISlot>();
-        //slot.isFree = true;
-        //slot.currentItem = null;
         inventory.UpdateKredit(price / 2);
-        //inventory.kredit += scrapItemCount * 10;
-        //inventory.tmpKredit.text = inventory.kredit.ToString();
-        Debug.Log("продал за полцены"+ price / 2);
-        //Destroy(gameObject);
+        Debug.Log("продал за полцены" + price / 2);
         ClearOldSlot();
         Destroy(gameObject);
-
     }
     public virtual void ClearOldSlot()
     {
@@ -97,7 +87,7 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
             startShop.currentItem = Instantiate(startShop.UIItemPrefab, startSlotTransform).GetComponent<UIItem>();
             startShop.currentItem.transform.SetParent(startSlotTransform);
             startShop.currentItem.transform.localPosition = Vector3.zero;
-            if(startShop.currentItem.GetComponent<CanvasGroup>() == null) { Debug.Log("нет канваса у кьюрент итема"); }
+            if (startShop.currentItem.GetComponent<CanvasGroup>() == null) { Debug.Log("нет канваса у кьюрент итема"); }
             startShop.currentItem.GetComponent<CanvasGroup>().blocksRaycasts = true;
             //Debug.Log("Instantiate in shop new "+ startShop.currentItem.gameObject.name);
         }
@@ -108,9 +98,15 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
         transform.localPosition = Vector3.zero;
         group.blocksRaycasts = true;
     }
-    public virtual GameObject CallNewModule(Cell cell)//затычка
+    public virtual void CallNewModule(Cell cell)
     {
-        return cell.gameObject;
+        if (cell.module == null)
+        {
+            GameObject c = (GameObject)Instantiate(itemPrefab, cell.transform.position, cell.transform.rotation);
+            c.transform.SetParent(cell.transform);
+            cell.module = c.GetComponent<Modulus>();
+            Debug.Log("Итем вызвал новый модуль : " + c.name);
+        }
     }
     public void ShowInfo()
     {
@@ -125,7 +121,6 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
     }
     public virtual string ReturnCharacter()
     {
-        return "character: 0";
+        return "character: " + itemPrefab.GetComponent<Modulus>().GetCharacter();
     }
-
 }

@@ -15,7 +15,7 @@ public class LazerGunEnemy : MonoBehaviour
 
     void Start()
     {
-        audioManager.a.volume = 0.15f;
+        audioManager.a.volume = 0.12f;
         enemy = transform.parent.GetComponent<EnemyMoscito>();
     }
 
@@ -36,7 +36,6 @@ public class LazerGunEnemy : MonoBehaviour
     }
     IEnumerator Fire(Transform target)
     {
-        //Debug.Log("start coro");
         while (enemy.flag)
         {
             //Debug.Log("coro working now");
@@ -46,7 +45,7 @@ public class LazerGunEnemy : MonoBehaviour
             if (target.GetComponent<Shield>() != null) target.GetComponent<Shield>().TakeDamage(damage);
             yield return new WaitForSeconds(reload);
         }
-        //Debug.Log("stop coro по флагу энеми");
+        audioManager.Stop();
     }
     public void StartFire()
     {
@@ -76,12 +75,12 @@ public class LazerGunEnemy : MonoBehaviour
             }
         }
     }
-    public void StopFire()
-    {
-        StopAllCoroutines();
-        audioManager.Stop();
-        line.SetPosition(1, transform.position);
-        LLHitEffect.transform.position = transform.position;
-        LLHitEffect.Pause();
-    }
+    //public void StopFire()
+    //{
+    //    StopAllCoroutines();
+    //    audioManager.Stop();
+    //    line.SetPosition(1, transform.position);
+    //    LLHitEffect.transform.position = transform.position;
+    //    LLHitEffect.Pause();
+    //}
 }

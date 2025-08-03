@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
             var inventoryCellUISlot = inventoryGrid.GetChild(i).gameObject.GetComponent<UISlot>();
             if (inventoryCellUISlot != null)
             {
-                if (!inventoryCellUISlot.isFree && inventoryCellUISlot.currentItem.type != null && inventoryCellUISlot.currentItem.type == "Scrap")
+                if (!inventoryCellUISlot.isFree && inventoryCellUISlot.currentItem.type != null && inventoryCellUISlot.currentItem.itemName == "Scrap")
                 {
                     if (((UIItemScrap)inventoryCellUISlot.currentItem).scrapItemCount + value <= 100)
                     {

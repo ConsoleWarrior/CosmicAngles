@@ -2,22 +2,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float speed;
+    public float speed;
     [SerializeField] float xp;
     [SerializeField] Cell core;
     public Camera playerCamera;
     public GameObject gameOver;
     [SerializeField] Animator animator;
     public bool isLooting = false;
+    public bool isDestroing = false;
+    public AudioManager audioManager;
 
-    void Start()
-    {
-    }
+
     void Update()
     {
         if (core.isDestroyed)
         {
             gameOver.SetActive(true);
+            audioManager.SoundPlay0();
             this.gameObject.SetActive(false);
             Time.timeScale = 0;
         }

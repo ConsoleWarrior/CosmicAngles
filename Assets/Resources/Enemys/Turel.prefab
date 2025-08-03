@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound:
   - {fileID: 8300000, guid: 54bb1652cf71ff44fb92705a6e17756a, type: 3}
-  - {fileID: 8300000, guid: 65beeec3aa166bb4bb8f547a43f49e4e, type: 3}
+  - {fileID: 8300000, guid: 3448e8c9dc4e7424ea4940d44c93e46e, type: 3}
   a: {fileID: 2942216764802703841}
 --- !u!82 &2942216764802703841
 AudioSource:
@@ -252,7 +252,7 @@ MonoBehaviour:
   hpBar: {fileID: 972876684501090645}
   hpBarCanvas: {fileID: 7789353522253291157}
   audioManager: {fileID: 1052212022246652714}
-  xp: 1
+  xp: 8
   speed: 1
   dropScrapCount: 1000
   dropPrefabs:

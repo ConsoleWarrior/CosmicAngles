@@ -19,7 +19,8 @@ public class Armor : Modulus
     }
     void OnDestroy()
     {
-        DisconnectFromShip();
+        if (player != null && !player.GetComponent<Player>().isDestroing)
+            DisconnectFromShip();
     }
     public void ConnectToShip()
     {

@@ -123,9 +123,9 @@ public class Enemy : MonoBehaviour
         if (dropPrefabs != null)
             for (int i = 0; i < dropPrefabs.Count; i++)
             {
-                if (dropChance[i] >= Random.Range(1, 101) && xp > 8)//&& xp > 8
+                if (dropChance[i] >= Random.Range(1, 101) && xp >= 8)//&& xp > 8
                 {
-                    Instantiate(dropPrefabs[i], new(transform.position.x + 0.5f, transform.position.y + 0.5f), Quaternion.identity);
+                    Instantiate(dropPrefabs[i], new(transform.position.x + Random.Range(-1,2), transform.position.y + Random.Range(-1, 2)), Quaternion.identity);
                 }
             }
 

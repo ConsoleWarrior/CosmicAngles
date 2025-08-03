@@ -8,6 +8,7 @@ public class RepairBlok : MonoBehaviour
     public int repair1HPCost;
     public TextMeshProUGUI tmpCost;
     Inventory inventory;
+    [SerializeField] AudioManager manager;
 
 
     void Start()
@@ -27,6 +28,7 @@ public class RepairBlok : MonoBehaviour
         var cost = CalculateRepairCellsCost();
         if (inventory.kredit >= cost)
         {
+            manager.SoundPlay0();
             inventory.UpdateKredit(-cost);
             RepairNowAll();
             //tmpCost.text = CalculateRepairCellsCost().ToString();

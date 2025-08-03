@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CosmoPort : MonoBehaviour
+public class Cosmoport : MonoBehaviour
 {
     public Pause pause;
     public int number;
@@ -16,7 +16,7 @@ public class CosmoPort : MonoBehaviour
     }
     public void ColliderActivate()
     {
-        Invoke("ColliderActivateInvoke", 1);
+        Invoke("ColliderActivateInvoke", 3);
     }
     void ColliderActivateInvoke()
     {
