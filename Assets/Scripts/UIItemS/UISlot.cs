@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UISlot : MonoBehaviour, IDropHandler
+public class UISlot : MonoBehaviour//, IDropHandler
 {
     public int number;
     public bool isFree = true;
@@ -17,13 +17,13 @@ public class UISlot : MonoBehaviour, IDropHandler
         }
     }
 
-    public void OnDrop(PointerEventData eventData)
-    {
-        var itemTransform = eventData.pointerDrag.transform;
-        itemTransform.SetParent(transform);
-        itemTransform.localPosition = Vector3.zero;
-        currentItem = itemTransform.GetComponent<UIItem>();
+    //public void OnDrop(PointerEventData eventData)
+    //{
+    //    var itemTransform = eventData.pointerDrag.transform;
+    //    itemTransform.SetParent(transform);
+    //    itemTransform.localPosition = Vector3.zero;
+    //    currentItem = itemTransform.GetComponent<UIItem>();
 
-    }
+    //}
 }
 

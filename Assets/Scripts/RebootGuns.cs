@@ -6,19 +6,15 @@ public class RebootGuns : MonoBehaviour
     Transform player;
     List<Cell> cells;
 
-    void Start()
-    {
-        try
-        {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-        }
-        catch { Debug.Log("no player"); }
-    }
+    //void Start()
+    //{
+    //    try
+    //    {
+    //        player = GameObject.FindGameObjectWithTag("Player").transform;
+    //    }
+    //    catch { Debug.Log("no player"); }
+    //}
 
-    public void RefreshCells()
-    {
-        cells = new();
-    }
     public void DoReboot()
     {
         cells = new();
@@ -47,7 +43,7 @@ public class RebootGuns : MonoBehaviour
             {
                 Destroy(cell.module.gameObject);
                 cell.module = null;
-                Debug.Log("очистил " + cell.gameObject.name);
+                //Debug.Log("очистил " + cell.gameObject.name);
             }
         }
     }

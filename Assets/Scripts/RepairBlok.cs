@@ -32,7 +32,7 @@ public class RepairBlok : MonoBehaviour
             inventory.UpdateKredit(-cost);
             RepairNowAll();
             //tmpCost.text = CalculateRepairCellsCost().ToString();
-            Debug.Log("ремонт успешен, остаток кредита =" + inventory.kredit);
+            Debug.Log("выполнен ремонт за " + cost);
         }
         else
         {
@@ -46,7 +46,7 @@ public class RepairBlok : MonoBehaviour
         {
             x += cell.CalculateRepairHPCost();
         }
-        return x * repair1HPCost;
+        return (float)System.Math.Round(x * repair1HPCost, 0);
     }
     public void RepairNowAll()
     {

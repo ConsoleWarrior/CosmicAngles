@@ -15,15 +15,15 @@ public class EnemyTurel : Enemy
 
     void Start()
     {
-        try
-        {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-        }
-        catch { Debug.Log("player is not active"); }
+        //try
+        //{
+        //    player = GameObject.FindGameObjectWithTag("Player").transform;
+        //}
+        //catch { Debug.Log("player is not active"); }
         animator = GetComponent<Animator>();
         target = transform.position;
         audioManager.a.volume = 0.3f;
-        StartRepair();
+        StartCoroutine(RepairTic());
     }
     void FixedUpdate()
     {
@@ -32,7 +32,7 @@ public class EnemyTurel : Enemy
             player = GameObject.FindGameObjectWithTag("Player").transform;
 
         }
-        else dist = Vector3.Distance(player.position, transform.position);
+        dist = Vector3.Distance(player.position, transform.position);
         if (dist != 0 && dist < 13)
             Atack();
         else
@@ -82,10 +82,6 @@ public class EnemyTurel : Enemy
         {
             other.gameObject.GetComponent<Cell>().TakeDamage(currentHp);
         }
-    }
-    public void StartRepair()
-    {
-        StartCoroutine(RepairTic());
     }
     IEnumerator RepairTic()
     {

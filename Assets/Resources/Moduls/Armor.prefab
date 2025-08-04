@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2585911447608671155}
-  - component: {fileID: 904791313288968382}
   - component: {fileID: 7182210486824853639}
+  - component: {fileID: 904791313288968382}
   m_Layer: 0
   m_Name: Armor
   m_TagString: Untagged
@@ -33,6 +33,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7182210486824853639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9166677897196703679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a875f5a30d3bad40a2dab520418138a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bonus: 100
 --- !u!212 &904791313288968382
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -85,16 +98,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7182210486824853639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9166677897196703679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a875f5a30d3bad40a2dab520418138a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bonus: 100

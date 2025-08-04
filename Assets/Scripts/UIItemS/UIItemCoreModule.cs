@@ -7,52 +7,67 @@ public class UIItemCoreModule : UIItem
     {
         if (eventData != null)
         {
+            var point = eventData.pointerEnter.gameObject;
+            var slot = point.GetComponent<UISlot>();
+
             if (startSlotTransform.GetComponent<UISlotShop>() != null) //если ты в магазине пробуешь купить
             {
-                if (startSlotTransform.GetComponent<UISlotShop>().currentItem.price <= inventory.kredit)
+                if (price <= inventory.kredit)
                 {
-                    if (eventData.pointerEnter.transform.GetComponent<UISlot>())
+                    if (point.GetComponent<UISlot>() != null && slot.isFree && slot.number == 0)
                     {
                         inventory.UpdateKredit(-price);
                     }
                     else
                     {
-                        Debug.Log("не слот для покупки");
+                        Debug.Log("не слот для покупки, занят или не ядро");
                         ReturnBack();
                         return;
                     }
                 }
                 else
                 {
-                    Debug.Log("денег нет");
+                    Debug.Log("нехватает денег");
                     ReturnBack();
                     return;
                 }
             }
             else
             {
-                if (eventData.pointerEnter.gameObject.GetComponent<CosmoportPanel>() != null || eventData.pointerEnter.gameObject.GetComponent<UISlotShop>() != null)
+                if (point.GetComponent<CosmoportPanel>() != null || point.GetComponent<UISlotShop>() != null)
                 {
                     SellScrap();
                     return;
                 }
             }
-            if (eventData.pointerEnter.gameObject.GetComponent<UISlot>() != null)
+            if (slot != null)
             {
-                if (eventData.pointerEnter.gameObject.GetComponent<UISlot>().isFree)
+                if (slot.isFree)
                 {
-                    eventData.pointerEnter.gameObject.GetComponent<UISlot>().isFree = false;
-                    if (eventData.pointerEnter.gameObject.GetComponent<UISlot>().cell != null)
+                    if (slot.cell != null)
                     {
-                        var cell = eventData.pointerEnter.gameObject.GetComponent<UISlot>().cell;
-                        GameObject c = (GameObject)Instantiate(itemPrefab, cell.transform.position, cell.transform.rotation);
-                        c.transform.SetParent(cell.transform);
-                        cell.module = c.GetComponent<Modulus>();
-                        Debug.Log("переместили в корабль");
-                        ClearOldSlot();
+                        if (slot.number == 0)
+                        {
+                            var cell = slot.cell;
+                            GameObject c = (GameObject)Instantiate(itemPrefab, cell.transform.position, cell.transform.rotation);
+                            c.transform.SetParent(cell.transform);
+                            cell.module = c.GetComponent<Modulus>();
+                            slot.currentItem = this;
+                            slot.isFree = false;
+                            Debug.Log("установили на корабль");
+                            ClearOldSlot();
+                        }
+                        else
+                        {
+                            ReturnBack();
+                            Debug.Log("не ядро");
+                            return;
+                        }
                     }
                     else
                     {
+                        slot.currentItem = this;
+                        slot.isFree = false;
                         Debug.Log("переместили в инвентарь");
                         ClearOldSlot();
                     }
@@ -73,7 +88,7 @@ public class UIItemCoreModule : UIItem
         }
         else
         {
-            Debug.Log("ивент дата ноль");
+            Debug.Log("ивент дата нуль");
             ReturnBack();
             return;
         }

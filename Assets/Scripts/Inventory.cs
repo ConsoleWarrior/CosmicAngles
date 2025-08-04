@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
         if ((kredit + change) >= 0)
         {
             kredit += change;
-            tmpKredit.text = kredit.ToString();
+            tmpKredit.text = System.Math.Round(kredit, 0).ToString();
         }
         else Debug.Log("(kredit + change) < 0");
 
@@ -34,10 +34,6 @@ public class Inventory : MonoBehaviour
                     }
                 }
             }
-            //else
-            //{
-            //    Debug.Log("inventoryCellUISlot == null" + value);
-            //}
         }
 
         for (int j = 0; j < inventoryGrid.childCount; j++)
@@ -64,7 +60,6 @@ public class Inventory : MonoBehaviour
             var inventoryCellUISlot = inventoryGrid.GetChild(i).gameObject.GetComponent<UISlot>();
             if (inventoryCellUISlot != null && inventoryCellUISlot.isFree)
             {
-
                 GameObject newItem = (GameObject)Instantiate(drop, inventoryCellUISlot.transform.position, inventoryCellUISlot.transform.rotation);
                 newItem.transform.SetParent(inventoryCellUISlot.transform);
                 newItem.transform.localScale = Vector3.one;

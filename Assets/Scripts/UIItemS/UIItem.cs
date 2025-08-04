@@ -26,7 +26,7 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (eventData == null) Debug.Log("нет ивент даты");
+        //if (eventData == null) Debug.Log("нет ивент даты");
         startSlotTransform = rectTransform.parent;
         currentSlotTransform = rectTransform.parent;
         currentSlotTransform.SetAsLastSibling();
@@ -55,7 +55,7 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
     public virtual void SellScrap()
     {
         inventory.UpdateKredit(price / 2);
-        Debug.Log("продал за полцены" + price / 2);
+        Debug.Log("продал за " + price / 2);
         ClearOldSlot();
         Destroy(gameObject);
     }
@@ -70,20 +70,18 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
                 {
                     Destroy(startSlotTransform.GetComponent<UISlot>().cell.module.gameObject);
                     startSlotTransform.GetComponent<UISlot>().currentItem = null;// ошибка ребута пушек
-                    Debug.Log("переместили из корабля, старый слот чист");
+                    //Debug.Log("переместили из корабля, старый слот чист");
                 }
                 else
                 {
-                    Debug.Log("переместили из трюма");
+                    //Debug.Log("переместили из трюма");
                     startSlotTransform.GetComponent<UISlot>().currentItem = null;
                 }
-
             }
         }
         var startShop = startSlotTransform.GetComponent<UISlotShop>();
         if (startShop != null) //вызываем в магазе новый итем вместо старого
         {
-            //startSlotTransform.GetComponent<UISlotShop>().isFree = true;
             startShop.currentItem = Instantiate(startShop.UIItemPrefab, startSlotTransform).GetComponent<UIItem>();
             startShop.currentItem.transform.SetParent(startSlotTransform);
             startShop.currentItem.transform.localPosition = Vector3.zero;
@@ -105,7 +103,7 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
             GameObject c = (GameObject)Instantiate(itemPrefab, cell.transform.position, cell.transform.rotation);
             c.transform.SetParent(cell.transform);
             cell.module = c.GetComponent<Modulus>();
-            Debug.Log("Итем вызвал новый модуль : " + c.name);
+            //Debug.Log("Итем вызвал новый модуль : " + c.name);
         }
     }
     public void ShowInfo()

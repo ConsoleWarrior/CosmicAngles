@@ -131,7 +131,7 @@ MonoBehaviour:
   price: 2000
   group: {fileID: 0}
   itemPrefab: {fileID: 9166677897196703679, guid: 8f5decbcc5245374581dcc03f3b43170, type: 3}
-  itemColor: {r: 0.7960785, g: 0.83921576, b: 0.882353, a: 0}
+  itemColor: {r: 0.7960785, g: 0.83921576, b: 0.882353, a: 1}
 --- !u!222 &992150999290217254
 CanvasRenderer:
   m_ObjectHideFlags: 0

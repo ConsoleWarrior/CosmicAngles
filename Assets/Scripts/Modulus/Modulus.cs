@@ -27,7 +27,7 @@ public class Guns : Modulus
     }
     public override string GetCharacter()
     {
-        return "damage:" + damage + "\nbulletSpeed:" + bulletSpeed + "\nreload:" + reload;
+        return "damage= " + damage + "\nbulletSpeed= " + bulletSpeed + "\nreload= " + reload;
     }
 }
 
@@ -48,6 +48,6 @@ public class LazerGuns : Modulus
     }
     public override string GetCharacter()
     {
-        return "damage:" + damage + "\nreload:" + reload;
+        return "damage= " + damage + "\nreload= " + reload;
     }
 }

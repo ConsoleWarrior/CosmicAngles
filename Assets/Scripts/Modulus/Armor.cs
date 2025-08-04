@@ -60,6 +60,6 @@ public class Armor : Modulus
     }
     public override string GetCharacter()
     {
-        return "HPBonusCells: +" + bonus;
+        return "HPBonusCells= +" + bonus;
     }
 }
