@@ -1,14 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class Dash : MonoBehaviour
+public class Dash : Modulus
 {
     Player player;
+    [SerializeField] float distance;
 
-    void Start()
-    {
-        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -19,9 +16,7 @@ public class Dash : MonoBehaviour
     public void DoJump()
     {
         if (player == null) player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        var temp = player.speed;
-        ChangePlayerSpeed(32);
-        StartCoroutine(InvokeRoutine(() => ChangePlayerSpeed(temp), 0.5f));
+        player.transform.position = player.transform.position + player.transform.up * distance;
     }
     void ChangePlayerSpeed(float rate)
     {
