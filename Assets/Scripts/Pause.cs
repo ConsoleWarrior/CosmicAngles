@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Pause : MonoBehaviour
 {
@@ -6,6 +7,19 @@ public class Pause : MonoBehaviour
     public GameObject InventarPanel;
     public GameObject[] cosmoPortPanels;
     public GameObject[] cosmoPorts;
+
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab) && !InventarPanel.activeSelf)
+        {
+            PauseOpenInventory();
+        }
+        else if (Input.GetKeyDown(KeyCode.Tab) && InventarPanel.activeSelf)
+        {
+            Play();
+        }
+    }
     public void Play()
     {
         InventarPanel.SetActive(false);
@@ -21,7 +35,7 @@ public class Pause : MonoBehaviour
     }
     public void PauseOpenInventory()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (player == null) player = GameObject.FindGameObjectWithTag("Player").transform;
         player.rotation = Quaternion.identity;
         InventarPanel.SetActive(true);
         Time.timeScale = 0f;

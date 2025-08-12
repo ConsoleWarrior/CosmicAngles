@@ -17,16 +17,18 @@ public class Cell : MonoBehaviour
     void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
-        try
-        {
-            player = transform.parent.GetComponent<Player>();
-            if (player == null) { Debug.Log("player null"); }
-        }
-        catch
-        {
-            Debug.Log("не находит player");
-        }
+        player = transform.parent.GetComponent<Player>();
         shipGrid = GameObject.FindGameObjectWithTag("StartPlayer").GetComponent<StartPlayer>().shipGrid;
+
+        //try
+        //{
+        //    player = transform.parent.GetComponent<Player>();
+        //    if (player == null) { Debug.Log("player null"); }
+        //}
+        //catch
+        //{
+        //    Debug.Log("не находит player");
+        //}
         for (int i = 0; i < shipGrid.childCount; i++)
         {
             if (shipGrid.GetChild(i).GetComponent<UISlot>() != null)
@@ -99,7 +101,9 @@ public class Cell : MonoBehaviour
     }
     public float CalculateRepairHPCost()
     {
-        var x = maxHp - currentHp;
+        float x = maxHp - currentHp;
+        if (isDestroyed && slot.GetComponent<UISlot>().currentItem != null)
+            x += slot.GetComponent<UISlot>().currentItem.price / 100;
         return x;
     }
     public void Repair()
