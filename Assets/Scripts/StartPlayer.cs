@@ -1,5 +1,4 @@
 using UnityEngine;
-using static Unity.Collections.AllocatorManager;
 
 public class StartPlayer : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class StartPlayer : MonoBehaviour
     [SerializeField] GameObject gameOver;
     [SerializeField] AudioManager audioManager;
     public Transform shipGrid;
-    public RepairBlok[] repairBloks;
+    public RepairBlok repairBlok;
     Inventory inventory;
     public GameObject buyButton;
     public GameObject buyButton2;
@@ -25,16 +24,14 @@ public class StartPlayer : MonoBehaviour
         playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
         player.gameOver = gameOver;
         player.audioManager = audioManager;
-        for (int i = 0; i < player.transform.childCount; i++)
-        {
-            if (player.transform.GetChild(i).GetComponent<Cell>() != null)
-            {
-                foreach (var blok in repairBloks)
-                {
-                    blok.cells.Add(player.transform.GetChild(i).GetComponent<Cell>());
-                }
-            }
-        }
+        repairBlok.RefreshCells(player);
+        //for (int i = 0; i < player.transform.childCount; i++)
+        //{
+        //    if (player.transform.GetChild(i).GetComponent<Cell>() != null)
+        //    {
+        //        repairBlok.cells.Add(player.transform.GetChild(i).GetComponent<Cell>());
+        //    }
+        //}
     }
 
     public void CallNewShipPrefab1()
@@ -51,17 +48,15 @@ public class StartPlayer : MonoBehaviour
             playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
             player.gameOver = gameOver;
             player.audioManager = audioManager;
-            foreach (var blok in repairBloks)
-            {
-                blok.cells = new();
-                for (int i = 0; i < player.transform.childCount; i++)
-                {
-                    if (player.transform.GetChild(i).GetComponent<Cell>() != null)
-                    {
-                        blok.cells.Add(player.transform.GetChild(i).GetComponent<Cell>());
-                    }
-                }
-            }
+            repairBlok.RefreshCells(player);
+            //repairBlok.cells = new();
+            //for (int i = 0; i < player.transform.childCount; i++)
+            //{
+            //    if (player.transform.GetChild(i).GetComponent<Cell>() != null)
+            //    {
+            //        repairBlok.cells.Add(player.transform.GetChild(i).GetComponent<Cell>());
+            //    }
+            //}
             for (int i = 0; i < shipGrid.childCount; i++)
             {
                 if (shipGrid.GetChild(i).name == "Slot7")
@@ -103,18 +98,19 @@ public class StartPlayer : MonoBehaviour
             playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
             player.gameOver = gameOver;
             player.audioManager = audioManager;
+            repairBlok.RefreshCells(player);
 
-            foreach (var blok in repairBloks)
-            {
-                blok.cells = new();
-                for (int i = 0; i < player.transform.childCount; i++)
-                {
-                    if (player.transform.GetChild(i).GetComponent<Cell>() != null)
-                    {
-                        blok.cells.Add(player.transform.GetChild(i).GetComponent<Cell>());
-                    }
-                }
-            }
+            //foreach (var blok in repairBloks)
+            //{
+            //    blok.cells = new();
+            //    for (int i = 0; i < player.transform.childCount; i++)
+            //    {
+            //        if (player.transform.GetChild(i).GetComponent<Cell>() != null)
+            //        {
+            //            blok.cells.Add(player.transform.GetChild(i).GetComponent<Cell>());
+            //        }
+            //    }
+            //}
             for (int i = 0; i < shipGrid.childCount; i++)
             {
                 if (shipGrid.GetChild(i).name == "Slot10")

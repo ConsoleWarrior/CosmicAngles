@@ -114,6 +114,8 @@ MonoBehaviour:
   - {fileID: 2368374991916363772, guid: 33ef68eb842c28e4da8206757c5ad624, type: 3}
   - {fileID: 2917612651126115316, guid: 30795022603951d49954cb15914d2d24, type: 3}
   dropChance: 0300000003000000
+  fireDistance: 9.2
+  atackDistance: 10.5
   bulletPrefab: {fileID: 7443552582876438875, guid: 55e94c62a100d8e42b48d2496854383d, type: 3}
   bulletSpeed: 0
   reloadTime: 3
@@ -211,7 +213,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4946381566672173599, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: sound.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4946381566672173599, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: sound.Array.data[0]
@@ -220,7 +222,7 @@ PrefabInstance:
     - target: {fileID: 4946381566672173599, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: sound.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 65beeec3aa166bb4bb8f547a43f49e4e, type: 3}
+      objectReference: {fileID: 8300000, guid: 0c0729538b81bc54781cd892c612f69d, type: 3}
     - target: {fileID: 6344218776680865069, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: m_Name
       value: AudioManager

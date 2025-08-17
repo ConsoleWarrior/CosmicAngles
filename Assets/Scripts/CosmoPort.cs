@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class Cosmoport : MonoBehaviour
 {
+    public GameObject panel;
     public Pause pause;
     public int number;
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -11,7 +13,8 @@ public class Cosmoport : MonoBehaviour
         {
             gameObject.GetComponent<Collider2D>().enabled = false;
             pause.PauseOpenInventory();
-            pause.cosmoPortPanels[number].SetActive(true);
+            panel.SetActive(true);
+            //pause.cosmoPortPanels[number].SetActive(true);
         }
     }
     public void ColliderActivate()

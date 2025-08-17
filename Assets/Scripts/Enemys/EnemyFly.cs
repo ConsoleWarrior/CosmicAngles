@@ -12,12 +12,12 @@ public class EnemyFly : Enemy
 
     public override void Atack()
     {
-        if (!flag && dist < 7)
+        if (!flag && dist < fireDistance)
         {
             flag = true;
             StartCoroutine(Fire());
         }
-        else if (dist >= 7)
+        else if (dist >= fireDistance)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
@@ -29,7 +29,7 @@ public class EnemyFly : Enemy
 
     IEnumerator Fire()
     {
-        while (dist < 7)
+        while (dist < fireDistance)
         {
             //audioManager.SoundPlay1();
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
@@ -44,28 +44,18 @@ public class EnemyFly : Enemy
     {
         maxHp += maxHp * 0.3f;
         currentHp += currentHp * 0.3f;
-        transform.localScale = new Vector3(2, 2, 2);
-        speed -= speed * 0.3f;
-        reloadTime -= reloadTime * 0.3f;
+        transform.localScale = new Vector3(1.8f, 1.8f, 1);
+        speed -= speed * 0.1f;
+        reloadTime -= reloadTime * 0.2f;
         dropScrapCount = 4;
     }
     public override void EvolveLevel2()
     {
         maxHp += maxHp * 0.3f;
         currentHp += currentHp * 0.3f;
-        transform.localScale = new Vector3(2.5f, 2.5f, 1);
-        speed -= speed * 0.2f;
-        reloadTime -= reloadTime * 0.3f;
+        transform.localScale = new Vector3(2.3f, 2.3f, 1);
+        speed -= speed * 0.1f;
+        reloadTime -= reloadTime * 0.2f;
         dropScrapCount = 8;
     }
-    //public override void CalculateAndCallDrop()
-    //{
-    //    if (xp > 8 && Random.Range(0, 25) == 0)
-    //    {
-    //        Instantiate(Resources.Load("DropItems/DropGunBlue", typeof(GameObject)), new(transform.position.x + 0.5f, transform.position.y + 0.5f), Quaternion.identity);
-    //    }
-    //    GameObject c = (GameObject)Instantiate(Resources.Load("Scrap", typeof(GameObject)), transform.position, Quaternion.identity);
-    //    c.GetComponent<Scrap>().value = Random.Range(dropScrapCount / 2, dropScrapCount * 2);
-    //    c.transform.localScale = new Vector3(0.6f, 0.6f, 1);
-    //}
 }

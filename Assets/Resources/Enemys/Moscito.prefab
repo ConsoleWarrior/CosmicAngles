@@ -114,6 +114,8 @@ MonoBehaviour:
   dropPrefabs:
   - {fileID: 4854596453853521963, guid: c98b4b85b91ca81439a9cf7174dc254a, type: 3}
   dropChance: 02000000
+  fireDistance: 7
+  atackDistance: 10.5
   flag: 0
   gun: {fileID: 897086974167819299}
 --- !u!58 &3578079715457257352
@@ -148,9 +150,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010855645, y: -0.20944436}
+  m_Offset: {x: -0.00024104118, y: -0.1650573}
   serializedVersion: 2
-  m_Radius: 0.7901024
+  m_Radius: 0.6501951
 --- !u!50 &526142208230581952
 Rigidbody2D:
   serializedVersion: 4

@@ -71,16 +71,7 @@ public class LazerGunEnemy : MonoBehaviour
                     coroIsWorkNow = false;
                     StartCoroutine(Fire(c));
                 }
-
             }
         }
     }
-    //public void StopFire()
-    //{
-    //    StopAllCoroutines();
-    //    audioManager.Stop();
-    //    line.SetPosition(1, transform.position);
-    //    LLHitEffect.transform.position = transform.position;
-    //    LLHitEffect.Pause();
-    //}
 }

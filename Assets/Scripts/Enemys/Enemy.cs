@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected int dropScrapCount;
     [SerializeField] protected List<GameObject> dropPrefabs;
     [SerializeField] protected List<int> dropChance;
+    [SerializeField] protected float fireDistance;
+    [SerializeField] protected float atackDistance;
 
     protected float dist;
     protected Vector3 target;
@@ -64,7 +66,7 @@ public class Enemy : MonoBehaviour
     {
         if (player == null) player = GameObject.FindGameObjectWithTag("Player").transform;
         dist = Vector3.Distance(player.position, transform.position);
-        if (dist != 0 && dist < 10)
+        if (dist != 0 && dist < atackDistance)
             Atack();
         else
             Eating();
@@ -79,7 +81,7 @@ public class Enemy : MonoBehaviour
     public virtual void EvolveLevel2()
     {
     }
-    public virtual void SetParameters(float damage)
+    public virtual void SetParameters(float damage)//для снаряда мамки
     {
         maxHp = damage;
         currentHp = damage;

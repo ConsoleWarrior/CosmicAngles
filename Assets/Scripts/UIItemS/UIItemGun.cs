@@ -5,7 +5,7 @@ public class UIItemGun : UIItem
 {
     public override void OnEndDrag(PointerEventData eventData)
     {
-        if (eventData != null)
+        if (eventData != null && eventData.pointerEnter != null)
         {
             var point = eventData.pointerEnter.gameObject;
             var slot = point.GetComponent<UISlot>();
@@ -60,7 +60,7 @@ public class UIItemGun : UIItem
                         else
                         {
                             ReturnBack();
-                            Debug.Log("не ядро");
+                            Debug.Log("в ядро нельзя");
                             return;
                         }
                     }
@@ -88,7 +88,7 @@ public class UIItemGun : UIItem
         }
         else
         {
-            Debug.Log("ивент дата нуль");
+            Debug.Log("eventData или eventData.pointerEnter равно null");
             ReturnBack();
             return;
         }

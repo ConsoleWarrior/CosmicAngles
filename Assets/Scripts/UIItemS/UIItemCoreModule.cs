@@ -5,7 +5,7 @@ public class UIItemCoreModule : UIItem
 {
     public override void OnEndDrag(PointerEventData eventData)
     {
-        if (eventData != null)
+        if (eventData != null && eventData.pointerEnter != null)
         {
             var point = eventData.pointerEnter.gameObject;
             var slot = point.GetComponent<UISlot>();
@@ -60,7 +60,7 @@ public class UIItemCoreModule : UIItem
                         else
                         {
                             ReturnBack();
-                            Debug.Log("не ядро");
+                            Debug.Log("это не ядро");
                             return;
                         }
                     }

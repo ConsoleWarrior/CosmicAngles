@@ -15,11 +15,6 @@ public class EnemyTurel : Enemy
 
     void Start()
     {
-        //try
-        //{
-        //    player = GameObject.FindGameObjectWithTag("Player").transform;
-        //}
-        //catch { Debug.Log("player is not active"); }
         animator = GetComponent<Animator>();
         target = transform.position;
         audioManager.a.volume = 0.3f;
@@ -28,12 +23,9 @@ public class EnemyTurel : Enemy
     void FixedUpdate()
     {
         if (player == null)
-        {
             player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        }
         dist = Vector3.Distance(player.position, transform.position);
-        if (dist != 0 && dist < 13)
+        if (dist != 0 && dist < atackDistance)
             Atack();
         else
             if(target != transform.position) Eating();
@@ -48,12 +40,12 @@ public class EnemyTurel : Enemy
     }
     public override void Atack()
     {
-        if (!flag && dist < 10)
+        if (!flag && dist < fireDistance)
         {
             flag = true;
             StartCoroutine(Fire());
         }
-        else if (dist >= 10)
+        else if (dist >= fireDistance)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
@@ -64,7 +56,7 @@ public class EnemyTurel : Enemy
     }
     IEnumerator Fire()
     {
-        while (dist < 10)
+        while (dist < fireDistance)
         {
             audioManager.SoundPlay1();
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);

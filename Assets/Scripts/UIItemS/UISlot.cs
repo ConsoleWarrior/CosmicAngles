@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
+//using UnityEngine.EventSystems;
 
 public class UISlot : MonoBehaviour//, IDropHandler
 {
@@ -23,7 +23,6 @@ public class UISlot : MonoBehaviour//, IDropHandler
     //    itemTransform.SetParent(transform);
     //    itemTransform.localPosition = Vector3.zero;
     //    currentItem = itemTransform.GetComponent<UIItem>();
-
     //}
 }
 

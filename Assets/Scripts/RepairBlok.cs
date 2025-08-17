@@ -6,9 +6,11 @@ public class RepairBlok : MonoBehaviour
 {
     public List<Cell> cells = new();
     public int repair1HPCost;
-    public TextMeshProUGUI tmpCost;
-    Inventory inventory;
+    public List<TextMeshProUGUI> tmpCosts;
     [SerializeField] AudioManager manager;
+
+    Inventory inventory;
+    Player player;
 
 
     void Start()
@@ -17,11 +19,22 @@ public class RepairBlok : MonoBehaviour
     }
     void Update()
     {
-        tmpCost.text = CalculateRepairCellsCost().ToString();
+        foreach(var tmp in tmpCosts)
+        {
+            tmp.text = CalculateRepairCellsCost().ToString();
+        }
     }
-    public void RefreshCells()
+    public void RefreshCells(Player _player)
     {
+        player = _player;
         cells = new();
+        for (int i = 0; i < player.transform.childCount; i++)
+        {
+            if (player.transform.GetChild(i).GetComponent<Cell>() != null)
+            {
+                cells.Add(player.transform.GetChild(i).GetComponent<Cell>());
+            }
+        }
     }
     public void PushTheButton()
     {

@@ -15,7 +15,7 @@ public class UIItemScrap : UIItem
 
     public override void OnEndDrag(PointerEventData eventData)
     {
-        if (eventData != null)
+        if (eventData != null && eventData.pointerEnter != null)
         {
             var target = eventData.pointerEnter.gameObject;
             if (target.GetComponent<CosmoportPanel>() != null || target.GetComponent<UISlotShop>() != null)

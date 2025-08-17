@@ -200,7 +200,7 @@ MonoBehaviour:
   group: {fileID: 0}
   itemPrefab: {fileID: 0}
   itemColor: {r: 0.6075471, g: 0.6075471, b: 0.6075471, a: 1}
-  scrapItemCount: 95
+  scrapItemCount: 0
   tmpScrap: {fileID: 6310567689464555530}
 --- !u!225 &8511833783125957305
 CanvasGroup:

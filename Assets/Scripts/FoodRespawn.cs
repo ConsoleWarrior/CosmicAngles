@@ -22,6 +22,8 @@ public class FoodRespawn : MonoBehaviour
         b.transform.SetParent(transform, true);
         GameObject d = (GameObject)Instantiate(Resources.Load("Scrap", typeof(GameObject)), new Vector2(Random.Range(-200, -100), Random.Range(-100, 100)), Quaternion.identity);
         d.transform.SetParent(transform, true);
+        GameObject e = (GameObject)Instantiate(Resources.Load("Scrap", typeof(GameObject)), new Vector2(Random.Range(-100, 100), Random.Range(100, 200)), Quaternion.identity);
+        e.transform.SetParent(transform, true);
     }
 
     IEnumerator RespawnCoro()
@@ -29,15 +31,15 @@ public class FoodRespawn : MonoBehaviour
         while (true)
         {
             Respawn();
-            if (transform.childCount > 9000 && time != 0.3f)
+            if (transform.childCount > 12000 && time != 0.3f)
             {
                 time = 0.3f;
             }
-            if (transform.childCount < 9000 && transform.childCount > 6000 && time != 0.15f)
+            if (transform.childCount < 12000 && transform.childCount > 9000 && time != 0.15f)
             {
                 time = 0.15f;
             }
-            else if (transform.childCount <= 6000 && time != 0.05f)
+            else if (transform.childCount <= 9000 && time != 0.05f)
             {
                 time = 0.05f;
             }
