@@ -8,7 +8,7 @@ public class Cell : MonoBehaviour
     public Modulus module;
     Inventory inventory;
     public GameObject slot;
-    public Transform shipGrid;
+    Transform shipGrid;
     [SerializeField] AudioManager audioManager;
     public bool isDestroyed = false;
     Player player;
@@ -19,7 +19,7 @@ public class Cell : MonoBehaviour
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
         player = transform.parent.GetComponent<Player>();
         shipGrid = GameObject.FindGameObjectWithTag("StartPlayer").GetComponent<StartPlayer>().shipGrid;
-
+        audioManager.a.volume = 0.7f;
         //try
         //{
         //    player = transform.parent.GetComponent<Player>();
