@@ -52,8 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03017e0706a269e41b9b00ab23100984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 300
-  currentHp: 300
+  maxHp: 400
+  currentHp: 400
   hpBar: {fileID: 2298182510208265914}
   hpBarCanvas: {fileID: 9114657977327972730}
   audioManager: {fileID: 4576717084939039491}
@@ -61,9 +61,10 @@ MonoBehaviour:
   speed: 3.1
   dropScrapCount: 14
   dropPrefabs:
-  - {fileID: 4854596453853521963, guid: c98b4b85b91ca81439a9cf7174dc254a, type: 3}
   - {fileID: 971866323975946303, guid: a4c15b32b3373f5448ba79e6dda723b8, type: 3}
-  dropChance: 0200000002000000
+  - {fileID: 4098745871206213345, guid: 4a6cac37f64f762459a3464bc8199888, type: 3}
+  - {fileID: 1858820709484908416, guid: 854b054190f507644b4e971d4dd5af33, type: 3}
+  dropChance: 050000000200000001000000
   fireDistance: 8
   atackDistance: 10.5
   flag: 0

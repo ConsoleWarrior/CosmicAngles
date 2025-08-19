@@ -111,9 +111,10 @@ MonoBehaviour:
   speed: 2.3
   dropScrapCount: 6
   dropPrefabs:
-  - {fileID: 2368374991916363772, guid: 33ef68eb842c28e4da8206757c5ad624, type: 3}
   - {fileID: 2917612651126115316, guid: 30795022603951d49954cb15914d2d24, type: 3}
-  dropChance: 0300000003000000
+  - {fileID: 763632328761892825, guid: e21840407b0f7044c95fff514dbd8f4a, type: 3}
+  - {fileID: 8456192266433219608, guid: 92b445d6b3b873c44a439bb1ba8281d9, type: 3}
+  dropChance: 050000000200000001000000
   fireDistance: 9.2
   atackDistance: 10.5
   bulletPrefab: {fileID: 7443552582876438875, guid: 55e94c62a100d8e42b48d2496854383d, type: 3}
