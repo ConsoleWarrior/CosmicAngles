@@ -134,9 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3984394470041740971, guid: 1bb232a95918fb842a6382ce3f3a1b79, type: 3}
-  bulletSpeed: 5.5
-  reload: 0.4
-  damage: 13
+  bulletSpeed: 5
+  reload: 0.5
+  damage: 15
   audioManager: {fileID: 1593669771375690385}
   sprite: {fileID: 1824772140749801526}
 --- !u!212 &5604658750711593822

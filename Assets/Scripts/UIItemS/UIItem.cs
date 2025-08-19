@@ -54,8 +54,8 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
 
     public virtual void SellScrap()
     {
-        inventory.UpdateKredit(price / 2);
-        Debug.Log("продал за " + price / 2);
+        inventory.UpdateKredit(price*0.3f);
+        Debug.Log("продал за " + System.Math.Round(price * 0.3f, 0));
         ClearOldSlot();
         Destroy(gameObject);
     }
@@ -111,7 +111,7 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
         ItemInfo info = GameObject.FindGameObjectWithTag("ItemInfo").GetComponent<ItemInfo>();
         if (info == null) { Debug.Log("info == null"); }
         if (itemName == null) { Debug.Log("itemName == null"); }
-        info.itemName.text = "name: " + itemName;
+        info.itemName.text = "name: " + itemPrefab.name;
         info.type.text = "type: " + type;
         info.characteristics.text = ReturnCharacter();
         info.characteristics.color = itemColor;

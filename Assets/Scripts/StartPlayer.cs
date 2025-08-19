@@ -4,16 +4,16 @@ public class StartPlayer : MonoBehaviour
 {
     [SerializeField] GameObject[] playerPrefabs;
     Player player;
+    Inventory inventory;
     public Camera playerCamera;
     [SerializeField] GameObject gameOver;
     [SerializeField] AudioManager audioManager;
     public Transform shipGrid;
     public RepairBlok repairBlok;
-    Inventory inventory;
     public GameObject buyButton;
     public GameObject buyButton2;
+    public GameObject buyButton3;
     int shipLevel = 0;
-    //[SerializeField] RebootGuns reboot;
 
     void Start()
     {
@@ -25,13 +25,6 @@ public class StartPlayer : MonoBehaviour
         player.gameOver = gameOver;
         player.audioManager = audioManager;
         repairBlok.RefreshCells(player);
-        //for (int i = 0; i < player.transform.childCount; i++)
-        //{
-        //    if (player.transform.GetChild(i).GetComponent<Cell>() != null)
-        //    {
-        //        repairBlok.cells.Add(player.transform.GetChild(i).GetComponent<Cell>());
-        //    }
-        //}
     }
 
     public void CallNewShipPrefab1()
@@ -49,14 +42,7 @@ public class StartPlayer : MonoBehaviour
             player.gameOver = gameOver;
             player.audioManager = audioManager;
             repairBlok.RefreshCells(player);
-            //repairBlok.cells = new();
-            //for (int i = 0; i < player.transform.childCount; i++)
-            //{
-            //    if (player.transform.GetChild(i).GetComponent<Cell>() != null)
-            //    {
-            //        repairBlok.cells.Add(player.transform.GetChild(i).GetComponent<Cell>());
-            //    }
-            //}
+
             for (int i = 0; i < shipGrid.childCount; i++)
             {
                 if (shipGrid.GetChild(i).name == "Slot7")
@@ -100,17 +86,6 @@ public class StartPlayer : MonoBehaviour
             player.audioManager = audioManager;
             repairBlok.RefreshCells(player);
 
-            //foreach (var blok in repairBloks)
-            //{
-            //    blok.cells = new();
-            //    for (int i = 0; i < player.transform.childCount; i++)
-            //    {
-            //        if (player.transform.GetChild(i).GetComponent<Cell>() != null)
-            //        {
-            //            blok.cells.Add(player.transform.GetChild(i).GetComponent<Cell>());
-            //        }
-            //    }
-            //}
             for (int i = 0; i < shipGrid.childCount; i++)
             {
                 if (shipGrid.GetChild(i).name == "Slot10")
@@ -136,6 +111,44 @@ public class StartPlayer : MonoBehaviour
         else
         {
             Debug.Log("нет 50к или не куплен предыдущий апгрейд");
+        }
+    }
+    public void CallNewShipPrefab3()
+    {
+        if (inventory.kredit >= 100000 && shipLevel == 2)
+        {
+            inventory.UpdateKredit(-100000);
+            player.isDestroing = true;
+            Destroy(player.gameObject);
+
+            var obj = Instantiate(playerPrefabs[3], gameObject.transform);
+            player = obj.GetComponent<Player>();
+            player.playerCamera = playerCamera;
+            playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
+            player.gameOver = gameOver;
+            player.audioManager = audioManager;
+            repairBlok.RefreshCells(player);
+
+            for (int i = 0; i < shipGrid.childCount; i++)
+            {
+                if (shipGrid.GetChild(i).name == "Slot13")
+                {
+                    shipGrid.GetChild(i).gameObject.SetActive(true);
+                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(10).GetComponent<Cell>();
+                }
+
+                if (shipGrid.GetChild(i).name == "Slot14")
+                {
+                    shipGrid.GetChild(i).gameObject.SetActive(true);
+                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(11).GetComponent<Cell>();
+                }
+            }
+            shipLevel = 3;
+            buyButton3.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("нет 100к или не куплен предыдущий апгрейд");
         }
     }
 }

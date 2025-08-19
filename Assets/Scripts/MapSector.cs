@@ -15,13 +15,16 @@ public class MapSector : MonoBehaviour
     public int maxY;
     bool overflow = false;
 
-
+    public void StartRespawnSector()
+    {
+        StartCoroutine("RespawnCoro");
+    }
     void RespawnSector()
     {
         if (!overflow)
             foreach (var prefab in enemyPrefabs)
             {
-                GameObject c = (GameObject)Instantiate(prefab, new Vector2(Random.Range(minX, minX), Random.Range(minY, maxY)), Quaternion.identity);
+                GameObject c = (GameObject)Instantiate(prefab, new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)), Quaternion.identity);
                 c.transform.SetParent(transform, true);
             }
         var count = transform.childCount;
@@ -40,9 +43,5 @@ public class MapSector : MonoBehaviour
             RespawnSector();
             yield return new WaitForSeconds(time);
         }
-    }
-    public void StartRespawnSector()
-    {
-        StartCoroutine("RespawnCoro");
     }
 }

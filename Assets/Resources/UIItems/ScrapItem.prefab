@@ -194,11 +194,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80551b4682e06754d8156873788e3dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Scrap
+  itemName: 1321
   type: Merchandise
-  price: 10
+  price: 15
   group: {fileID: 0}
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 1516075339228139234, guid: b8a529c85f7fb9e4cbf77fa64e49b810, type: 3}
   itemColor: {r: 0.6075471, g: 0.6075471, b: 0.6075471, a: 1}
   scrapItemCount: 0
   tmpScrap: {fileID: 6310567689464555530}

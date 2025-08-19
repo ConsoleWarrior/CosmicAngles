@@ -19,12 +19,12 @@ public class Inventory : MonoBehaviour
     }
     public void CollectScrap(float value)
     {
-        for (int i = 0; i < inventoryGrid.childCount; i++)
+        for (int i = 0; i < inventoryGrid.childCount; i++) //пробую запихнуть в неполный стак
         {
             var inventoryCellUISlot = inventoryGrid.GetChild(i).gameObject.GetComponent<UISlot>();
             if (inventoryCellUISlot != null)
             {
-                if (!inventoryCellUISlot.isFree && inventoryCellUISlot.currentItem.itemName == "Scrap")
+                if (!inventoryCellUISlot.isFree && inventoryCellUISlot.currentItem.name == "ScrapItem(Clone)")
                 {
                     if (((UIItemScrap)inventoryCellUISlot.currentItem).scrapItemCount + value <= 100)
                     {
