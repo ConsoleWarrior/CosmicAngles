@@ -10,13 +10,9 @@ public class Armor : Modulus
 
     void Start()
     {
-        //player = GameObject.FindGameObjectWithTag("Player").transform;
         ConnectToShip();
     }
-    void Update()
-    {
 
-    }
     void OnDestroy()
     {
         if (player != null && !player.GetComponent<Player>().isDestroing)

@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     public bool isLooting = false;
     public bool isDestroing = false;
     public AudioManager audioManager;
+    public GameObject shieldFront;
+    public GameObject shieldBack;
 
 
     void Update()

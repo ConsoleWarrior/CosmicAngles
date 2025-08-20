@@ -3,21 +3,19 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    [SerializeField] float shieldCapacity;
+    public float shieldCapacity;
     [SerializeField] float shieldCurrentVolume;
     [SerializeField] float shieldSpeedRecovery;
-    [SerializeField] float shieldVolumeRecovery;
+    public float shieldVolumeRecovery;
     [SerializeField] HalfCircle lineRenderer;
     [SerializeField] PolygonCollider2D shieldCollider;
     [SerializeField] AudioManager audioManager;
+    public float coefficientTickness = 1;
 
     void Start()
     {
         StartCoroutine(ShieldRecovery());
         audioManager.a.volume = 0.4f;
-    }
-    void Update()
-    {
     }
 
     public void TakeDamage(float damage)
@@ -28,15 +26,15 @@ public class Shield : MonoBehaviour
             shieldCurrentVolume = 0;
             shieldCollider.enabled = false;
         }
-        lineRenderer.SetThickness(shieldCurrentVolume / shieldCapacity);
+        lineRenderer.SetThickness(shieldCurrentVolume / shieldCapacity * coefficientTickness);
         var a = Random.Range(0, 3);
         switch (a)
         {
-            case 0: audioManager.SoundPlay0();break;
-            case 1: audioManager.SoundPlay1();break;
-            case 2: audioManager.SoundPlay2();break;
+            case 0: audioManager.SoundPlay0(); break;
+            case 1: audioManager.SoundPlay1(); break;
+            case 2: audioManager.SoundPlay2(); break;
         }
-        
+
     }
     IEnumerator ShieldRecovery()
     {
@@ -48,7 +46,7 @@ public class Shield : MonoBehaviour
             {
                 shieldCurrentVolume = shieldCapacity;
             }
-            lineRenderer.SetThickness(shieldCurrentVolume / shieldCapacity);
+            lineRenderer.SetThickness(shieldCurrentVolume / shieldCapacity * coefficientTickness);
             yield return new WaitForSeconds(shieldSpeedRecovery);
         }
     }
