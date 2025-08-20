@@ -83,7 +83,9 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
         if (startShop != null) //вызываем в магазе новый итем вместо старого
         {
             startShop.currentItem = Instantiate(startShop.UIItemPrefab, startSlotTransform).GetComponent<UIItem>();
-            startShop.currentItem.transform.SetParent(startSlotTransform);
+            //startShop.currentItem = Instantiate(startShop.UIItemPrefab, startSlotTransform.position, startSlotTransform.rotation).GetComponent<UIItem>();
+
+            //startShop.currentItem.transform.SetParent(startSlotTransform);
             startShop.currentItem.transform.localPosition = Vector3.zero;
             if (startShop.currentItem.GetComponent<CanvasGroup>() == null) { Debug.Log("нет канваса у кьюрент итема"); }
             startShop.currentItem.GetComponent<CanvasGroup>().blocksRaycasts = true;

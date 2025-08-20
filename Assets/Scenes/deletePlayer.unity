@@ -281,19 +281,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 5000
+      value: 7500
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 110
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 5000
+      value: 7500
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede006aaf9270074f93112f28f26d2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kredit: 1500
+  kredit: 200000
   tmpKredit: {fileID: 1936960106}
   inventoryGrid: {fileID: 1717957669}
 --- !u!4 &148060770
@@ -1451,19 +1451,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 3000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 80
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 3000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
@@ -1986,6 +1986,10 @@ PrefabInstance:
       propertyPath: isFree
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 841394731071335687, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
+      propertyPath: UIItemPrefab
+      value: 
+      objectReference: {fileID: 2732077583963873387, guid: d4c4eab25d611f54386a4f9a9e4dfcdd, type: 3}
     - target: {fileID: 983924603820259327, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: isFree
       value: 1
@@ -2002,6 +2006,10 @@ PrefabInstance:
       propertyPath: isFree
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1486434907200757106, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
+      propertyPath: UIItemPrefab
+      value: 
+      objectReference: {fileID: 3667381911792690536, guid: ed23716cc1a93dc43be1fcf76b497a48, type: 3}
     - target: {fileID: 1486531352836676289, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: isFree
       value: 1
@@ -2058,6 +2066,10 @@ PrefabInstance:
       propertyPath: currentItem
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3860258550483645969, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
+      propertyPath: UIItemPrefab
+      value: 
+      objectReference: {fileID: 4694892665666456890, guid: 27d7b642d36c60f4691e78aaf01fcd8b, type: 3}
     - target: {fileID: 3866238837728727499, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: isFree
       value: 1
@@ -2210,6 +2222,10 @@ PrefabInstance:
       propertyPath: currentItem
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7441181693154106674, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
+      propertyPath: UIItemPrefab
+      value: 
+      objectReference: {fileID: 1034817657263315820, guid: 4af058f167299bd4ab48841b9f924283, type: 3}
     - target: {fileID: 7529253430097870141, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: isFree
       value: 1
@@ -2924,19 +2940,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 5000
+      value: 7500
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 110
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 5000
+      value: 7500
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
@@ -4102,19 +4118,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 3000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 80
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 3000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
@@ -4328,19 +4344,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 5000
+      value: 7500
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 110
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 5000
+      value: 7500
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
@@ -5552,19 +5568,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 3000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 80
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 3000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
@@ -6314,19 +6330,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 5000
+      value: 7500
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 110
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 5000
+      value: 7500
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
@@ -7592,6 +7608,10 @@ PrefabInstance:
       propertyPath: isFree
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 841394731071335687, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
+      propertyPath: UIItemPrefab
+      value: 
+      objectReference: {fileID: 2732077583963873387, guid: d4c4eab25d611f54386a4f9a9e4dfcdd, type: 3}
     - target: {fileID: 983924603820259327, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: isFree
       value: 1
@@ -7608,6 +7628,10 @@ PrefabInstance:
       propertyPath: isFree
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1486434907200757106, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
+      propertyPath: UIItemPrefab
+      value: 
+      objectReference: {fileID: 3667381911792690536, guid: ed23716cc1a93dc43be1fcf76b497a48, type: 3}
     - target: {fileID: 1486531352836676289, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: isFree
       value: 1
@@ -7664,6 +7688,10 @@ PrefabInstance:
       propertyPath: currentItem
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3860258550483645969, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
+      propertyPath: UIItemPrefab
+      value: 
+      objectReference: {fileID: 1219289517017096947, guid: b3176f980e13b4e4aa0816301c65bd79, type: 3}
     - target: {fileID: 3866238837728727499, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: isFree
       value: 1
@@ -7820,6 +7848,10 @@ PrefabInstance:
       propertyPath: currentItem
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7441181693154106674, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
+      propertyPath: UIItemPrefab
+      value: 
+      objectReference: {fileID: 4694892665666456890, guid: 27d7b642d36c60f4691e78aaf01fcd8b, type: 3}
     - target: {fileID: 7529253430097870141, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: isFree
       value: 1
@@ -8430,19 +8462,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 3000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 80
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 3000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
@@ -9537,19 +9569,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 5000
+      value: 7500
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 110
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 5000
+      value: 7500
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
@@ -9970,19 +10002,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 5000
+      value: 7500
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 110
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 5000
+      value: 7500
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
@@ -10842,6 +10874,10 @@ PrefabInstance:
       propertyPath: isFree
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 841394731071335687, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
+      propertyPath: UIItemPrefab
+      value: 
+      objectReference: {fileID: 2732077583963873387, guid: d4c4eab25d611f54386a4f9a9e4dfcdd, type: 3}
     - target: {fileID: 983924603820259327, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: isFree
       value: 1
@@ -10858,6 +10894,10 @@ PrefabInstance:
       propertyPath: isFree
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1486434907200757106, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
+      propertyPath: UIItemPrefab
+      value: 
+      objectReference: {fileID: 3667381911792690536, guid: ed23716cc1a93dc43be1fcf76b497a48, type: 3}
     - target: {fileID: 1486531352836676289, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: isFree
       value: 1
@@ -10914,6 +10954,10 @@ PrefabInstance:
       propertyPath: currentItem
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3860258550483645969, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
+      propertyPath: UIItemPrefab
+      value: 
+      objectReference: {fileID: 8395943772789311375, guid: b276818b8380f494e8d688b563bd12c1, type: 3}
     - target: {fileID: 3866238837728727499, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: isFree
       value: 1
@@ -11070,6 +11114,10 @@ PrefabInstance:
       propertyPath: currentItem
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7441181693154106674, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
+      propertyPath: UIItemPrefab
+      value: 
+      objectReference: {fileID: 1219289517017096947, guid: b3176f980e13b4e4aa0816301c65bd79, type: 3}
     - target: {fileID: 7529253430097870141, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: isFree
       value: 1
@@ -11229,6 +11277,10 @@ PrefabInstance:
       propertyPath: isFree
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 841394731071335687, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
+      propertyPath: UIItemPrefab
+      value: 
+      objectReference: {fileID: 2732077583963873387, guid: d4c4eab25d611f54386a4f9a9e4dfcdd, type: 3}
     - target: {fileID: 983924603820259327, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: isFree
       value: 1
@@ -11245,6 +11297,10 @@ PrefabInstance:
       propertyPath: isFree
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1486434907200757106, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
+      propertyPath: UIItemPrefab
+      value: 
+      objectReference: {fileID: 3667381911792690536, guid: ed23716cc1a93dc43be1fcf76b497a48, type: 3}
     - target: {fileID: 1486531352836676289, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: isFree
       value: 1

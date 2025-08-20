@@ -52,8 +52,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03017e0706a269e41b9b00ab23100984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 400
-  currentHp: 400
+  maxHp: 500
+  currentHp: 500
   hpBar: {fileID: 2298182510208265914}
   hpBarCanvas: {fileID: 9114657977327972730}
   audioManager: {fileID: 4576717084939039491}

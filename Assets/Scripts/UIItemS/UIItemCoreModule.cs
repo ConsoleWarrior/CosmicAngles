@@ -14,7 +14,7 @@ public class UIItemCoreModule : UIItem
             {
                 if (price <= inventory.kredit)
                 {
-                    if (point.GetComponent<UISlot>() != null && slot.isFree && slot.number == 0)
+                    if (point.GetComponent<UISlot>() != null && slot.isFree && (slot.number == 0 || slot.number == 99))
                     {
                         inventory.UpdateKredit(-price);
                     }

@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Acceleration : Modulus
@@ -8,19 +9,40 @@ public class Acceleration : Modulus
     [SerializeField] float accelerationSpeed;
     bool flag = false;
     float temp;
+    [SerializeField] float tank = 100;
+    [SerializeField] SpriteRenderer activateSprite;
 
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        temp = player.speed;
+        StartCoroutine(Refill());
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !flag)
+        //if (Input.GetKeyDown(KeyCode.Space) && !flag)
+        //{
+        //    flag = true;
+        //    Activate();
+        //}
+        if (Input.GetKey(KeyCode.Space) && tank > 0)
         {
-            flag = true;
-            Activate();
+            tank -= Time.deltaTime * 10;
+            player.speed = accelerationSpeed;
+            activateSprite.enabled = true;
+            //transform.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        else if (player.speed != temp)
+        {
+            player.speed = temp;
+            activateSprite.enabled = false;
+            //transform.GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
     void OnDestroy()
     {
         if (flag)
-            player.speed  = temp;
+            player.speed = temp;
     }
     void Activate()
     {
@@ -35,7 +57,7 @@ public class Acceleration : Modulus
     {
         player.speed = rate;
     }
-    IEnumerator InvokeRoutine(System.Action f, float delay)
+    IEnumerator InvokeRoutine(System.Action f, float delay) //корутина на методом с параметрами!
     {
         yield return new WaitForSeconds(delay);
         f();
@@ -46,5 +68,15 @@ public class Acceleration : Modulus
     public override string GetCharacter()
     {
         return "AccelerationSpeed= " + accelerationSpeed + "\nDuration= " + duration;
+    }
+    IEnumerator Refill()
+    {
+        while (true)
+        {
+            if (tank <= 98) tank += 2;
+            transform.GetComponent<SpriteRenderer>().color = new Color(tank / 100, tank / 100, tank / 100, 1);
+
+            yield return new WaitForSeconds(1);
+        }
     }
 }

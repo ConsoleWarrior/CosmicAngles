@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd72feb5057c5146ad2d0fcdd898446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 250
-  currentHp: 250
+  maxHp: 300
+  currentHp: 300
   hpBar: {fileID: 6347079244391649674}
   hpBarCanvas: {fileID: 4146785028725198410}
   audioManager: {fileID: 2051228060596244335}
@@ -5083,7 +5083,7 @@ MonoBehaviour:
   line: {fileID: 1099217951968419389}
   LLHitEffect: {fileID: 799717672652009318}
   audioManager: {fileID: 4203049675146151135}
-  damage: 1.8
+  damage: 2
   reload: 0.1
   coroIsWorkNow: 0
 --- !u!120 &1099217951968419389

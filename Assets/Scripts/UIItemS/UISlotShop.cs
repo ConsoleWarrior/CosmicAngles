@@ -12,7 +12,8 @@ public class UISlotShop : MonoBehaviour//, IDropHandler
         if (transform.GetComponentInChildren<UIItem>() != null)
         {
             currentItem = transform.GetComponentInChildren<UIItem>();
-            UIItemPrefab = transform.GetComponentInChildren<UIItem>().gameObject;
+            //UIItemPrefab = transform.GetComponentInChildren<UIItem>().gameObject;
+            //UIItemPrefab = PrefabUtility.GetCorrespondingObjectFromSource(transform.GetComponentInChildren<UIItem>().gameObject);
             isFree = false;
         }
     }
