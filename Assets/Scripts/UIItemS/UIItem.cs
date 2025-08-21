@@ -22,6 +22,7 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
         group = GetComponent<CanvasGroup>();
+        startSlotTransform = rectTransform.parent;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
