@@ -869,7 +869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2853572325602360706, guid: b53b21bdbe65c394eb1269dc1fc04f20, type: 3}
       propertyPath: maxHp
-      value: 150
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2853572325602360706, guid: b53b21bdbe65c394eb1269dc1fc04f20, type: 3}
       propertyPath: number
@@ -877,7 +877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2853572325602360706, guid: b53b21bdbe65c394eb1269dc1fc04f20, type: 3}
       propertyPath: currentHp
-      value: 150
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5026734790525555273, guid: b53b21bdbe65c394eb1269dc1fc04f20, type: 3}
       propertyPath: m_LocalPosition.x

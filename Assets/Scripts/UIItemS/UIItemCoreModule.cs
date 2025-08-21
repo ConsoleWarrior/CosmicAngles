@@ -95,4 +95,17 @@ public class UIItemCoreModule : UIItem
         transform.localPosition = Vector3.zero;
         group.blocksRaycasts = true;
     }
+    public override void CallNewModule(Cell cell)
+    {
+        if (cell.module == null)
+        {
+            GameObject c = (GameObject)Instantiate(itemPrefab, cell.transform.position, cell.transform.rotation);
+            c.transform.SetParent(cell.transform);
+            cell.module = c.GetComponent<Modulus>();
+
+            if (c.GetComponent<Acceleration>() != null)
+                c.GetComponent<Acceleration>().RefillFullTank();
+            //Debug.Log("Итем вызвал новый модуль : " + c.name);
+        }
+    }
 }

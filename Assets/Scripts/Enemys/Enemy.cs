@@ -125,14 +125,20 @@ public class Enemy : MonoBehaviour
         if (dropPrefabs != null)
             for (int i = 0; i < dropPrefabs.Count; i++)
             {
-                if (dropChance[i] >= Random.Range(1, 101) && xp >= 8)//&& xp > 8
+                if (dropChance[i] >= Random.Range(1, 101))
                 {
-                    Instantiate(dropPrefabs[i], new(transform.position.x + Random.Range(-1,2), transform.position.y + Random.Range(-1, 2)), Quaternion.identity);
+                    if (dropPrefabs[i].CompareTag("Scrap"))
+                    {
+                        var scrap = Instantiate(dropPrefabs[i], new(transform.position.x + Random.Range(-1, 2), transform.position.y + Random.Range(-1, 2)), Quaternion.identity);
+                        scrap.GetComponent<Scrap>().value = Random.Range(dropScrapCount / 2, dropScrapCount * 2);
+                        //scrap.transform.localScale = new Vector3(0.6f, 0.6f, 1);
+                    }
+                    else Instantiate(dropPrefabs[i], new(transform.position.x + Random.Range(-1,2), transform.position.y + Random.Range(-1, 2)), Quaternion.identity);
+                    
                 }
             }
-
-        GameObject c = (GameObject)Instantiate(Resources.Load("Scrap", typeof(GameObject)), transform.position, Quaternion.identity);
-        c.GetComponent<Scrap>().value = Random.Range(dropScrapCount / 2, dropScrapCount * 2);
-        c.transform.localScale = new Vector3(0.6f, 0.6f, 1);
+        //GameObject c = (GameObject)Instantiate(Resources.Load("Scrap", typeof(GameObject)), transform.position, Quaternion.identity);
+        //c.GetComponent<Scrap>().value = Random.Range(dropScrapCount / 2, dropScrapCount * 2);
+        //c.transform.localScale = new Vector3(0.6f, 0.6f, 1);
     }
 }

@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class ShieldBoost : Modulus
 {
-    public GameObject shieldFront;
-    public GameObject shieldBack;
+    public Shield shieldFront;
+    public Shield shieldBack;
     Player player;
+    [SerializeField] float coefficientTicknessBonus;
+    [SerializeField] float shieldCapacityBonus;
+    [SerializeField] float shieldVolumeRecoveryBonus;
 
     void Start()
     {
@@ -15,49 +18,31 @@ public class ShieldBoost : Modulus
         if (player != null && !player.GetComponent<Player>().isDestroing)
             DisconnectFromShip();
     }
-    void OnDisable()
-    {
-        if (player != null && !player.GetComponent<Player>().isDestroing)
-            DisconnectFromShip();
-    }
-    //void OnEnable()
-    //{
-    //    ConnectToShip();
-    //}
+
     public void ConnectToShip()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        shieldFront = player.shieldFront;
-        shieldBack = player.shieldBack;
+        shieldFront = player.shieldFront.GetComponentInChildren<Shield>();
+        shieldBack = player.shieldBack.GetComponentInChildren<Shield>();
 
-        //shieldFront.GetComponent<HalfCircle>().SetThickness(2);
-        //shieldBack.GetComponent<HalfCircle>().SetThickness(2);
-
-        shieldFront.GetComponentInChildren<Shield>().shieldCapacity += 50;
-        shieldFront.GetComponentInChildren<Shield>().shieldVolumeRecovery += 5;
-        shieldFront.GetComponentInChildren<Shield>().coefficientTickness += 1;
-        shieldBack.GetComponentInChildren<Shield>().shieldCapacity += 50;
-        shieldBack.GetComponentInChildren<Shield>().shieldVolumeRecovery += 5;
-        shieldBack.GetComponentInChildren<Shield>().coefficientTickness += 1;
+        shieldFront.shieldCapacity += shieldCapacityBonus;
+        shieldFront.shieldVolumeRecovery += shieldVolumeRecoveryBonus;
+        shieldFront.coefficientTickness += coefficientTicknessBonus;
+        shieldBack.shieldCapacity += shieldCapacityBonus;
+        shieldBack.shieldVolumeRecovery += shieldVolumeRecoveryBonus;
+        shieldBack.coefficientTickness += coefficientTicknessBonus;
     }
     public void DisconnectFromShip()
     {
-        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        shieldFront = player.shieldFront;
-        shieldBack = player.shieldBack;
-
-        //shieldFront.GetComponent<HalfCircle>().SetThickness(1);
-        //shieldBack.GetComponent<HalfCircle>().SetThickness(1);
-
-        shieldFront.GetComponentInChildren<Shield>().shieldCapacity -= 50;
-        shieldFront.GetComponentInChildren<Shield>().shieldVolumeRecovery -= 5;
-        shieldFront.GetComponentInChildren<Shield>().coefficientTickness -= 1;
-        shieldBack.GetComponentInChildren<Shield>().shieldCapacity -= 50;
-        shieldBack.GetComponentInChildren<Shield>().shieldVolumeRecovery -= 5;
-        shieldBack.GetComponentInChildren<Shield>().coefficientTickness -= 1;
+        shieldFront.shieldCapacity -= shieldCapacityBonus;
+        shieldFront.shieldVolumeRecovery -= shieldVolumeRecoveryBonus;
+        shieldFront.coefficientTickness -= coefficientTicknessBonus;
+        shieldBack.shieldCapacity -= shieldCapacityBonus;
+        shieldBack.shieldVolumeRecovery -= shieldVolumeRecoveryBonus;
+        shieldBack.coefficientTickness -= coefficientTicknessBonus;
     }
     public override string GetCharacter()
     {
-        return "shieldCapacity += 50\nshieldVolumeRecovery += 5";
+        return "shieldCapacityBonus = " + shieldCapacityBonus + "\nshieldVolumeRecoveryBonus = " + shieldVolumeRecoveryBonus;
     }
 }

@@ -6,15 +6,6 @@ public class RebootGuns : MonoBehaviour
     Transform player;
     List<Cell> cells;
 
-    //void Start()
-    //{
-    //    try
-    //    {
-    //        player = GameObject.FindGameObjectWithTag("Player").transform;
-    //    }
-    //    catch { Debug.Log("no player"); }
-    //}
-
     public void DoReboot()
     {
         cells = new();

@@ -47,9 +47,10 @@ public class Cell : MonoBehaviour
     {
         if (currentHp <= 0 && !isDestroyed)
         {
-            if (module != null) module.gameObject.SetActive(false);
+            if (module != null) //module.gameObject.SetActive(false);
+                Destroy(module.gameObject);
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            //gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             if (slot != null) slot.SetActive(false);
             isDestroyed = true;
         }
@@ -110,9 +111,14 @@ public class Cell : MonoBehaviour
     {
         currentHp = maxHp;
         ReturnColor();
-        if (module != null) module.gameObject.SetActive(true);
-        gameObject.GetComponent<CircleCollider2D>().enabled = true;
         if (slot != null) slot.SetActive(true);
+        //if (module != null) module.gameObject.SetActive(true);
+        if(slot.GetComponent<UISlot>().currentItem != null)
+        {
+            slot.GetComponent<UISlot>().currentItem.CallNewModule(this);
+        }
+        gameObject.GetComponent<CircleCollider2D>().enabled = true;
+
         isDestroyed = false;
     }
     public void UpdateArmor(float bonus)

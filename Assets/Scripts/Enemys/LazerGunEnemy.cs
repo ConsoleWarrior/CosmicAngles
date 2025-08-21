@@ -41,7 +41,7 @@ public class LazerGunEnemy : MonoBehaviour
             //Debug.Log("coro working now");
             coroIsWorkNow = true;
             audioManager.SoundPlay2();
-            if (target.GetComponent<Cell>() != null) target.GetComponent<Cell>().TakeDamage(damage);
+            if (target.GetComponent<Cell>() != null) target.GetComponent<Cell>().TakeDamage(damage);// error
             if (target.GetComponent<Shield>() != null) target.GetComponent<Shield>().TakeDamage(damage);
             yield return new WaitForSeconds(reload);
         }

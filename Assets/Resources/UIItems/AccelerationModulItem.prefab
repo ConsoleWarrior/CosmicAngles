@@ -76,7 +76,7 @@ MonoBehaviour:
   price: 5000
   group: {fileID: 0}
   itemPrefab: {fileID: 8127295506779921910, guid: 7740f5a08532c7b448225aef2a380dd9, type: 3}
-  itemColor: {r: 0.7960785, g: 0.83921576, b: 0.882353, a: 1}
+  itemColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &3719816094678007595
 GameObject:
   m_ObjectHideFlags: 0
