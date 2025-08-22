@@ -45,8 +45,26 @@ public class Acceleration : Modulus
     }
     void OnDestroy()
     {
-
         player.speed = temp;
+    }
+    public void PushDownAndroidButton()
+    {
+        if (tempValues.accelerationTank > 0)
+        {
+            tempValues.accelerationTank -= Time.deltaTime * 10;
+            player.speed = accelerationSpeed;
+            activateSprite.enabled = true;
+            //transform.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+    }
+    public void PushUpAndroidButton()
+    {
+        if (player.speed != temp)
+        {
+            player.speed = temp;
+            activateSprite.enabled = false;
+            //transform.GetComponent<SpriteRenderer>().color = Color.white;
+        }
     }
     //void Activate()
     //{
