@@ -28,9 +28,9 @@ public class EnemyTurel : Enemy
         if (dist != 0 && dist < atackDistance)
             Atack();
         else
-            if(target != transform.position) Eating();
+            if(target != transform.position) Walking();
     }
-    public override void Eating()
+    public override void Walking()
     {
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
         Vector2 direction = (target - transform.position).normalized;

@@ -36,6 +36,9 @@ public class Enemy : MonoBehaviour
         sector = transform.parent.GetComponent<MapSector>();
         target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
         audioManager.a.volume = 0.5f;
+
+        Invoke("Evolve", 600);
+        Invoke("EvolveLevel2", 1000);
     }
 
     void Update()
@@ -49,18 +52,19 @@ public class Enemy : MonoBehaviour
             CalculateAndCallDrop();
             Destroy(this.gameObject, 0.5f);
         }
-        if (xp == 4 && !evolved)
-        {
-            Evolve();
-            //Debug.Log("Эволюционировал");
-            evolved = true;
-        }
-        if (xp == 8 && evolved)
-        {
-            EvolveLevel2();
-            //Debug.Log("Эволюционировал второй раз");
-            evolved = false;
-        }
+
+        //if (xp == 4 && !evolved)
+        //{
+        //    Evolve();
+        //    //Debug.Log("Эволюционировал");
+        //    evolved = true;
+        //}
+        //if (xp == 8 && evolved)
+        //{
+        //    EvolveLevel2();
+        //    //Debug.Log("Эволюционировал второй раз");
+        //    evolved = false;
+        //}
     }
     void FixedUpdate()
     {
@@ -69,7 +73,7 @@ public class Enemy : MonoBehaviour
         if (dist != 0 && dist < atackDistance)
             Atack();
         else
-            Eating();
+            Walking();
     }
     public virtual void Atack()
     {
@@ -81,13 +85,14 @@ public class Enemy : MonoBehaviour
     public virtual void EvolveLevel2()
     {
     }
+
     public virtual void SetParameters(float damage)//для снаряда мамки
     {
         maxHp = damage;
         currentHp = damage;
         speed = 5;
     }
-    public virtual void Eating()
+    public virtual void Walking()
     {
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
         Vector2 direction = (target - transform.position).normalized;
@@ -109,11 +114,11 @@ public class Enemy : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Scrap"))
-        {
-            float value = other.gameObject.GetComponent<Scrap>().value;
-            xp += value;
-        }
+        //if (other.gameObject.CompareTag("Scrap"))
+        //{
+        //    float value = other.gameObject.GetComponent<Scrap>().value;
+        //    xp += value;
+        //}
         if (other.gameObject.CompareTag("Cell"))
         {
             other.gameObject.GetComponent<Cell>().TakeDamage(currentHp);

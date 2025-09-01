@@ -12,7 +12,7 @@ public class Scrap : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Cell") || other.CompareTag("Enemy"))
+        if (other.CompareTag("Cell"))
         {
             Destroy(this.gameObject);
         }
