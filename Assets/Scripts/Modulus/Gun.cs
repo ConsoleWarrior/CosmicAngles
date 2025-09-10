@@ -46,12 +46,26 @@ public class Gun : Guns
             sprite.rotation = Quaternion.Euler(0, 0, angle - 90);
 
             audioManager.SoundPlay0();
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            bullet.GetComponent<Bullet>().damage = damage;
+            //GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+
+            var bullet = gunBulletPool.Get();
+            bullet.transform.position = transform.position;
+            bullet.transform.rotation = transform.rotation;
+            var blt = bullet.GetComponent<Bullet>();
+            blt.damage = damage;
+            blt.gunBulletPool = gunBulletPool;
+            //blt.inFly = true;
             bullet.GetComponent<Rigidbody2D>().AddForce((target.position - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse); // Придать пуле скорость
-            Destroy(bullet, 2f);
+            //StartCoroutine(ReturnBullet(bullet));
+            //Destroy(bullet, 2f);
+            blt.ReturnToPool(2);
             yield return new WaitForSeconds(reload);
         }
         flag = false;
     }
+    //IEnumerator ReturnBullet(GameObject bullet)
+    //{
+    //    yield return new WaitForSeconds(2f);
+    //    if (gunBulletPool.) gunBulletPool.Release(bullet);
+    //}
 }

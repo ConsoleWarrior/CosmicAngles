@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Modulus : MonoBehaviour
 {
@@ -19,11 +20,12 @@ public class Guns : Modulus
     [SerializeField] protected AudioManager audioManager;
     protected bool flag = false;
     [SerializeField] protected Transform sprite;
-
+    protected ObjectPool<GameObject> gunBulletPool;
 
     void Start()
     {
         audioManager.a.volume = 0.15f;
+        gunBulletPool = GameObject.Find("PoolManager").GetComponent<PoolManager>().gunBulletPool;
     }
     public override string GetCharacter()
     {
