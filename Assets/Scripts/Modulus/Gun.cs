@@ -54,18 +54,11 @@ public class Gun : Guns
             var blt = bullet.GetComponent<Bullet>();
             blt.damage = damage;
             blt.gunBulletPool = gunBulletPool;
-            //blt.inFly = true;
-            bullet.GetComponent<Rigidbody2D>().AddForce((target.position - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse); // Придать пуле скорость
-            //StartCoroutine(ReturnBullet(bullet));
-            //Destroy(bullet, 2f);
             blt.ReturnToPool(2);
+            bullet.GetComponent<Rigidbody2D>().AddForce((target.position - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse); // Придать пуле скорость
+            //Destroy(bullet, 2f);
             yield return new WaitForSeconds(reload);
         }
         flag = false;
     }
-    //IEnumerator ReturnBullet(GameObject bullet)
-    //{
-    //    yield return new WaitForSeconds(2f);
-    //    if (gunBulletPool.) gunBulletPool.Release(bullet);
-    //}
 }

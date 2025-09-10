@@ -6,7 +6,11 @@ public class Blaster : Guns
     [SerializeField] Transform gunBarrel1;
     [SerializeField] Transform gunBarrel2;
 
-
+    void Start()
+    {
+        audioManager.a.volume = 0.15f;
+        gunBulletPool = GameObject.Find("PoolManager").GetComponent<PoolManager>().blasterBulletPool;
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
@@ -57,9 +61,16 @@ public class Blaster : Guns
 
     private void InstantiateBullet(Transform gunBarrel)
     {
-        GameObject bullet = Instantiate(bulletPrefab, gunBarrel.position, gunBarrel.rotation);
-        bullet.GetComponent<Bullet>().damage = damage;
+        var bullet = gunBulletPool.Get();
+        bullet.transform.position = gunBarrel.position;
+        bullet.transform.rotation = gunBarrel.rotation;
+        var blt = bullet.GetComponent<Bullet>();
+        blt.damage = damage;
+        blt.gunBulletPool = gunBulletPool;
+        blt.ReturnToPool(2);
+        //GameObject bullet = Instantiate(bulletPrefab, gunBarrel.position, gunBarrel.rotation);
+        //bullet.GetComponent<Bullet>().damage = damage;
         bullet.GetComponent<Rigidbody2D>().AddForce((target.position - gunBarrel.position).normalized * bulletSpeed, ForceMode2D.Impulse); // Придать пуле скорость
-        Destroy(bullet, 2f);
+        //Destroy(bullet, 2f);
     }
 }

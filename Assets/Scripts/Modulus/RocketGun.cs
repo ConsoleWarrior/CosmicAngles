@@ -3,7 +3,11 @@ using UnityEngine;
 
 public class RocketGun : Guns
 {
-
+    void Start()
+    {
+        audioManager.a.volume = 0.15f;
+        gunBulletPool = GameObject.Find("PoolManager").GetComponent<PoolManager>().rocketBulletPool;
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
@@ -45,12 +49,21 @@ public class RocketGun : Guns
             sprite.rotation = Quaternion.Euler(0, 0, angle - 90);// поворот гана
 
             audioManager.SoundPlay0();
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            bullet.GetComponent<RocketBullet>().damage = damage;
-            bullet.GetComponent<RocketBullet>().speed = bulletSpeed;
-            bullet.GetComponent<RocketBullet>().targetEnemy = target;
+            var bullet = gunBulletPool.Get();
+            bullet.transform.position = transform.position;
+            bullet.transform.rotation = transform.rotation;
+            var blt = bullet.GetComponent<RocketBullet>();
+            blt.damage = damage;
+            blt.speed = bulletSpeed;
+            blt.targetEnemy = target;
+            blt.gunBulletPool = gunBulletPool;
+            blt.ReturnToPool(5);
+            //GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            //bullet.GetComponent<RocketBullet>().damage = damage;
+            //bullet.GetComponent<RocketBullet>().speed = bulletSpeed;
+            //bullet.GetComponent<RocketBullet>().targetEnemy = target;
             //bullet.GetComponent<Rigidbody2D>().AddForce((target.position - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse); // Придать пуле скорость
-            Destroy(bullet, 5f);
+            //Destroy(bullet, 5f);
             yield return new WaitForSeconds(reload);
         }
         flag = false;

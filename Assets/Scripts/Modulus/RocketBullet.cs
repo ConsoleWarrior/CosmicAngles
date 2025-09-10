@@ -13,13 +13,19 @@ public class RocketBullet : Bullet
         {
             var enemy = other.gameObject.GetComponent<Enemy>();
             enemy.TakeDamage(damage);
-            Destroy(this.gameObject);
+            StopAllCoroutines();
+            gunBulletPool.Release(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
     void Update()
     {
         if(targetEnemy != null) Atack(targetEnemy);
-        else Destroy(this.gameObject);
+        else //Destroy(this.gameObject);
+        {
+            StopAllCoroutines();
+            gunBulletPool.Release(this.gameObject);
+        }
     }
     private void Atack(Transform enemy)
     {
