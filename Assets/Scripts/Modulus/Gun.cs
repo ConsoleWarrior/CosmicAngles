@@ -49,6 +49,7 @@ public class Gun : Guns
             //GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
 
             var bullet = gunBulletPool.Get();
+            //bullet.transform.SetParent(transform);
             bullet.transform.position = transform.position;
             bullet.transform.rotation = transform.rotation;
             var blt = bullet.GetComponent<Bullet>();

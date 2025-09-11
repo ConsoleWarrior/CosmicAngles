@@ -14,10 +14,29 @@ public class MapSector : MonoBehaviour
     public int minY;
     public int maxY;
     bool overflow = false;
+    FoodRespawn foodRespawn;
+    [SerializeField] int sectorScrapValue;
+    private void Start()
+    {
+        foodRespawn = GameObject.Find("Scraps").GetComponent<FoodRespawn>();
+    }
 
     public void StartRespawnSector()
     {
+        //foodRespawn = GameObject.Find("Scraps").GetComponent<FoodRespawn>();
+        Invoke("StartRespawnScrap", 0.5f);
+
         StartCoroutine("RespawnCoro");
+    }
+    public void StopRespawnSector()
+    {
+        StopAllCoroutines();
+        foodRespawn.ReturnToPoolSectorScraps();
+        //foreach(var enemy in transform.GetChild)
+    }
+    void StartRespawnScrap()
+    {
+        foodRespawn.ScrapRespawnSector(sectorScrapValue, minX, maxX, minY, maxY);
     }
     void RespawnSector()
     {
@@ -38,10 +57,13 @@ public class MapSector : MonoBehaviour
     }
     IEnumerator RespawnCoro()
     {
+        //yield return new WaitForSeconds(1);
+
         while (true)
         {
             RespawnSector();
             yield return new WaitForSeconds(time);
         }
     }
+
 }

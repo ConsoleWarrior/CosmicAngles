@@ -1,10 +1,14 @@
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Scrap : MonoBehaviour
 {
     public float value;
     private float startInvisibleTime = 1;
-    void Start()
+    public ObjectPool<GameObject> scrapPool;
+
+
+    void OnEnable()
     {
         transform.GetComponent<Collider2D>().enabled = false;
         Invoke("InvisibleTime", startInvisibleTime);
@@ -14,7 +18,8 @@ public class Scrap : MonoBehaviour
     {
         if (other.CompareTag("Cell"))
         {
-            Destroy(this.gameObject);
+            scrapPool.Release(gameObject);
+            //Destroy(this.gameObject);
         }
     }
 
