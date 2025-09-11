@@ -9,13 +9,17 @@ public class FlyBullet : Bullet
         {
             var cell = other.gameObject.GetComponent<Cell>();
             cell.TakeDamage(damage);
-            Destroy(this.gameObject);
+            StopAllCoroutines();
+            gunBulletPool.Release(this.gameObject);
+            //Destroy(this.gameObject);
         }
         if (other.CompareTag("Shield"))
         {
             var shield = other.gameObject.GetComponent<Shield>();
             shield.TakeDamage(damage);
-            Destroy(this.gameObject);
+            StopAllCoroutines();
+            gunBulletPool.Release(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 }

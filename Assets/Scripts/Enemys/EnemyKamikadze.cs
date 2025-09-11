@@ -9,7 +9,7 @@ public class EnemyKamikadze : Enemy
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
-        catch { }//Debug.Log("player is not active"); }
+        catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
         animator = GetComponent<Animator>();
         if (transform.parent != null)
         {
@@ -42,14 +42,4 @@ public class EnemyKamikadze : Enemy
         //speed += speed * 0.1f;
         dropScrapCount = 6;
     }
-    //public override void CalculateAndCallDrop()
-    //{
-    //    if (xp > 8 && Random.Range(0, 25) == 0)
-    //    {
-    //        Instantiate(Resources.Load("DropItems/DropGunBlue", typeof(GameObject)), new(transform.position.x + 0.5f, transform.position.y + 0.5f), Quaternion.identity);
-    //    }
-    //    GameObject c = (GameObject)Instantiate(Resources.Load("Scrap", typeof(GameObject)), transform.position, Quaternion.identity);
-    //    c.GetComponent<Scrap>().value = Random.Range(dropScrapCount / 2, dropScrapCount * 2);
-    //    c.transform.localScale = new Vector3(0.6f, 0.6f, 1);
-    //}
 }

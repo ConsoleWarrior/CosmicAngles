@@ -31,14 +31,14 @@ public class Enemy : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
-        catch { }//Debug.Log("player is not active"); }
+        catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
         animator = GetComponent<Animator>();
         sector = transform.parent.GetComponent<MapSector>();
         target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
         audioManager.a.volume = 0.5f;
 
-        Invoke("Evolve", 600);
-        Invoke("EvolveLevel2", 1000);
+        Invoke("Evolve", 300);
+        Invoke("EvolveLevel2", 600);
     }
 
     void Update()
@@ -86,12 +86,12 @@ public class Enemy : MonoBehaviour
     {
     }
 
-    public virtual void SetParameters(float damage)//для снаряда мамки
-    {
-        maxHp = damage;
-        currentHp = damage;
-        speed = 5;
-    }
+    //public virtual void SetParameters(float damage)//для снаряда мамки
+    //{
+    //    maxHp = damage;
+    //    currentHp = damage;
+    //    speed = 5;
+    //}
     public virtual void Walking()
     {
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
@@ -105,7 +105,7 @@ public class Enemy : MonoBehaviour
             target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
         }
     }
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         currentHp -= damage;
         if (currentHp < 0) currentHp = 0;

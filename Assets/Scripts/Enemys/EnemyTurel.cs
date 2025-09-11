@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Pool;
 
 
 public class EnemyTurel : Enemy
@@ -11,6 +12,7 @@ public class EnemyTurel : Enemy
     [SerializeField] float damage;
     [SerializeField] float repairReloadTime;
     [SerializeField] float repairVolume;
+    ObjectPool<GameObject> gunBulletPool;
 
 
     void Start()
@@ -18,7 +20,14 @@ public class EnemyTurel : Enemy
         animator = GetComponent<Animator>();
         target = transform.position;
         audioManager.a.volume = 0.3f;
+        //gunBulletPool = GameObject.Find("PoolManager").GetComponent<PoolManager>().flyBulletPool;
+        Invoke("Initialize",0.5f);
         StartCoroutine(RepairTic());
+    }
+    void Initialize()
+    {
+        gunBulletPool = GameObject.Find("PoolManager").GetComponent<PoolManager>().flyBulletPool;
+        if (gunBulletPool == null) Debug.Log("gunBulletPool == null");
     }
     void FixedUpdate()
     {
@@ -59,11 +68,18 @@ public class EnemyTurel : Enemy
         while (dist < fireDistance)
         {
             audioManager.SoundPlay1();
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            var bullet = gunBulletPool.Get();
+            bullet.transform.position = transform.position;
+            bullet.transform.rotation = transform.rotation;
+            var blt = bullet.GetComponent<Bullet>();
+            blt.damage = damage;
+            blt.gunBulletPool = gunBulletPool;
+            blt.ReturnToPool(5);
+            //GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
             bullet.transform.localScale = Vector3.one;
             bullet.GetComponent<Rigidbody2D>().AddForce((player.position - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse);
-            bullet.GetComponent<Bullet>().damage = damage;
-            Destroy(bullet, 2f);
+            //bullet.GetComponent<Bullet>().damage = damage;
+            //Destroy(bullet, 2f);
             yield return new WaitForSeconds(reloadTime);
         }
         flag = false;
