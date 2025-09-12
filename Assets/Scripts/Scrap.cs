@@ -4,27 +4,28 @@ using UnityEngine.Pool;
 public class Scrap : MonoBehaviour
 {
     public float value;
-    private float startInvisibleTime = 1;
+    //private float startInvisibleTime = 1;
     public ObjectPool<GameObject> scrapPool;
 
 
-    void OnEnable()
-    {
-        transform.GetComponent<Collider2D>().enabled = false;
-        Invoke("InvisibleTime", startInvisibleTime);
-    }
+    //void OnEnable()
+    //{
+    //    transform.GetComponent<Collider2D>().enabled = false;
+    //    Invoke("InvisibleTime", startInvisibleTime);
+    //}
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Cell"))
         {
-            scrapPool.Release(gameObject);
+            if(gameObject.name != "Scrap(Clone)") Destroy(this.gameObject);
+            else scrapPool.Release(gameObject);
             //Destroy(this.gameObject);
         }
     }
 
-    void InvisibleTime()
-    {
-        transform.GetComponent<Collider2D>().enabled = true;
-    }
+    //void InvisibleTime()
+    //{
+    //    transform.GetComponent<Collider2D>().enabled = true;
+    //}
 }
