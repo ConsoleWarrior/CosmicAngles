@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
+using UnityEngine.UIElements;
 
 
 public class MapSector : MonoBehaviour
@@ -18,12 +20,14 @@ public class MapSector : MonoBehaviour
     FoodRespawn foodRespawn;
     [SerializeField] int sectorScrapValue;
     Transform scrapParent;
+    PoolManager poolManager;
+    GameObject enemyObject;
 
-
-    private void Start()
+    void Start()
     {
         foodRespawn = GameObject.Find("Scraps").GetComponent<FoodRespawn>();
         scrapParent = transform.GetChild(0);
+        poolManager = GameObject.Find("PoolManager").GetComponent<PoolManager>();
     }
 
     public void StartRespawnSector()
@@ -41,14 +45,15 @@ public class MapSector : MonoBehaviour
         StopAllCoroutines();
         Debug.Log(foodRespawn.scrapPool.CountAll);
         StartCoroutine(SlowReturnToPoolScrap());
+        StartCoroutine(SlowReturnToPoolEnemy());
         //foodRespawn.ReturnToPoolSectorScraps();
         //foreach(var enemy in transform.GetChild)
     }
-    void StartRespawnScrap()
-    {
-        //foodRespawn.ScrapRespawnSector(sectorScrapValue, minX, maxX, minY, maxY);
-        StartCoroutine(foodRespawn.RespawnCoro(sectorScrapValue, minX, maxX, minY, maxY, scrapParent));
-    }
+    //void StartRespawnScrap()
+    //{
+    //    //foodRespawn.ScrapRespawnSector(sectorScrapValue, minX, maxX, minY, maxY);
+    //    StartCoroutine(foodRespawn.RespawnCoro(sectorScrapValue, minX, maxX, minY, maxY, scrapParent));
+    //}
     IEnumerator RespawnScrapCoro()
     {
         while (true)
@@ -80,8 +85,26 @@ public class MapSector : MonoBehaviour
         if (!overflow)
             foreach (var prefab in enemyPrefabs)
             {
-                GameObject c = (GameObject)Instantiate(prefab, new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)), Quaternion.identity);
-                c.transform.SetParent(transform, true);
+                var position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+                switch (prefab.name)
+                {
+                    case "Fly": { enemyObject = poolManager.flyPool.Get(); enemyObject.transform.SetParent(transform, true); enemyObject.transform.position = position; break; }
+                    case "Kamikadze": { enemyObject = poolManager.kamikadzePool.Get(); enemyObject.transform.SetParent(transform, true); enemyObject.transform.position = position; break; }
+                    case "Burner": { enemyObject = poolManager.burnerPool.Get(); enemyObject.transform.SetParent(transform, true); enemyObject.transform.position = position; break; }
+                    case "Mommy": { enemyObject = poolManager.mommyPool.Get(); enemyObject.transform.SetParent(transform, true); enemyObject.transform.position = position; break; }
+                    case "Moscito": { enemyObject = poolManager.moscitoPool.Get(); enemyObject.transform.SetParent(transform, true); enemyObject.transform.position = position; break; }
+                    case "Destroyer": { enemyObject = poolManager.destroyerPool.Get(); enemyObject.transform.SetParent(transform, true); enemyObject.transform.position = position; break; }
+                    case "Turel": { enemyObject = poolManager.turelPool.Get(); enemyObject.transform.SetParent(transform, true); enemyObject.transform.position = position; break; }
+
+                }
+                //var rand = Random.Range(0,3);
+                //if (rand == 1) enemyObject.GetComponent<Enemy>().Level1();
+                //else if (rand == 2) enemyObject.GetComponent<Enemy>().Level2();
+                //if (enemyObject.GetComponent<Enemy>() != null) enemyObject.GetComponent<Enemy>().ResetEnemy();
+                //Debug.Log("GetComponent<Enemy == null");
+                //GameObject c  = 
+                //GameObject c = (GameObject)Instantiate(prefab, new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)), Quaternion.identity);
+                //c.transform.SetParent(transform, true);
             }
         var count = transform.childCount;
         overflow = false;
@@ -108,6 +131,26 @@ public class MapSector : MonoBehaviour
         {
             foodRespawn.scrapPool.Release(scrapParent.GetChild(0).gameObject);
             yield return new WaitForSeconds(0.1f);
+        }
+    }
+    IEnumerator SlowReturnToPoolEnemy()
+    {
+        while (transform.childCount > 2)
+        {
+            var c = transform.GetChild(2).gameObject;
+            switch (c.name)
+            {
+                case "Fly(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.flyPool.Release(c);  break; }
+                case "Kamikadze(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.kamikadzePool.Release(c); break; }
+                case "Burner(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.burnerPool.Release(c); break; }
+                case "Mommy(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.mommyPool.Release(c); break; }
+                case "Moscito(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.moscitoPool.Release(c); break; }
+                case "Destroyer(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.destroyerPool.Release(c); break; }
+                case "Turel(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.turelPool.Release(c); break; }
+                    //default 
+            }
+            //foodRespawn.scrapPool.Release(transform.GetChild(1).gameObject);
+            yield return new WaitForSeconds(3f);
         }
     }
 }

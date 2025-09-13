@@ -116,6 +116,7 @@ MonoBehaviour:
   dropChance: 0500000064000000
   fireDistance: 7
   atackDistance: 10
+  sprite: {fileID: 712503030, guid: 72d665b7165e2bb40b6497176944d6eb, type: 3}
   bulletPrefab: {fileID: 3984394470041740971, guid: d139fe15cdcbcba4d9dbdc6fefd6e344, type: 3}
   bulletSpeed: 5
   reloadTime: 1
@@ -192,7 +193,7 @@ Animator:
   m_GameObject: {fileID: 1518333895789308286}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2c04b57fe0446fc4288dac598f6519e6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 377b56d464294094891ceb0e12ee086c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -218,7 +219,7 @@ PrefabInstance:
     - target: {fileID: 4946381566672173599, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: sound.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 96169b2b101401041b16264f4f1e8b1c, type: 3}
+      objectReference: {fileID: 8300000, guid: 54bb1652cf71ff44fb92705a6e17756a, type: 3}
     - target: {fileID: 4946381566672173599, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: sound.Array.data[1]
       value: 

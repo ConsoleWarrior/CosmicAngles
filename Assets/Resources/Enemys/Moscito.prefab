@@ -119,6 +119,7 @@ MonoBehaviour:
   dropChance: 05000000020000000100000064000000
   fireDistance: 7
   atackDistance: 10.5
+  sprite: {fileID: 0}
   flag: 0
   gun: {fileID: 897086974167819299}
 --- !u!58 &3578079715457257352
@@ -193,7 +194,7 @@ Animator:
   m_GameObject: {fileID: 2600920385395749974}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2c04b57fe0446fc4288dac598f6519e6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 052b7cadecddcb5428db25be979725b7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5084,7 +5085,7 @@ MonoBehaviour:
   line: {fileID: 1099217951968419389}
   LLHitEffect: {fileID: 799717672652009318}
   audioManager: {fileID: 4203049675146151135}
-  damage: 1.8
+  damage: 2
   reload: 0.1
   coroIsWorkNow: 0
 --- !u!120 &1099217951968419389

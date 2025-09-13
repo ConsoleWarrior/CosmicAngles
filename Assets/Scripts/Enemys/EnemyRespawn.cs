@@ -14,7 +14,7 @@ public class EnemyRespawn : MonoBehaviour
     //        sector.StartRespawnSector();
     //    }
     //}
-    private void Update()
+    void Update()
     {
         if (player == null) player = GameObject.FindGameObjectWithTag("Player").transform;
         if (currentSector != 0 && player.position.y > -100 && player.position.y < 100)
@@ -27,6 +27,7 @@ public class EnemyRespawn : MonoBehaviour
         else if (currentSector != 1 && player.position.y > 100 && player.position.y < 300)
         {
             sectors[0].StopRespawnSector();
+            sectors[2].StopRespawnSector();
             sectors[1].StartRespawnSector();
             //sectors[2].StartRespawnSector();
             currentSector = 1;
@@ -34,6 +35,7 @@ public class EnemyRespawn : MonoBehaviour
         else if (currentSector != 2 && player.position.y > 300 && player.position.y < 500)
         {
             sectors[1].StopRespawnSector();
+            sectors[3].StopRespawnSector();
             sectors[2].StartRespawnSector();
             //sectors[2].StartRespawnSector();
             currentSector = 2;
@@ -41,6 +43,7 @@ public class EnemyRespawn : MonoBehaviour
         else if (currentSector != 3 && player.position.y > 500 && player.position.y < 700)
         {
             sectors[2].StopRespawnSector();
+            //sectors[4].StopRespawnSector();
             sectors[3].StartRespawnSector();
             //sectors[2].StartRespawnSector();
             currentSector = 3;

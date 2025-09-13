@@ -5,7 +5,7 @@ using UnityEngine.Pool;
 
 public class EnemyBurner : Enemy
 {
-    private bool flag = false;
+    private bool fireFlag = false;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletSpeed;
     [SerializeField] float reloadTime;
@@ -23,16 +23,16 @@ public class EnemyBurner : Enemy
         sector = transform.parent.GetComponent<MapSector>();
         target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
         audioManager.a.volume = 0.5f;
-        gunBulletPool = GameObject.Find("PoolManager").GetComponent<PoolManager>().flyBulletPool;
+        var managerObj = GameObject.Find("PoolManager").GetComponent<PoolManager>();
+        gunBulletPool = managerObj.flyBulletPool;
+        enemyPool = managerObj.burnerPool;
 
-        Invoke("Evolve", 180);
-        Invoke("EvolveLevel2", 300);
     }
     public override void Atack()
     {
-        if (!flag && dist < fireDistance)
+        if (!fireFlag && dist < fireDistance)
         {
-            flag = true;
+            fireFlag = true;
             StartCoroutine(Fire());
         }
         else if (dist >= fireDistance)
@@ -64,24 +64,39 @@ public class EnemyBurner : Enemy
             //Destroy(bullet, 2f);
             yield return new WaitForSeconds(reloadTime);
         }
-        flag = false;
+        fireFlag = false;
     }
-    public override void Evolve()
+    public override void Level0()
     {
-        maxHp += maxHp * 0.3f;
-        currentHp += currentHp * 0.3f;
+        fireFlag = false;
+
+        damage = 1.5f;
+        maxHp = 150;
+        currentHp = 150;
+        transform.localScale = new Vector3(0.5f, 0.5f, 1);
+        reloadTime = 0.15f;
+        dropScrapCount = 4;
+    }
+    public override void Level1()
+    {
+        fireFlag = false;
+
+        damage = 2f;
+        maxHp = 200;
+        currentHp = 200;
         transform.localScale = new Vector3(0.7f, 0.7f, 1);
-        speed += speed * 0.2f;
-        reloadTime -= reloadTime * 0.2f;
+        reloadTime = 0.125f;
         dropScrapCount = 6;
     }
-    public override void EvolveLevel2()
+    public override void Level2()
     {
-        maxHp += maxHp * 0.3f;
-        currentHp += currentHp * 0.3f;
-        transform.localScale = new Vector3(1, 1, 1);
-        speed += speed * 0.2f;
-        reloadTime -= reloadTime * 0.2f;
-        dropScrapCount = 10;
+        fireFlag = false;
+
+        damage = 2.5f;
+        maxHp = 250;
+        currentHp = 250;
+        transform.localScale = new Vector3(0.9f, 0.9f, 1);
+        reloadTime = 0.1f;
+        dropScrapCount = 8;
     }
 }

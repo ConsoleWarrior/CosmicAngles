@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accelerationSpeed: 8
-  tank: 1000
+  tank: 100
   refillValues: 2
   activateSprite: {fileID: 7258987490339741438}
   tempValues: {fileID: 0}

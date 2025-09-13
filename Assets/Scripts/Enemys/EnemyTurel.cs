@@ -23,11 +23,15 @@ public class EnemyTurel : Enemy
         //gunBulletPool = GameObject.Find("PoolManager").GetComponent<PoolManager>().flyBulletPool;
         Invoke("Initialize",0.5f);
         StartCoroutine(RepairTic());
+
     }
     void Initialize()
     {
-        gunBulletPool = GameObject.Find("PoolManager").GetComponent<PoolManager>().flyBulletPool;
-        if (gunBulletPool == null) Debug.Log("gunBulletPool == null");
+        //gunBulletPool = GameObject.Find("PoolManager").GetComponent<PoolManager>().flyBulletPool;
+        //if (gunBulletPool == null) Debug.Log("gunBulletPool == null");
+        var managerObj = GameObject.Find("PoolManager").GetComponent<PoolManager>();
+        gunBulletPool = managerObj.flyBulletPool;
+        enemyPool = managerObj.turelPool;
     }
     void FixedUpdate()
     {

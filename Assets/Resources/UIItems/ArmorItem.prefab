@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   type: CoreModule
-  price: 5000
+  price: 7500
   group: {fileID: 0}
   itemPrefab: {fileID: 9166677897196703679, guid: 8f5decbcc5245374581dcc03f3b43170, type: 3}
   itemColor: {r: 0, g: 0, b: 0, a: 1}

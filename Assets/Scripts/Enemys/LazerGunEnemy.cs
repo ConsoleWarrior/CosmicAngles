@@ -7,7 +7,7 @@ public class LazerGunEnemy : MonoBehaviour
     [SerializeField] LineRenderer line;
     [SerializeField] ParticleSystem LLHitEffect;
     [SerializeField] AudioManager audioManager;
-    [SerializeField] float damage;
+    public float damage;
     [SerializeField] float reload;
     Transform temp;
     EnemyMoscito enemy;
@@ -23,7 +23,7 @@ public class LazerGunEnemy : MonoBehaviour
     {
         line.SetPosition(0, transform.position);
 
-        if (enemy.flag)
+        if (enemy.fireFlag)
         {
             StartFire();
         }
@@ -36,7 +36,7 @@ public class LazerGunEnemy : MonoBehaviour
     }
     IEnumerator Fire(Transform target)
     {
-        while (enemy.flag)
+        while (enemy.fireFlag)
         {
             //Debug.Log("coro working now");
             coroIsWorkNow = true;

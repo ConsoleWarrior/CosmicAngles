@@ -118,6 +118,7 @@ MonoBehaviour:
   dropChance: 05000000020000000100000064000000
   fireDistance: 7.2
   atackDistance: 10
+  sprite: {fileID: 0}
   bulletPrefab: {fileID: 3984394470041740971, guid: d139fe15cdcbcba4d9dbdc6fefd6e344, type: 3}
   bulletSpeed: 9
   reloadTime: 0.15
@@ -194,7 +195,7 @@ Animator:
   m_GameObject: {fileID: 2149881737884762687}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2c04b57fe0446fc4288dac598f6519e6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8177dba2a957d6f4882c1cef3c54ef03, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

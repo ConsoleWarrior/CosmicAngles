@@ -3,9 +3,9 @@ using UnityEngine.Pool;
 
 public class BlasterEnemy : MonoBehaviour
 {
-    [SerializeField] GameObject bulletPrefab;
+    //[SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletSpeed;
-    [SerializeField] float damage;
+    public float damage;
     ObjectPool<GameObject> gunBulletPool;
 
     void Start()

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RocketBullet : Bullet
 {
-    [SerializeField] Animator animator;
+    //[SerializeField] Animator animator;
     public float speed;
     public Transform targetEnemy;
 
@@ -20,7 +20,7 @@ public class RocketBullet : Bullet
     }
     void Update()
     {
-        if(targetEnemy != null) Atack(targetEnemy);
+        if(targetEnemy.gameObject.activeSelf) Atack(targetEnemy);
         else //Destroy(this.gameObject);
         {
             StopAllCoroutines();

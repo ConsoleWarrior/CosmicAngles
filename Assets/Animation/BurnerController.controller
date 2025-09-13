@@ -96,7 +96,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e48b4bc24d469bd4c84fbd9ad30fa2cf, type: 2}
+  m_Motion: {fileID: 7400000, guid: 3d90e37d2b73c2a4ebdc2af262345402, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -135,7 +135,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: KamikadzeController
+  m_Name: BurnerController
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Destroy

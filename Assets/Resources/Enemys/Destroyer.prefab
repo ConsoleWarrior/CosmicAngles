@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4506260324051449004}
@@ -68,6 +68,7 @@ MonoBehaviour:
   dropChance: 05000000020000000100000064000000
   fireDistance: 8
   atackDistance: 10.5
+  sprite: {fileID: 0}
   flag: 0
   reloadTime: 0.2
   gun1: {fileID: 40525463567446463}
@@ -196,7 +197,7 @@ Animator:
   m_GameObject: {fileID: 6785384662722177404}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2c04b57fe0446fc4288dac598f6519e6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 67d7fcb7cf1e45044b7753aa54bd7fca, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

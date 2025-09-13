@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] protected float maxHp;
-    [SerializeField] protected float currentHp;
+    public float maxHp;
+    public float currentHp;
     [SerializeField] protected Image hpBar;
     [SerializeField] protected GameObject hpBarCanvas;
     [SerializeField] protected AudioManager audioManager;
@@ -22,49 +23,45 @@ public class Enemy : MonoBehaviour
     protected Vector3 target;
     protected bool evolved = false;
     protected MapSector sector;
+    protected ObjectPool<GameObject> enemyPool;
+    protected bool destroyFlag = false;
+    [SerializeField] protected Sprite sprite;
 
+    //void Start()
+    //{
+    //    try
+    //    {
+    //        player = GameObject.FindGameObjectWithTag("Player").transform;
+    //    }
+    //    catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
+    //    animator = GetComponent<Animator>();
+    //    sector = transform.parent.GetComponent<MapSector>();
+    //    target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
+    //    audioManager.a.volume = 0.5f;
 
-
-    void Start()
-    {
-        try
-        {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-        }
-        catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
-        animator = GetComponent<Animator>();
-        sector = transform.parent.GetComponent<MapSector>();
-        target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
-        audioManager.a.volume = 0.5f;
-
-        Invoke("Evolve", 300);
-        Invoke("EvolveLevel2", 600);
-    }
+    //    Invoke("Evolve", 300);
+    //    Invoke("EvolveLevel2", 600);
+    //}
 
     void Update()
     {
-        if (currentHp <= 0 && !animator.GetBool("Destroy"))
+        if (currentHp <= 0 && !destroyFlag)
         {
+            destroyFlag = true;
             animator.SetBool("Destroy", true);
             audioManager.a.volume = 1;
             audioManager.SoundPlay0();
-            transform.GetComponent<CircleCollider2D>().enabled = false;
+            //transform.GetComponent<CircleCollider2D>().enabled = false;
             CalculateAndCallDrop();
-            Destroy(this.gameObject, 0.5f);
+            Invoke("Destroying", 0.5f);
+            //Destroy(this.gameObject, 0.5f);
         }
-
-        //if (xp == 4 && !evolved)
-        //{
-        //    Evolve();
-        //    //Debug.Log("Эволюционировал");
-        //    evolved = true;
-        //}
-        //if (xp == 8 && evolved)
-        //{
-        //    EvolveLevel2();
-        //    //Debug.Log("Эволюционировал второй раз");
-        //    evolved = false;
-        //}
+    }
+    protected void Destroying()
+    {
+        transform.SetParent(GameObject.Find("PoolManager").transform);
+        ResetEnemy();
+        enemyPool.Release(this.gameObject);
     }
     void FixedUpdate()
     {
@@ -78,11 +75,13 @@ public class Enemy : MonoBehaviour
     public virtual void Atack()
     {
     }
-
-    public virtual void Evolve()
+    public virtual void Level0()
     {
     }
-    public virtual void EvolveLevel2()
+    public virtual void Level1()
+    {
+    }
+    public virtual void Level2()
     {
     }
 
@@ -138,12 +137,26 @@ public class Enemy : MonoBehaviour
                         scrap.GetComponent<Scrap>().value = Random.Range(dropScrapCount / 2, dropScrapCount * 2);
                         //scrap.transform.localScale = new Vector3(0.6f, 0.6f, 1);
                     }
-                    else Instantiate(dropPrefabs[i], new(transform.position.x + Random.Range(-1,2), transform.position.y + Random.Range(-1, 2)), Quaternion.identity);
-                    
+                    else Instantiate(dropPrefabs[i], new(transform.position.x + Random.Range(-1, 2), transform.position.y + Random.Range(-1, 2)), Quaternion.identity);
+
                 }
             }
         //GameObject c = (GameObject)Instantiate(Resources.Load("Scrap", typeof(GameObject)), transform.position, Quaternion.identity);
         //c.GetComponent<Scrap>().value = Random.Range(dropScrapCount / 2, dropScrapCount * 2);
         //c.transform.localScale = new Vector3(0.6f, 0.6f, 1);
+    }
+    public virtual void ResetEnemy()
+    {
+        //TakeDamage(-maxHp);
+        var rand = Random.Range(0, 3);
+        if (rand == 0) Level0();
+        else if (rand == 1) Level1();
+        else Level2();
+
+        hpBar.fillAmount = currentHp / maxHp;
+        destroyFlag = false;
+        if (animator != null)
+            animator.SetBool("Destroy", false);
+        audioManager.a.volume = 0.5f;
     }
 }
