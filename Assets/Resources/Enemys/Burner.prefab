@@ -116,7 +116,7 @@ MonoBehaviour:
   - {fileID: 3787300834446268226, guid: abe7a56e8211edf49bb00f7ef956b058, type: 3}
   - {fileID: 3617159770173728927, guid: 4e48d92f944fa5340a3d4e7f7aefa36e, type: 3}
   dropChance: 05000000020000000100000064000000
-  fireDistance: 7.2
+  fireDistance: 6.5
   atackDistance: 10
   sprite: {fileID: 0}
   bulletPrefab: {fileID: 3984394470041740971, guid: d139fe15cdcbcba4d9dbdc6fefd6e344, type: 3}

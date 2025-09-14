@@ -11,7 +11,7 @@ public class Modulus : MonoBehaviour
 }
 public class Guns : Modulus
 {
-    [SerializeField] protected GameObject bulletPrefab;
+    //[SerializeField] protected GameObject bulletPrefab;
     [SerializeField] protected float bulletSpeed;
     [SerializeField] protected float reload;
     [SerializeField] protected float damage;

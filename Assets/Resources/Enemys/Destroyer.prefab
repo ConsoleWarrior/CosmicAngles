@@ -67,9 +67,9 @@ MonoBehaviour:
   - {fileID: 3617159770173728927, guid: 4e48d92f944fa5340a3d4e7f7aefa36e, type: 3}
   dropChance: 05000000020000000100000064000000
   fireDistance: 8
-  atackDistance: 10.5
+  atackDistance: 11
   sprite: {fileID: 0}
-  flag: 0
+  fireFlag: 0
   reloadTime: 0.2
   gun1: {fileID: 40525463567446463}
   gun2: {fileID: 4108414796976324188}

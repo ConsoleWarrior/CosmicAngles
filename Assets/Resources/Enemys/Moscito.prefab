@@ -118,9 +118,9 @@ MonoBehaviour:
   - {fileID: 3617159770173728927, guid: 4e48d92f944fa5340a3d4e7f7aefa36e, type: 3}
   dropChance: 05000000020000000100000064000000
   fireDistance: 7
-  atackDistance: 10.5
+  atackDistance: 10
   sprite: {fileID: 0}
-  flag: 0
+  fireFlag: 0
   gun: {fileID: 897086974167819299}
 --- !u!58 &3578079715457257352
 CircleCollider2D:

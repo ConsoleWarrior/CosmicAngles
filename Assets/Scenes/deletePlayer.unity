@@ -843,7 +843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede006aaf9270074f93112f28f26d2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kredit: 0
+  kredit: 500000
   tmpKredit: {fileID: 1936960106}
   inventoryGrid: {fileID: 1717957669}
 --- !u!4 &148060770
@@ -3251,6 +3251,7 @@ MonoBehaviour:
   - {fileID: 572739728}
   - {fileID: 434978785}
   - {fileID: 454351785}
+  pointer: {fileID: 1633823389}
 --- !u!4 &492056211
 Transform:
   m_ObjectHideFlags: 0
@@ -3732,11 +3733,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: fireDistance
-      value: 11.5
+      value: 16.5
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: atackDistance
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
@@ -10225,7 +10230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39ce48771524454697892fd0f360ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cosmoPort: {fileID: 445200550}
+  cosmoports:
+  - {fileID: 445200550}
+  - {fileID: 1423842519}
+  - {fileID: 767958759}
+  - {fileID: 1259035485}
 --- !u!212 &1633823390
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11670,6 +11679,7 @@ MonoBehaviour:
   gunBulletPrefab: {fileID: 3984394470041740971, guid: 1bb232a95918fb842a6382ce3f3a1b79, type: 3}
   rocketBulletPrefab: {fileID: 5091863379858687263, guid: d415cc50431173c4fba9493ab890d54d, type: 3}
   blasterBulletPrefab: {fileID: 8383149672375207215, guid: 24af95a984fea2d48bba983c8e591ece, type: 3}
+  splashBulletPrefab: {fileID: 4398295918424237966, guid: 6dc8e72f0f44e57459629ad8708da51f, type: 3}
   flyBulletPrefab: {fileID: 3984394470041740971, guid: d139fe15cdcbcba4d9dbdc6fefd6e344, type: 3}
   destroyerBulletPrefab: {fileID: 2179432269079511556, guid: 754dfa78443d8ee4890c7a6d277079b3, type: 3}
   mommyBulletPrefab: {fileID: 3062242358514997324, guid: 4c307b525c0ebdd47a58e18009e8447f, type: 3}
