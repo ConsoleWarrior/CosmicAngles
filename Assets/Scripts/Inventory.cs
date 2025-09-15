@@ -6,6 +6,8 @@ public class Inventory : MonoBehaviour
     public float kredit;
     public TextMeshProUGUI tmpKredit;
     public Transform inventoryGrid;
+    [SerializeField] AudioManager audioManager;
+
 
     public void UpdateKredit(float change)
     {
@@ -17,8 +19,9 @@ public class Inventory : MonoBehaviour
         else Debug.Log("(kredit + change) < 0");
 
     }
-    public void CollectScrap(float value)
+    public void CollectScrap(GameObject scrap)
     {
+        var value = scrap.GetComponent<Scrap>().value;
         for (int i = 0; i < inventoryGrid.childCount; i++) //пробую запихнуть в неполный стак
         {
             var inventoryCellUISlot = inventoryGrid.GetChild(i).gameObject.GetComponent<UISlot>();
@@ -26,9 +29,11 @@ public class Inventory : MonoBehaviour
             {
                 if (!inventoryCellUISlot.isFree && inventoryCellUISlot.currentItem.name == "ScrapItem(Clone)")
                 {
-                    if (((UIItemScrap)inventoryCellUISlot.currentItem).scrapItemCount + value <= 100)
+                    if (((UIItemScrap)inventoryCellUISlot.currentItem).scrapItemCount + value <= 1000)
                     {
                         ((UIItemScrap)inventoryCellUISlot.currentItem).scrapItemCount += value;
+                        audioManager.SoundPlay0();
+                        scrap.GetComponent<Scrap>().ReturnScrapToPool();
                         Debug.Log("collect scrap value : " + value);
                         return;
                     }
@@ -48,7 +53,9 @@ public class Inventory : MonoBehaviour
                 inventoryCellUISlot2.currentItem = newStack.GetComponent<UIItem>();
                 ((UIItemScrap)inventoryCellUISlot2.currentItem).scrapItemCount = value;
                 inventoryCellUISlot2.isFree = false;
-                //Debug.Log("collect scrap good in new stack");
+                audioManager.SoundPlay0();
+                scrap.GetComponent<Scrap>().ReturnScrapToPool();
+                Debug.Log("collect scrap in new stack : " + value);
                 return;
             }
         }

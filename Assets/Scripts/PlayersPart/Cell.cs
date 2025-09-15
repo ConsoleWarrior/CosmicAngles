@@ -64,11 +64,11 @@ public class Cell : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Scrap"))
             {
-                float value = other.gameObject.GetComponent<Scrap>().value;
-                inventory.CollectScrap(value);
-                audioManager.SoundPlay0();
+                //float value = other.gameObject.GetComponent<Scrap>().value;
+                inventory.CollectScrap(other.gameObject);
+                //audioManager.SoundPlay0();
             }
-            if (player.isLooting) Debug.Log("isLooting");
+            //if (player.isLooting) Debug.Log("isLooting");
             if (other.gameObject.CompareTag("Drop") && !player.isLooting)
             {
                 player.isLooting = true;

@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
             audioManager.SoundPlay0();
             //transform.GetComponent<CircleCollider2D>().enabled = false;
             CalculateAndCallDrop();
-            Invoke("Destroying", 0.5f);
+            Invoke("Destroying", 0.4f);
             //Destroy(this.gameObject, 0.5f);
         }
     }
