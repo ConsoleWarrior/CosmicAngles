@@ -22,6 +22,7 @@ public class MapSector : MonoBehaviour
     Transform scrapParent;
     PoolManager poolManager;
     GameObject enemyObject;
+    Transform player;
 
     void Start()
     {
@@ -83,9 +84,18 @@ public class MapSector : MonoBehaviour
     void RespawnSector()
     {
         if (!overflow)
+        {
+            if (player == null) player = GameObject.FindWithTag("Player").transform;
             foreach (var prefab in enemyPrefabs)
             {
                 var position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+                while (true)
+                {
+                    if(Vector3.Distance(player.position, position) > 30) break;
+                    else position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+                }
+                //dist = Vector3.Distance(player.position, position);
+
                 switch (prefab.name)
                 {
                     case "Fly": { enemyObject = poolManager.flyPool.Get(); enemyObject.transform.SetParent(transform, true); enemyObject.transform.position = position; break; }
@@ -106,6 +116,7 @@ public class MapSector : MonoBehaviour
                 //GameObject c = (GameObject)Instantiate(prefab, new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY)), Quaternion.identity);
                 //c.transform.SetParent(transform, true);
             }
+        }
         var count = transform.childCount;
         overflow = false;
         if (count < maxPopulation * 0.3f) enemyRespawnTime = 2f;
@@ -140,7 +151,7 @@ public class MapSector : MonoBehaviour
             var c = transform.GetChild(2).gameObject;
             switch (c.name)
             {
-                case "Fly(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.flyPool.Release(c);  break; }
+                case "Fly(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.flyPool.Release(c); break; }
                 case "Kamikadze(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.kamikadzePool.Release(c); break; }
                 case "Burner(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.burnerPool.Release(c); break; }
                 case "Mommy(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.mommyPool.Release(c); break; }

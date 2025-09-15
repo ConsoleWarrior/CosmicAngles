@@ -45,9 +45,9 @@ public class SplashRocketGun : Guns
                 }
             }
 
-            Vector2 direction = (target.position - transform.position).normalized;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            sprite.rotation = Quaternion.Euler(0, 0, angle - 90);
+            //Vector2 direction = (target.position - transform.position).normalized;
+            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            //sprite.rotation = Quaternion.Euler(0, 0, angle - 90);
 
             audioManager.SoundPlay0();
             //GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
@@ -56,11 +56,16 @@ public class SplashRocketGun : Guns
             //bullet.transform.SetParent(transform);
             bullet.transform.position = transform.position;
             bullet.transform.rotation = transform.rotation;
-            var blt = bullet.GetComponent<Bullet>();
+            var blt = bullet.GetComponent<SplashBullet>();
             blt.damage = damage;
+            blt.speed = bulletSpeed;
             blt.gunBulletPool = gunBulletPool;
-            blt.ReturnToPool(2);
-            bullet.GetComponent<Rigidbody2D>().AddForce((target.position - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse); // Придать пуле скорость
+            blt.ReturnToPool(4);
+            //var blt = bullet.GetComponent<Bullet>();
+            //blt.damage = damage;
+            //blt.gunBulletPool = gunBulletPool;
+            //blt.ReturnToPool(2);
+            //bullet.GetComponent<Rigidbody2D>().AddForce((target.position - transform.position).normalized * bulletSpeed*50, ForceMode2D.Force); // Придать пуле скорость
             //Destroy(bullet, 2f);
             yield return new WaitForSeconds(reload);
         }

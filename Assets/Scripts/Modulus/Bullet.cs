@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public float damage;
     public ObjectPool<GameObject> gunBulletPool;
 
-    public void ReturnToPool(float time)
+    public virtual void ReturnToPool(float time)
     {
         StartCoroutine(ReturnCoro(time));
     }
