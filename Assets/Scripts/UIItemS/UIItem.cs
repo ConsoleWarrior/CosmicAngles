@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerClickHandler
 {
-    public string itemName;
+    //public string itemName;
     public string type;
     public int price;
     protected RectTransform rectTransform;
@@ -111,9 +111,11 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
     }
     public void ShowInfo()
     {
-        ItemInfo info = GameObject.FindGameObjectWithTag("ItemInfo").GetComponent<ItemInfo>();
+        var obj = GameObject.FindGameObjectWithTag("ItemInfo").transform;
+        obj.GetChild(1).gameObject.SetActive(false);
+        obj.GetChild(0).gameObject.SetActive(true);
+        ItemInfo info = obj.GetChild(0).GetComponent<ItemInfo>();
         if (info == null) { Debug.Log("info == null"); }
-        if (itemName == null) { Debug.Log("itemName == null"); }
         info.itemName.text = "name: " + itemPrefab.name;
         info.type.text = "type: " + type;
         info.characteristics.text = ReturnCharacter();

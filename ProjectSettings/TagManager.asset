@@ -15,14 +15,15 @@ TagManager:
   - ItemInfo
   - ShipGrid
   - StartPlayer
+  - CellInfo
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - PlayersPart
+  - 
   - Water
   - UI
-  - EnemysPart
+  - 
   - 
   - 
   - 
@@ -53,5 +54,8 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: New Layer 1
-    uniqueID: 1502249899
+    uniqueID: 175203327
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 610672629
     locked: 0

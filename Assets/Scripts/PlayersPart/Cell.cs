@@ -3,8 +3,9 @@ using UnityEngine;
 public class Cell : MonoBehaviour
 {
     public int number;
-    [SerializeField] float maxHp;
-    [SerializeField] float currentHp;
+    public float maxHp;
+    public float currentHp;
+    public int armorThickness;
     public Modulus module;
     Inventory inventory;
     public GameObject slot;
@@ -91,7 +92,7 @@ public class Cell : MonoBehaviour
     public void TakeDamage(float damage)
     {
         audioManager.SoundPlay1();
-        currentHp -= damage;
+        currentHp -= (damage - damage*armorThickness/10);
         if (currentHp < 0) currentHp = 0;
         transform.GetComponent<SpriteRenderer>().color = Color.red;
         Invoke("ReturnColor", 0.12f);
