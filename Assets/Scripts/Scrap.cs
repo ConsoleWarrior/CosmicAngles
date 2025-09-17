@@ -4,8 +4,8 @@ using UnityEngine.Pool;
 public class Scrap : MonoBehaviour
 {
     public float value;
-    //private float startInvisibleTime = 1;
     public ObjectPool<GameObject> scrapPool;
+    public bool isCollected;
 
 
     //void OnEnable()

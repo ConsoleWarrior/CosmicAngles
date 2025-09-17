@@ -59,40 +59,61 @@ public class Cell : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (player == null)
-            Debug.Log("player == null");//затычка
-        else
+        //if (other.gameObject.CompareTag("Scrap"))
+        //{
+        //    inventory.TryCollectScrap(other.gameObject);
+        //    //audioManager.SoundPlay0();
+        //}
+        if (other.gameObject.CompareTag("Scrap"))
         {
-            if (other.gameObject.CompareTag("Scrap"))
+            var scrap = other.gameObject.GetComponent<Scrap>();
+            if (!scrap.isCollected)
             {
-                //float value = other.gameObject.GetComponent<Scrap>().value;
-                inventory.CollectScrap(other.gameObject);
-                //audioManager.SoundPlay0();
-            }
-            //if (player.isLooting) Debug.Log("isLooting");
-            if (other.gameObject.CompareTag("Drop") && !player.isLooting)
-            {
-                player.isLooting = true;
-                var drop = other.gameObject.GetComponent<Drop>().itemPrefab;
-                if (other.gameObject == null) Debug.Log("уже уничтожен");
-                if (inventory.TryCollectDrop(drop))//&&drop!=null
+                if (inventory.TryCollectScrap(scrap))
                 {
+                    scrap.isCollected = true;
                     audioManager.SoundPlay0();
-                    if (other.gameObject == null)
-                    {
-                        Debug.Log("дроп уже собрали is null");
-                    }
+                    scrap.ReturnScrapToPool();
+                    //Destroy(other.gameObject);
+                }
+            }
+            else Debug.Log("уже собран");
+        }
+        //if (player.isLooting) Debug.Log("isLooting");
+        if (other.gameObject.CompareTag("Drop"))
+        {
+            var drop = other.gameObject.GetComponent<Drop>();
+            if (!drop.isCollected)
+            {
+                if (inventory.TryCollectDrop(drop.itemPrefab))
+                {
+                    drop.isCollected = true;
+                    audioManager.SoundPlay0();
                     Destroy(other.gameObject);
                 }
-                player.isLooting = false;
             }
+            else Debug.Log("уже собран");
+        }
+        if (other.gameObject.CompareTag("TitanBox"))
+        {
+            var drop = other.gameObject.GetComponent<Scrap>();
+            if (!drop.isCollected)
+            {
+                if (inventory.TryCollectTitan())
+                {
+                    drop.isCollected = true;
+                    audioManager.SoundPlay0();
+                    Destroy(other.gameObject);
+                }
+            }
+            else Debug.Log("уже собран");
         }
     }
 
     public void TakeDamage(float damage)
     {
         audioManager.SoundPlay1();
-        currentHp -= (damage - damage*armorThickness/10);
+        currentHp -= (damage - damage * armorThickness / 10);
         if (currentHp < 0) currentHp = 0;
         transform.GetComponent<SpriteRenderer>().color = Color.red;
         Invoke("ReturnColor", 0.12f);
@@ -114,7 +135,7 @@ public class Cell : MonoBehaviour
         ReturnColor();
         if (slot != null) slot.SetActive(true);
         //if (module != null) module.gameObject.SetActive(true);
-        if(slot.GetComponent<UISlot>().currentItem != null)
+        if (slot.GetComponent<UISlot>().currentItem != null)
         {
             slot.GetComponent<UISlot>().currentItem.CallNewModule(this);
         }

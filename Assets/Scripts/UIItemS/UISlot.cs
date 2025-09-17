@@ -29,15 +29,15 @@ public class UISlot : MonoBehaviour, IPointerClickHandler //, IDropHandler
             info = obj.GetChild(1).GetComponent<ItemInfo>();
             info.transform.GetChild(2).GetComponent<Button>().onClick.RemoveAllListeners();
             info.gameObject.SetActive(true);
-            info.type.text = "cell MaxHp = " + cell.maxHp + "\ncurrentHp = " + cell.currentHp + "\narmorThickness = " + cell.armorThickness;
+            info.type.text = "MaxHp = " + cell.maxHp + "\ncurrentHp = " + cell.currentHp + "\narmorThickness = " + cell.armorThickness;
             info.characteristics.text = "1 Armor Thickness reduce 10% damage.\n1 Armor upgrade cost 1 TitanBox";
             info.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(UpgradeArmor);
         }
     }
     public void UpgradeArmor()
     {
-        cell.armorThickness += 1;
-        info.type.text = "cell MaxHp = " + cell.maxHp + "\ncurrentHp = " + cell.currentHp + "\narmorThickness = " + cell.armorThickness;
+        if (cell.armorThickness < 5) cell.armorThickness += 1;
+        info.type.text = "MaxHp = " + cell.maxHp + "\ncurrentHp = " + cell.currentHp + "\narmorThickness = " + cell.armorThickness;
     }
     //public void OnDrop(PointerEventData eventData)
     //{

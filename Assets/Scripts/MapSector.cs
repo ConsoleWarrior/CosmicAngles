@@ -63,6 +63,7 @@ public class MapSector : MonoBehaviour
             scrapObj.transform.SetParent(scrapParent);
             scrapObj.transform.position = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
             var scrap = scrapObj.GetComponent<Scrap>();
+            scrap.isCollected = false;
             scrap.value = sectorScrapValue;
             scrap.scrapPool = foodRespawn.scrapPool;
             //Respawn();
