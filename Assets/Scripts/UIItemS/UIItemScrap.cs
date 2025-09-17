@@ -28,7 +28,9 @@ public class UIItemScrap : UIItem
                 if (target.GetComponent<UISlot>().isFree && target.GetComponent<UISlot>().cell == null)
                 {
                     target.GetComponent<UISlot>().isFree = false;
-                    startSlotTransform.GetComponent<UISlot>().isFree = true;
+                    //startSlotTransform.GetComponent<UISlot>().isFree = true;
+                    target.GetComponent<UISlot>().currentItem = this;
+                    ClearOldSlot();
                     Debug.Log("переместили scrap");
                 }
                 else

@@ -36,8 +36,11 @@ public class UISlot : MonoBehaviour, IPointerClickHandler //, IDropHandler
     }
     public void UpgradeArmor()
     {
-        if (cell.armorThickness < 5) cell.armorThickness += 1;
-        info.type.text = "MaxHp = " + cell.maxHp + "\ncurrentHp = " + cell.currentHp + "\narmorThickness = " + cell.armorThickness;
+        if (cell.armorThickness < 5 && cell.inventory.TryBuyCellUpgrade(cell.armorThickness+1))
+        {
+            cell.armorThickness += 1;
+            info.type.text = "MaxHp = " + cell.maxHp + "\ncurrentHp = " + cell.currentHp + "\narmorThickness = " + cell.armorThickness;
+        }
     }
     //public void OnDrop(PointerEventData eventData)
     //{

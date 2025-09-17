@@ -7,7 +7,7 @@ public class Cell : MonoBehaviour
     public float currentHp;
     public int armorThickness;
     public Modulus module;
-    Inventory inventory;
+    public Inventory inventory;
     public GameObject slot;
     Transform shipGrid;
     [SerializeField] AudioManager audioManager;

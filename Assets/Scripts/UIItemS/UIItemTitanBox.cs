@@ -29,6 +29,8 @@ public class UIItemTitanBox : UIItem
                 {
                     target.GetComponent<UISlot>().isFree = false;
                     startSlotTransform.GetComponent<UISlot>().isFree = true;
+                    target.GetComponent<UISlot>().currentItem = this;
+
                     Debug.Log("переместили titan");
                 }
                 else

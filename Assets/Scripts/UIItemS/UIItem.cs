@@ -79,6 +79,11 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
                     startSlotTransform.GetComponent<UISlot>().currentItem = null;
                 }
             }
+            else
+            {
+                //Debug.Log("переместили из трюма");
+                startSlotTransform.GetComponent<UISlot>().currentItem = null;
+            }
         }
         var startShop = startSlotTransform.GetComponent<UISlotShop>();
         if (startShop != null) //вызываем в магазе новый итем вместо старого

@@ -114,7 +114,7 @@ public class Inventory : MonoBehaviour
     }
     public bool TryBuyCellUpgrade(int cost)
     {
-        for (int i = 0; i < inventoryGrid.childCount; i++) 
+        for (int i = 0; i < inventoryGrid.childCount; i++)
         {
             var inventoryCellUISlot = inventoryGrid.GetChild(i).gameObject.GetComponent<UISlot>();
             if (!inventoryCellUISlot.isFree && inventoryCellUISlot.currentItem.name == "TitanBoxItem(Clone)")
@@ -122,7 +122,12 @@ public class Inventory : MonoBehaviour
                 if (((UIItemTitanBox)inventoryCellUISlot.currentItem).itemCount - cost >= 0)
                 {
                     ((UIItemTitanBox)inventoryCellUISlot.currentItem).itemCount -= cost;
-                    Debug.Log("buy upgrade cost:"+cost);
+                    Debug.Log("buy upgrade cost:" + cost);
+                    if (((UIItemTitanBox)inventoryCellUISlot.currentItem).itemCount == 0)
+                    {
+                        Destroy(inventoryCellUISlot.currentItem.gameObject);
+                        inventoryCellUISlot.isFree = true;
+                    }
                     return true;
                 }
             }
