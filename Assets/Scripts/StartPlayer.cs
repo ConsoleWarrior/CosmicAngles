@@ -26,16 +26,24 @@ public class StartPlayer : MonoBehaviour
         player.audioManager = audioManager;
         repairBlok.RefreshCells(player);
     }
-
+    void TransferPlayerData(GameObject newPlayer)
+    {
+        for (int i = 0; i < player.transform.childCount; i++)
+        {
+            if (player.transform.GetChild(i).GetComponent<Cell>() != null)
+                newPlayer.transform.GetChild(i).GetComponent<Cell>().armorThickness = player.transform.GetChild(i).GetComponent<Cell>().armorThickness;
+        }
+    }
     public void CallNewShipPrefab1()
     {
         if (inventory.kredit >= 25000 && shipLevel == 0)
         {
             inventory.UpdateKredit(-25000);
             player.isDestroing = true;
+            var obj = Instantiate(playerPrefabs[1], gameObject.transform);
+            TransferPlayerData(obj);
             Destroy(player.gameObject);
 
-            var obj = Instantiate(playerPrefabs[1], gameObject.transform);
             player = obj.GetComponent<Player>();
             player.playerCamera = playerCamera;
             playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
@@ -76,9 +84,10 @@ public class StartPlayer : MonoBehaviour
         {
             inventory.UpdateKredit(-50000);
             player.isDestroing = true;
+            var obj = Instantiate(playerPrefabs[2], gameObject.transform);
+            TransferPlayerData(obj);
             Destroy(player.gameObject);
 
-            var obj = Instantiate(playerPrefabs[2], gameObject.transform);
             player = obj.GetComponent<Player>();
             player.playerCamera = playerCamera;
             playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
@@ -119,9 +128,10 @@ public class StartPlayer : MonoBehaviour
         {
             inventory.UpdateKredit(-100000);
             player.isDestroing = true;
+            var obj = Instantiate(playerPrefabs[3], gameObject.transform);
+            TransferPlayerData(obj);
             Destroy(player.gameObject);
 
-            var obj = Instantiate(playerPrefabs[3], gameObject.transform);
             player = obj.GetComponent<Player>();
             player.playerCamera = playerCamera;
             playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;

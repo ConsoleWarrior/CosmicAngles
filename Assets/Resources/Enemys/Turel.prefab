@@ -259,7 +259,8 @@ MonoBehaviour:
   - {fileID: 2658934399757328153, guid: ded180281475eec4dad89104e09f132e, type: 3}
   - {fileID: 0}
   - {fileID: 0}
-  dropChance: 640000000000000000000000
+  - {fileID: 86772473382699015, guid: d67e0626c182f57499577eb05a039f7b, type: 3}
+  dropChance: e80300000000000000000000e8030000
   fireDistance: 10
   atackDistance: 13
   sprite: {fileID: 0}

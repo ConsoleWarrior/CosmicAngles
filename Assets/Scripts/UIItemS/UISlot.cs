@@ -19,7 +19,7 @@ public class UISlot : MonoBehaviour, IPointerClickHandler //, IDropHandler
             isFree = false;
         }
     }
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData)//
     {
         if (cell != null)
         {
@@ -30,7 +30,7 @@ public class UISlot : MonoBehaviour, IPointerClickHandler //, IDropHandler
             info.transform.GetChild(2).GetComponent<Button>().onClick.RemoveAllListeners();
             info.gameObject.SetActive(true);
             info.type.text = "MaxHp = " + cell.maxHp + "\ncurrentHp = " + cell.currentHp + "\narmorThickness = " + cell.armorThickness;
-            info.characteristics.text = "1 Armor Thickness reduce 10% damage.\n1 Armor upgrade cost 1 TitanBox";
+            info.characteristics.text = "1 Armor = -10% damage, Max -50%\nUpgrade armor cost "+ (cell.armorThickness +1) + " TitanBox";
             info.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(UpgradeArmor);
         }
     }
@@ -40,6 +40,7 @@ public class UISlot : MonoBehaviour, IPointerClickHandler //, IDropHandler
         {
             cell.armorThickness += 1;
             info.type.text = "MaxHp = " + cell.maxHp + "\ncurrentHp = " + cell.currentHp + "\narmorThickness = " + cell.armorThickness;
+            info.characteristics.text = "1 Armor = -10% damage, Max -50%\nUpgrade armor cost " + (cell.armorThickness + 1) + " TitanBox";
         }
     }
     //public void OnDrop(PointerEventData eventData)

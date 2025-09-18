@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public Camera playerCamera;
     public GameObject gameOver;
     [SerializeField] Animator animator;
-    public bool isLooting = false;
+    //public bool isLooting = false;
     public bool isDestroing = false;
     public AudioManager audioManager;
     public GameObject shieldFront;

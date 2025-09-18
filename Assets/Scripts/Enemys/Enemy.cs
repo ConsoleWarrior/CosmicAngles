@@ -129,7 +129,7 @@ public class Enemy : MonoBehaviour
         if (dropPrefabs != null)
             for (int i = 0; i < dropPrefabs.Count; i++)
             {
-                if (dropChance[i] >= Random.Range(1, 101))
+                if (dropChance[i] >= Random.Range(1, 1001))
                 {
                     if (dropPrefabs[i].CompareTag("Scrap"))
                     {
