@@ -122,6 +122,11 @@ public class Cell : MonoBehaviour
     {
         transform.GetComponent<SpriteRenderer>().color = new Color(1 - currentHp / maxHp, 0.5f, 0.5f, 1);
     }
+    public void UpgradeCellSprite(int number)
+    {
+        transform.GetComponent<SpriteRenderer>().sprite = player.armorSprites[number];
+
+    }
     public float CalculateRepairHPCost()
     {
         float x = maxHp - currentHp;

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     public AudioManager audioManager;
     public GameObject shieldFront;
     public GameObject shieldBack;
+    public List<Sprite> armorSprites;
 
 
     void Update()

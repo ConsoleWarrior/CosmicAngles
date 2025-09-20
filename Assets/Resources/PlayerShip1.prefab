@@ -306,11 +306,13 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   gameOver: {fileID: 0}
   animator: {fileID: 6632515101255414485}
-  isLooting: 0
   isDestroing: 0
   audioManager: {fileID: 0}
   shieldFront: {fileID: 8646703661751590220}
   shieldBack: {fileID: 22736683630598310}
+  armorSprites:
+  - {fileID: 21300000, guid: 3fa453f496a62a745b6af40170ec7b2d, type: 3}
+  - {fileID: 21300000, guid: 7d59df93466fa234aba7878f6375c43d, type: 3}
 --- !u!1001 &886532729174821541
 PrefabInstance:
   m_ObjectHideFlags: 0

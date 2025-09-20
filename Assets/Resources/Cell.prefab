@@ -51,9 +51,10 @@ MonoBehaviour:
   number: 1
   maxHp: 100
   currentHp: 100
+  armorThickness: 0
   module: {fileID: 0}
+  inventory: {fileID: 0}
   slot: {fileID: 0}
-  shipGrid: {fileID: 0}
   audioManager: {fileID: 924434633579842045}
   isDestroyed: 0
 --- !u!212 &8446761863488875479

@@ -39,6 +39,7 @@ public class UISlot : MonoBehaviour, IPointerClickHandler //, IDropHandler
         if (cell.armorThickness < 5 && cell.inventory.TryBuyCellUpgrade(cell.armorThickness+1))
         {
             cell.armorThickness += 1;
+            cell.UpgradeCellSprite(cell.armorThickness);
             info.type.text = "MaxHp = " + cell.maxHp + "\ncurrentHp = " + cell.currentHp + "\narmorThickness = " + cell.armorThickness;
             info.characteristics.text = "1 Armor = -10% damage, Max -50%\nUpgrade armor cost " + (cell.armorThickness + 1) + " TitanBox";
         }
