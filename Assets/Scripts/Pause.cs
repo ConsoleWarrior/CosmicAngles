@@ -7,7 +7,7 @@ public class Pause : MonoBehaviour
     public Transform player;
     public GameObject InventarPanel;
     //public GameObject[] cosmoPortPanels;
-    public GameObject[] cosmoPorts;
+    public Transform cosmoPorts;
 
 
     void Update()
@@ -28,10 +28,10 @@ public class Pause : MonoBehaviour
         //{
         //    i.SetActive(false);
         //}
-        foreach (var port in cosmoPorts)
+        for (int i = 0;i<cosmoPorts.childCount;i++)
         {
-            port.GetComponent<Cosmoport>().panel.SetActive(false);
-            port.GetComponent<Cosmoport>().ColliderActivate();
+            cosmoPorts.GetChild(i).GetComponent<Cosmoport>().panel.SetActive(false);
+            cosmoPorts.GetChild(i).GetComponent<Cosmoport>().ColliderActivate();
         }
         Time.timeScale = 1f;
     }

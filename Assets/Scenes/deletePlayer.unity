@@ -8987,11 +8987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   InventarPanel: {fileID: 1087952789}
-  cosmoPorts:
-  - {fileID: 445200546}
-  - {fileID: 1423842515}
-  - {fileID: 767958758}
-  - {fileID: 1259035484}
+  cosmoPorts: {fileID: 1171994394}
 --- !u!114 &1022071826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14673,7 +14669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   InventarPanel: {fileID: 0}
-  cosmoPorts: []
+  cosmoPorts: {fileID: 0}
 --- !u!114 &1689122225
 MonoBehaviour:
   m_ObjectHideFlags: 0
