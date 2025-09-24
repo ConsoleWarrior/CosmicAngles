@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Pool;
 
 
-public class EnemyMommy : Enemy
+public class EnemyDaddy : Enemy
 {
     private bool fireFlag = false;
     //[SerializeField] GameObject bulletPrefab;
@@ -25,8 +25,8 @@ public class EnemyMommy : Enemy
         target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
         audioManager.a.volume = 0.5f;
         var managerObj = GameObject.Find("PoolManager").GetComponent<PoolManager>();
-        gunBulletPool = managerObj.mommyBulletPool;
-        enemyPool = managerObj.mommyPool;
+        gunBulletPool = managerObj.daddyBulletPool;
+        enemyPool = managerObj.daddyPool;
 
     }
     public override void Atack()
@@ -57,7 +57,7 @@ public class EnemyMommy : Enemy
             bullet.transform.GetComponent<CircleCollider2D>().enabled = true;
 
             //bullet.transform.localScale = new Vector3(0.5f, 0.5f, 1);
-            var blt = bullet.GetComponent<MommyRocket>();
+            var blt = bullet.GetComponent<DaddyRocket>();
             blt.SetParameters(damage);
             blt.gunBulletPool = gunBulletPool;
             blt.ReturnToPool(3.5f);
@@ -73,33 +73,33 @@ public class EnemyMommy : Enemy
     {
         fireFlag = false;
 
-        damage = 30f;
-        maxHp = 175;
-        currentHp = 175;
-        transform.localScale = new Vector3(0.5f, 0.5f, 1);
+        damage = 29f;
+        maxHp = 400;
+        currentHp = 400;
+        transform.localScale = new Vector3(0.6f, 0.6f, 1);
         reloadTime = 3f;
-        dropScrapCount = 6;
+        dropScrapCount = 12;
     }
     public override void Level1()
     {
         fireFlag = false;
 
-        damage = 40f;
-        maxHp = 225;
-        currentHp = 225;
-        transform.localScale = new Vector3(0.7f, 0.7f, 1);
+        damage = 38f;
+        maxHp = 550;
+        currentHp = 550;
+        transform.localScale = new Vector3(0.8f, 0.8f, 1);
         reloadTime = 2.8f;
-        dropScrapCount = 8;
+        dropScrapCount = 14;
     }
     public override void Level2()
     {
         fireFlag = false;
 
-        damage = 50f;
-        maxHp = 275;
-        currentHp = 275;
-        transform.localScale = new Vector3(0.9f, 0.9f, 1);
+        damage = 47f;
+        maxHp = 700;
+        currentHp = 700;
+        transform.localScale = new Vector3(1f, 1f, 1);
         reloadTime = 2.6f;
-        dropScrapCount = 10;
+        dropScrapCount = 16;
     }
 }

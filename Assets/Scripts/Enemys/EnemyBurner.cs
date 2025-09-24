@@ -70,7 +70,7 @@ public class EnemyBurner : Enemy
     {
         fireFlag = false;
 
-        damage = 1.5f;
+        damage = 2f;
         maxHp = 150;
         currentHp = 150;
         transform.localScale = new Vector3(0.5f, 0.5f, 1);
@@ -81,7 +81,7 @@ public class EnemyBurner : Enemy
     {
         fireFlag = false;
 
-        damage = 2f;
+        damage = 2.5f;
         maxHp = 200;
         currentHp = 200;
         transform.localScale = new Vector3(0.7f, 0.7f, 1);
@@ -92,7 +92,7 @@ public class EnemyBurner : Enemy
     {
         fireFlag = false;
 
-        damage = 2.5f;
+        damage = 3f;
         maxHp = 250;
         currentHp = 250;
         transform.localScale = new Vector3(0.9f, 0.9f, 1);

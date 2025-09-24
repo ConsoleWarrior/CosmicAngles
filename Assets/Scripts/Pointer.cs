@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Pointer : MonoBehaviour
 {
-    [SerializeField] List<Transform> cosmoports;
+    //[SerializeField] List<Transform> cosmoports;
+    [SerializeField] Transform ports;
     Transform currentCosmoport;
     // Start is called before the first frame update
     //void Start()
@@ -12,7 +14,7 @@ public class Pointer : MonoBehaviour
     //}
     private void Start()
     {
-        currentCosmoport = cosmoports[0];
+        currentCosmoport = ports.GetChild(0);
     }
     void Update()
     {
@@ -22,13 +24,15 @@ public class Pointer : MonoBehaviour
     }
     public void SetCurrentCosmoport(int number)
     {
-        currentCosmoport = cosmoports[number];
+        currentCosmoport = ports.GetChild(number);
         switch (number)
         {
             case 0: gameObject.GetComponent<SpriteRenderer>().color = Color.white; break;
             case 1: gameObject.GetComponent<SpriteRenderer>().color = Color.green; break;
             case 2: gameObject.GetComponent<SpriteRenderer>().color = Color.blue; break;
             case 3: gameObject.GetComponent<SpriteRenderer>().color = Color.yellow; break;
+            case 4: gameObject.GetComponent<SpriteRenderer>().color = Color.magenta; break;
+            case 5: gameObject.GetComponent<SpriteRenderer>().color = Color.red; break;
 
         }
     }

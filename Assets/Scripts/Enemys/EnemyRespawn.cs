@@ -7,13 +7,7 @@ public class EnemyRespawn : MonoBehaviour
     Transform player;
     int currentSector = 99;
     [SerializeField] Pointer pointer;
-    //void Start()
-    //{
-    //    foreach (var sector in sectors)
-    //    {
-    //        sector.StartRespawnSector();
-    //    }
-    //}
+
     void Update()
     {
         if (player == null) player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -55,8 +49,17 @@ public class EnemyRespawn : MonoBehaviour
         else if (currentSector != 4 && player.position.y > 700 && player.position.y < 900)
         {
             sectors[3].StopRespawnSector();
+            sectors[5].StopRespawnSector();
             sectors[4].StartRespawnSector();
             currentSector = 4;
+            pointer.SetCurrentCosmoport(4);
+
+        }
+        else if (currentSector != 5 && player.position.y > 900 && player.position.y < 1100)
+        {
+            sectors[4].StopRespawnSector();
+            sectors[5].StartRespawnSector();
+            currentSector = 5;
         }
     }
 }

@@ -2,9 +2,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class MommyRocket : Enemy
+public class DaddyRocket : Enemy
 {
-
+    int flag;
     public ObjectPool<GameObject> gunBulletPool;
 
     void Start()
@@ -14,14 +14,14 @@ public class MommyRocket : Enemy
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
         catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         audioManager.a.volume = 0.5f;
     }
     void Update()
     {
-        if (currentHp <= 0 && !animator.GetBool("Destroy"))
+        if (currentHp <= 0)//&& !animator.GetBool("Destroy")
         {
-            animator.SetBool("Destroy", true);
+            //animator.SetBool("Destroy", true);
             audioManager.a.volume = 1;
             audioManager.SoundPlay0();
             transform.GetComponent<CircleCollider2D>().enabled = false;
@@ -60,17 +60,32 @@ public class MommyRocket : Enemy
         currentHp -= damage;
         if (currentHp < 0) currentHp = 0;
     }
-    //void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    //if (other.gameObject.CompareTag("Scrap"))
-    //    //{
-    //    //    float value = other.gameObject.GetComponent<Scrap>().value;
-    //    //    xp += value;
-    //    //}
-    //    if (other.gameObject.CompareTag("Cell"))
-    //    {
-    //        other.gameObject.GetComponent<Cell>().TakeDamage(currentHp);
-    //        currentHp = 0;
-    //    }
-    //}
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Cell"))
+        {
+            if (flag == 0)
+            {
+                flag++;
+                var cell = other.gameObject.GetComponent<Cell>();
+                cell.TakeDamage(currentHp);
+                StopAllCoroutines();
+                //sprite.localScale = new Vector2(0.8f,0.8f);
+                gameObject.GetComponent<ParticleSystem>().Play();
+                gameObject.GetComponent<CircleCollider2D>().radius = 0.8f;
+                Invoke("ResetAndReturn", 0.2f);
+            }
+            else
+            {
+                var cell = other.gameObject.GetComponent<Cell>();
+                cell.TakeDamage(currentHp);
+            }
+        }
+    }
+    void ResetAndReturn()
+    {
+        gameObject.GetComponent<CircleCollider2D>().radius = 0.25f;
+        flag = 0;
+        gunBulletPool.Release(this.gameObject);
+    }
 }

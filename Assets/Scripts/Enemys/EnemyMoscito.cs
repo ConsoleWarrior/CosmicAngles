@@ -58,7 +58,7 @@ public class EnemyMoscito : Enemy
     public override void Level0()
     {
         fireFlag = false;
-        gun.damage = 2f;
+        gun.damage = 2.5f;
         maxHp = 220;
         currentHp = 220;
         transform.localScale = new Vector3(0.5f, 0.5f, 1);
@@ -67,18 +67,18 @@ public class EnemyMoscito : Enemy
     public override void Level1()
     {
         fireFlag = false;
-        gun.damage = 2.5f;
-        maxHp = 260;
-        currentHp = 260;
+        gun.damage = 3f;
+        maxHp = 280;
+        currentHp = 280;
         transform.localScale = new Vector3(0.7f, 0.7f, 1);
         dropScrapCount = 10;
     }
     public override void Level2()
     {
         fireFlag = false;
-        gun.damage = 3f;
-        maxHp = 320;
-        currentHp = 320;
+        gun.damage = 3.5f;
+        maxHp = 350;
+        currentHp = 350;
         transform.localScale = new Vector3(0.9f, 0.9f, 1);
         dropScrapCount = 12;
     }

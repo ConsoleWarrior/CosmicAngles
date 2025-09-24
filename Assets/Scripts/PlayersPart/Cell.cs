@@ -124,8 +124,8 @@ public class Cell : MonoBehaviour
     }
     public void UpgradeCellSprite(int number)
     {
+        if (player == null) player = transform.parent.GetComponent<Player>();
         transform.GetComponent<SpriteRenderer>().sprite = player.armorSprites[number];
-
     }
     public float CalculateRepairHPCost()
     {

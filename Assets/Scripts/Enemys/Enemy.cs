@@ -54,7 +54,6 @@ public class Enemy : MonoBehaviour
             //transform.GetComponent<CircleCollider2D>().enabled = false;
             CalculateAndCallDrop();
             Invoke("Destroying", 0.4f);
-            //Destroy(this.gameObject, 0.5f);
         }
     }
     protected void Destroying()
@@ -84,13 +83,6 @@ public class Enemy : MonoBehaviour
     public virtual void Level2()
     {
     }
-
-    //public virtual void SetParameters(float damage)//для снаряда мамки
-    //{
-    //    maxHp = damage;
-    //    currentHp = damage;
-    //    speed = 5;
-    //}
     public virtual void Walking()
     {
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
@@ -113,11 +105,6 @@ public class Enemy : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        //if (other.gameObject.CompareTag("Scrap"))
-        //{
-        //    float value = other.gameObject.GetComponent<Scrap>().value;
-        //    xp += value;
-        //}
         if (other.gameObject.CompareTag("Cell"))
         {
             other.gameObject.GetComponent<Cell>().TakeDamage(currentHp);
@@ -135,19 +122,13 @@ public class Enemy : MonoBehaviour
                     {
                         var scrap = Instantiate(dropPrefabs[i], new(transform.position.x + Random.Range(-1, 2), transform.position.y + Random.Range(-1, 2)), Quaternion.identity);
                         scrap.GetComponent<Scrap>().value = Random.Range(dropScrapCount / 2, dropScrapCount * 2);
-                        //scrap.transform.localScale = new Vector3(0.6f, 0.6f, 1);
                     }
                     else Instantiate(dropPrefabs[i], new(transform.position.x + Random.Range(-1, 2), transform.position.y + Random.Range(-1, 2)), Quaternion.identity);
-
                 }
             }
-        //GameObject c = (GameObject)Instantiate(Resources.Load("Scrap", typeof(GameObject)), transform.position, Quaternion.identity);
-        //c.GetComponent<Scrap>().value = Random.Range(dropScrapCount / 2, dropScrapCount * 2);
-        //c.transform.localScale = new Vector3(0.6f, 0.6f, 1);
     }
     public virtual void ResetEnemy()
     {
-        //TakeDamage(-maxHp);
         var rand = Random.Range(0, 3);
         if (rand == 0) Level0();
         else if (rand == 1) Level1();

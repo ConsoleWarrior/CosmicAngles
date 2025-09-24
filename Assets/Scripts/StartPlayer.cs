@@ -13,6 +13,7 @@ public class StartPlayer : MonoBehaviour
     public GameObject buyButton;
     public GameObject buyButton2;
     public GameObject buyButton3;
+    public GameObject buyButton4;
     int shipLevel = 0;
 
     void Start()
@@ -31,7 +32,11 @@ public class StartPlayer : MonoBehaviour
         for (int i = 0; i < player.transform.childCount; i++)
         {
             if (player.transform.GetChild(i).GetComponent<Cell>() != null)
-                newPlayer.transform.GetChild(i).GetComponent<Cell>().armorThickness = player.transform.GetChild(i).GetComponent<Cell>().armorThickness;
+            {
+                var cell = newPlayer.transform.GetChild(i).GetComponent<Cell>();
+                cell.armorThickness = player.transform.GetChild(i).GetComponent<Cell>().armorThickness;
+                cell.UpgradeCellSprite(cell.armorThickness);
+            }
         }
     }
     public void CallNewShipPrefab1()
@@ -159,6 +164,45 @@ public class StartPlayer : MonoBehaviour
         else
         {
             Debug.Log("нет 100к или не куплен предыдущий апгрейд");
+        }
+    }
+    public void CallNewShipPrefab4()
+    {
+        if (inventory.kredit >= 200000 && shipLevel == 3)
+        {
+            inventory.UpdateKredit(-200000);
+            player.isDestroing = true;
+            var obj = Instantiate(playerPrefabs[4], gameObject.transform);
+            TransferPlayerData(obj);
+            Destroy(player.gameObject);
+
+            player = obj.GetComponent<Player>();
+            player.playerCamera = playerCamera;
+            playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
+            player.gameOver = gameOver;
+            player.audioManager = audioManager;
+            repairBlok.RefreshCells(player);
+
+            for (int i = 0; i < shipGrid.childCount; i++)
+            {
+                if (shipGrid.GetChild(i).name == "Slot15")
+                {
+                    shipGrid.GetChild(i).gameObject.SetActive(true);
+                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(10).GetComponent<Cell>();
+                }
+
+                if (shipGrid.GetChild(i).name == "Slot16")
+                {
+                    shipGrid.GetChild(i).gameObject.SetActive(true);
+                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(11).GetComponent<Cell>();
+                }
+            }
+            shipLevel = 4;
+            buyButton4.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("нет 200к или не куплен предыдущий апгрейд");
         }
     }
 }
