@@ -71,9 +71,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b5f5a9e8b9ec94a928267023da5537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: AccelerationModule
   type: CoreModule
-  price: 5000
+  price: 7500
   group: {fileID: 0}
   itemPrefab: {fileID: 8127295506779921910, guid: 7740f5a08532c7b448225aef2a380dd9, type: 3}
   itemColor: {r: 0, g: 0, b: 0, a: 1}

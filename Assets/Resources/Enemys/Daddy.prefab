@@ -57,8 +57,11 @@ MonoBehaviour:
   xp: 0
   speed: 2.4
   dropScrapCount: 12
-  dropPrefabs: []
-  dropChance: 
+  dropPrefabs:
+  - {fileID: 3617159770173728927, guid: 4e48d92f944fa5340a3d4e7f7aefa36e, type: 3}
+  - {fileID: 86772473382699015, guid: d67e0626c182f57499577eb05a039f7b, type: 3}
+  - {fileID: 4567426832418474282, guid: 5603658db39494c43be56b2a030cd52a, type: 3}
+  dropChance: e80300006400000028000000
   fireDistance: 9
   atackDistance: 12
   sprite: {fileID: 0}
