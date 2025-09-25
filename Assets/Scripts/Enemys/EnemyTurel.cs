@@ -17,21 +17,19 @@ public class EnemyTurel : Enemy
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         target = transform.position;
         audioManager.a.volume = 0.3f;
-        //gunBulletPool = GameObject.Find("PoolManager").GetComponent<PoolManager>().flyBulletPool;
-        Invoke("Initialize",0.5f);
+        //Invoke("Initialize",0.5f);
         StartCoroutine(RepairTic());
-
+        Initialize();
     }
     void Initialize()
     {
-        //gunBulletPool = GameObject.Find("PoolManager").GetComponent<PoolManager>().flyBulletPool;
-        //if (gunBulletPool == null) Debug.Log("gunBulletPool == null");
         var managerObj = GameObject.Find("PoolManager").GetComponent<PoolManager>();
         gunBulletPool = managerObj.flyBulletPool;
         enemyPool = managerObj.turelPool;
+        animPool = managerObj.destroyAnimPool;
     }
     void FixedUpdate()
     {

@@ -14,18 +14,25 @@ public class MommyRocket : Enemy
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
         catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
-        animator = GetComponent<Animator>();
+                                                    //animator = GetComponent<Animator>();
+        var managerObj = GameObject.Find("PoolManager").GetComponent<PoolManager>();
+        animPool = managerObj.destroyAnimPool;
         audioManager.a.volume = 0.5f;
     }
     void Update()
     {
-        if (currentHp <= 0 && !animator.GetBool("Destroy"))
+        if (currentHp <= 0)// && !animator.GetBool("Destroy")
         {
-            animator.SetBool("Destroy", true);
-            audioManager.a.volume = 1;
-            audioManager.SoundPlay0();
-            transform.GetComponent<CircleCollider2D>().enabled = false;
-            ReturnToPool(0.3f);
+            //animator.SetBool("Destroy", true);
+            //audioManager.a.volume = 1;
+            //audioManager.SoundPlay0();
+            //transform.GetComponent<CircleCollider2D>().enabled = false;
+            StopAllCoroutines();
+            var obj = animPool.Get();
+            obj.transform.position = transform.position;
+            obj.GetComponent<AnimDestroy>().animPool = animPool;
+            gunBulletPool.Release(this.gameObject);
+            //ReturnToPool(0.3f);
         }
     }
     void FixedUpdate()
@@ -49,7 +56,7 @@ public class MommyRocket : Enemy
     {
         yield return new WaitForSeconds(time);
         gunBulletPool.Release(this.gameObject);
-        Debug.Log(gameObject.name + " = " + gunBulletPool.CountAll);
+        //Debug.Log(gameObject.name + " = " + gunBulletPool.CountAll);
     }
     public void SetParameters(float damage)//для снаряда мамки
     {

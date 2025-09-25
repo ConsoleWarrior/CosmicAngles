@@ -38,6 +38,9 @@ public class PoolManager : MonoBehaviour
     public ObjectPool<GameObject> daddyPool;
     [SerializeField] GameObject daddyPrefab;
 
+    public ObjectPool<GameObject> destroyAnimPool;
+    [SerializeField] GameObject DestroyAnimPrefab;
+
 
     void Awake()
     {
@@ -59,6 +62,8 @@ public class PoolManager : MonoBehaviour
         mommyPool = new ObjectPool<GameObject>(createFunc: () => { var obj = Instantiate(mommyPrefab); obj.transform.SetParent(transform); obj.SetActive(false); return obj; }, actionOnGet: (obj) => obj.SetActive(true), actionOnRelease: (obj) => obj.SetActive(false), actionOnDestroy: (obj) => Destroy(obj), collectionCheck: false, defaultCapacity: 256, maxSize: 512);
         turelPool = new ObjectPool<GameObject>(createFunc: () => { var obj = Instantiate(turelPrefab); obj.transform.SetParent(transform); obj.SetActive(false); return obj; }, actionOnGet: (obj) => obj.SetActive(true), actionOnRelease: (obj) => obj.SetActive(false), actionOnDestroy: (obj) => Destroy(obj), collectionCheck: false, defaultCapacity: 256, maxSize: 512);
         daddyPool = new ObjectPool<GameObject>(createFunc: () => { var obj = Instantiate(daddyPrefab); obj.transform.SetParent(transform); obj.SetActive(false); return obj; }, actionOnGet: (obj) => obj.SetActive(true), actionOnRelease: (obj) => obj.SetActive(false), actionOnDestroy: (obj) => Destroy(obj), collectionCheck: false, defaultCapacity: 256, maxSize: 512);
+
+        destroyAnimPool = new ObjectPool<GameObject>(createFunc: () => { var obj = Instantiate(DestroyAnimPrefab); obj.transform.SetParent(transform); obj.SetActive(false); return obj; }, actionOnGet: (obj) => obj.SetActive(true), actionOnRelease: (obj) => obj.SetActive(false), actionOnDestroy: (obj) => Destroy(obj), collectionCheck: false, defaultCapacity: 256, maxSize: 512);
 
     }
 

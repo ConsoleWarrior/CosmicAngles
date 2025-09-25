@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3747964335993007605}
   - component: {fileID: 8642623551257587165}
   - component: {fileID: 7134681735802011436}
-  - component: {fileID: 4490529607614729776}
   m_Layer: 0
   m_Name: Daddy
   m_TagString: Enemy
@@ -180,27 +179,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &4490529607614729776
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40231074154112848}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fb4ba751e953efb4695108124e85a3c7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1439101182939593852
 PrefabInstance:
   m_ObjectHideFlags: 0

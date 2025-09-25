@@ -191,7 +191,7 @@ MonoBehaviour:
   group: {fileID: 0}
   itemPrefab: {fileID: 86772473382699015, guid: d67e0626c182f57499577eb05a039f7b, type: 3}
   itemColor: {r: 0.8207547, g: 0.6326547, b: 0, a: 1}
-  itemCount: 1
+  itemCount: 300
   tmpTitan: {fileID: 8953884304343495888}
 --- !u!114 &8567736140311145262
 MonoBehaviour:

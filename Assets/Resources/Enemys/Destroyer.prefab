@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3379850310253935022}
   - component: {fileID: 8782539083317430452}
   - component: {fileID: 4356421884465311798}
-  - component: {fileID: 1448500313397406211}
   m_Layer: 0
   m_Name: Destroyer
   m_TagString: Enemy
@@ -188,27 +187,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &1448500313397406211
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6785384662722177404}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 67d7fcb7cf1e45044b7753aa54bd7fca, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1744749186075341463
 PrefabInstance:
   m_ObjectHideFlags: 0

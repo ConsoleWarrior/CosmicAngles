@@ -16,16 +16,24 @@ public class DaddyRocket : Enemy
         catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
         //animator = GetComponent<Animator>();
         audioManager.a.volume = 0.5f;
+        var managerObj = GameObject.Find("PoolManager").GetComponent<PoolManager>();
+        animPool = managerObj.destroyAnimPool;
+        //animPool = managerObj.destroyAnimPool;
     }
     void Update()
     {
         if (currentHp <= 0)//&& !animator.GetBool("Destroy")
         {
             //animator.SetBool("Destroy", true);
-            audioManager.a.volume = 1;
-            audioManager.SoundPlay0();
-            transform.GetComponent<CircleCollider2D>().enabled = false;
-            ReturnToPool(0.3f);
+            //audioManager.a.volume = 1;
+            //audioManager.SoundPlay0();
+            //transform.GetComponent<CircleCollider2D>().enabled = false;
+            //ReturnToPool(0.3f);
+            StopAllCoroutines();
+            var obj = animPool.Get();
+            obj.transform.position = transform.position;
+            obj.GetComponent<AnimDestroy>().animPool = animPool;
+            ResetAndReturn();
         }
     }
     void FixedUpdate()
@@ -33,7 +41,6 @@ public class DaddyRocket : Enemy
         if (player == null) player = GameObject.FindGameObjectWithTag("Player").transform;
         Atack();
     }
-
     public override void Atack()
     {
         transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
@@ -49,7 +56,7 @@ public class DaddyRocket : Enemy
     {
         yield return new WaitForSeconds(time);
         gunBulletPool.Release(this.gameObject);
-        Debug.Log(gameObject.name + " = " + gunBulletPool.CountAll);
+        //Debug.Log(gameObject.name + " = " + gunBulletPool.CountAll);
     }
     public void SetParameters(float damage)//для снаряда мамки
     {
