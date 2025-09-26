@@ -118,7 +118,7 @@ public class Cell : MonoBehaviour
         transform.GetComponent<SpriteRenderer>().color = Color.red;
         Invoke("ReturnColor", 0.12f);
     }
-    void ReturnColor()
+    public void ReturnColor()
     {
         transform.GetComponent<SpriteRenderer>().color = new Color(1 - currentHp / maxHp, 0.5f, 0.5f, 1);
     }
@@ -134,7 +134,7 @@ public class Cell : MonoBehaviour
             x += slot.GetComponent<UISlot>().currentItem.price / 100;
         return x;
     }
-    public void Repair()
+    public void FullRepair()
     {
         currentHp = maxHp;
         ReturnColor();
@@ -152,6 +152,6 @@ public class Cell : MonoBehaviour
     {
         currentHp += bonus;
         maxHp += bonus;
-        Debug.Log("updateArmor");
+        //Debug.Log("updateArmor");
     }
 }

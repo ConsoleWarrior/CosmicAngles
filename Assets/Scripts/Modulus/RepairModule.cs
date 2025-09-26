@@ -1,10 +1,13 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RepairModule : Modulus
 {
-    public float bonus;
+    [SerializeField] float repairValue;
+    [SerializeField] float repairTime;
+
     Transform player;
     List<Cell> cells = new();
 
@@ -21,21 +24,19 @@ public class RepairModule : Modulus
     public void ConnectToShip()
     {
         RememberCell();
-        foreach (Cell cell in cells)
-        {
-            cell.UpdateArmor(bonus);
-            //Debug.Log("+updategood+");
-        }
+        StartCoroutine(AvtoRepairCoro());
     }
     public void DisconnectFromShip()
     {
-        RememberCell();
-        foreach (Cell cell in cells)
-        {
-            //cell.UpdateArmor(-(bonus));
-            //Debug.Log("-updategood-");
-            StopAllCoroutines();
-        }
+        //RememberCell();
+        //foreach (Cell cell in cells)
+        //{
+        //    //cell.UpdateArmor(-(bonus));
+        //    //Debug.Log("-updategood-");
+        //}
+        StopAllCoroutines();
+        Debug.Log("StopAllCoroutines");
+
     }
     void RememberCell()
     {
@@ -55,9 +56,26 @@ public class RepairModule : Modulus
         catch (NullReferenceException) { Debug.Log("поймал нуль эксепшн, все ок"); }
 
     }
-    
+    IEnumerator AvtoRepairCoro()
+    {
+        while (true)
+        {
+            foreach (Cell cell in cells)
+            {
+                if (!cell.isDestroyed)
+                {
+                    cell.currentHp += repairValue;
+                    if (cell.currentHp > cell.maxHp)
+                        cell.currentHp = cell.maxHp;
+                    cell.ReturnColor();
+                }
+                Debug.Log("cicle");
+            }
+            yield return new WaitForSeconds(repairTime);
+        }
+    }
     public override string GetCharacter()
     {
-        return "Repair all ship in 1 sec = " + bonus;
+        return "Repair " + repairValue + "hp every " + repairTime + "sec";
     }
 }

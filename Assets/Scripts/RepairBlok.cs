@@ -65,7 +65,7 @@ public class RepairBlok : MonoBehaviour
     {
         foreach (var cell in cells)
         {
-            cell.Repair();
+            cell.FullRepair();
         }
     }
 }
