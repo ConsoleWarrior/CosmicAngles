@@ -3134,7 +3134,7 @@ PrefabInstance:
     - target: {fileID: 7304834856392182819, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 07b5ad6c0cb8a94458fb67f55b423d4a, type: 3}
+      objectReference: {fileID: 21300000, guid: 14aa76bfbf9ceb74d89b053df8179776, type: 3}
     - target: {fileID: 7441181693154106674, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: UIItemPrefab
       value: 
@@ -8788,6 +8788,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b0f5539183dd8c4ab9bd097df08199c, type: 3}
+--- !u!1 &982415572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2081978926884025420, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
+  m_PrefabInstance: {fileID: 1089384348}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &984811623 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 805302392373475142, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
@@ -9227,6 +9232,7 @@ MonoBehaviour:
   - {fileID: 7591464053969863425, guid: 992bd7e01b7ff8b4d8a81e751d6add4f, type: 3}
   - {fileID: 7638246204840683375, guid: bcbc832bf8e61d44c82cd077a685c3bf, type: 3}
   - {fileID: 7237678536637947187, guid: 9bb12e2cd4ef6f24e96a442bcf945a08, type: 3}
+  - {fileID: 3340479387307534687, guid: d35d8503ccfb18e45990625e5c2ff6ab, type: 3}
   playerCamera: {fileID: 519420031}
   gameOver: {fileID: 1195064416}
   audioManager: {fileID: 514132897}
@@ -9236,6 +9242,7 @@ MonoBehaviour:
   buyButton2: {fileID: 71366394}
   buyButton3: {fileID: 1641387248}
   buyButton4: {fileID: 1240026266}
+  buyButton5: {fileID: 982415572}
 --- !u!4 &1005263310
 Transform:
   m_ObjectHideFlags: 0
@@ -9964,7 +9971,7 @@ PrefabInstance:
       objectReference: {fileID: 1005263309}
     - target: {fileID: 702302026399133746, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CallNewShipPrefab4
+      value: CallNewShipPrefab5
       objectReference: {fileID: 0}
     - target: {fileID: 1486531352836676289, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: UIItemPrefab
@@ -10089,7 +10096,7 @@ PrefabInstance:
     - target: {fileID: 7304834856392182819, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c89e2809c613a884b8b08b8cf95228de, type: 3}
+      objectReference: {fileID: 21300000, guid: a1775ba2a7f9c214b9532e51152847d1, type: 3}
     - target: {fileID: 7441181693154106674, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: UIItemPrefab
       value: 
@@ -10958,7 +10965,7 @@ PrefabInstance:
     - target: {fileID: 7304834856392182819, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c89e2809c613a884b8b08b8cf95228de, type: 3}
+      objectReference: {fileID: 21300000, guid: cdf843858d126b048a5505a3c99c90c9, type: 3}
     - target: {fileID: 7441181693154106674, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: UIItemPrefab
       value: 
@@ -13304,7 +13311,7 @@ PrefabInstance:
     - target: {fileID: 7304834856392182819, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 25e48cdad7954e146bfd122949141036, type: 3}
+      objectReference: {fileID: 21300000, guid: b4a6183c365077247a2a80d2271ca760, type: 3}
     - target: {fileID: 7441181693154106674, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: UIItemPrefab
       value: 
@@ -18121,13 +18128,13 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 797638634}
   - {fileID: 231477721}
+  - {fileID: 2038247160}
   - {fileID: 1220319507}
   - {fileID: 1005263310}
+  - {fileID: 1864523439}
   - {fileID: 148060770}
   - {fileID: 143943256561672561}
   - {fileID: 1134405785}
   - {fileID: 1630570057}
   - {fileID: 492056211}
   - {fileID: 1171994394}
-  - {fileID: 1864523439}
-  - {fileID: 2038247160}

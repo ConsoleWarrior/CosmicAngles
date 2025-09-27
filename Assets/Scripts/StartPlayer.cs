@@ -14,6 +14,7 @@ public class StartPlayer : MonoBehaviour
     public GameObject buyButton2;
     public GameObject buyButton3;
     public GameObject buyButton4;
+    public GameObject buyButton5;
     int shipLevel = 0;
 
     void Start()
@@ -149,13 +150,13 @@ public class StartPlayer : MonoBehaviour
                 if (shipGrid.GetChild(i).name == "Slot13")
                 {
                     shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(10).GetComponent<Cell>();
+                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(13).GetComponent<Cell>();
                 }
 
                 if (shipGrid.GetChild(i).name == "Slot14")
                 {
                     shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(11).GetComponent<Cell>();
+                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(14).GetComponent<Cell>();
                 }
             }
             shipLevel = 3;
@@ -188,17 +189,56 @@ public class StartPlayer : MonoBehaviour
                 if (shipGrid.GetChild(i).name == "Slot15")
                 {
                     shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(10).GetComponent<Cell>();
+                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(15).GetComponent<Cell>();
                 }
 
                 if (shipGrid.GetChild(i).name == "Slot16")
                 {
                     shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(11).GetComponent<Cell>();
+                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(16).GetComponent<Cell>();
                 }
             }
             shipLevel = 4;
             buyButton4.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("нет 200к или не куплен предыдущий апгрейд");
+        }
+    }
+    public void CallNewShipPrefab5()
+    {
+        if (inventory.kredit >= 300000 && shipLevel == 4)
+        {
+            inventory.UpdateKredit(-300000);
+            player.isDestroing = true;
+            var obj = Instantiate(playerPrefabs[5], gameObject.transform);
+            TransferPlayerData(obj);
+            Destroy(player.gameObject);
+
+            player = obj.GetComponent<Player>();
+            player.playerCamera = playerCamera;
+            playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
+            player.gameOver = gameOver;
+            player.audioManager = audioManager;
+            repairBlok.RefreshCells(player);
+
+            for (int i = 0; i < shipGrid.childCount; i++)
+            {
+                if (shipGrid.GetChild(i).name == "Slot17")
+                {
+                    shipGrid.GetChild(i).gameObject.SetActive(true);
+                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(17).GetComponent<Cell>();
+                }
+
+                if (shipGrid.GetChild(i).name == "Slot18")
+                {
+                    shipGrid.GetChild(i).gameObject.SetActive(true);
+                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(18).GetComponent<Cell>();
+                }
+            }
+            shipLevel = 5;
+            buyButton5.SetActive(false);
         }
         else
         {
