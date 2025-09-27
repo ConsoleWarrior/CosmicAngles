@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &276123279121781060
+--- !u!1 &3194726244713909531
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,30 +8,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2158928675226893436}
-  - component: {fileID: 3087271013901261711}
-  - component: {fileID: 7015433554521107885}
-  - component: {fileID: 7611162976054135678}
+  - component: {fileID: 6669224953139141914}
+  - component: {fileID: 19429090011328801}
+  - component: {fileID: 4185712287380018739}
+  - component: {fileID: 3251132750312866489}
   m_Layer: 5
-  m_Name: SplashRocketGunItem
+  m_Name: SplashRocketGunGreenItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &2158928675226893436
+--- !u!224 &6669224953139141914
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276123279121781060}
+  m_GameObject: {fileID: 3194726244713909531}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5545840774370295318}
+  - {fileID: 4164401126265240840}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -39,44 +39,44 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &3087271013901261711
+--- !u!222 &19429090011328801
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276123279121781060}
+  m_GameObject: {fileID: 3194726244713909531}
   m_CullTransparentMesh: 1
---- !u!114 &7015433554521107885
+--- !u!114 &4185712287380018739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276123279121781060}
+  m_GameObject: {fileID: 3194726244713909531}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a526a88139000245959de13db8bbaa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: Gun
-  price: 25000
+  price: 30000
   group: {fileID: 0}
-  itemPrefab: {fileID: 94014597344632202, guid: c6f83da58ee91134db3b3fa81ae9791e, type: 3}
-  itemColor: {r: 0.50980395, g: 0.5058824, b: 0.50980395, a: 1}
---- !u!225 &7611162976054135678
+  itemPrefab: {fileID: 2978453683837915308, guid: 70169d94c032d754cbdfb48613cd3a8f, type: 3}
+  itemColor: {r: 0, g: 0.8773585, b: 0.025262915, a: 1}
+--- !u!225 &3251132750312866489
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276123279121781060}
+  m_GameObject: {fileID: 3194726244713909531}
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1456627861916895036
+--- !u!1 &5983319686959031889
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,9 +84,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5545840774370295318}
-  - component: {fileID: 4213251634495131101}
-  - component: {fileID: 1558386608858799025}
+  - component: {fileID: 4164401126265240840}
+  - component: {fileID: 3672932613770506528}
+  - component: {fileID: 7025246985620619059}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -94,40 +94,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &5545840774370295318
+--- !u!224 &4164401126265240840
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456627861916895036}
+  m_GameObject: {fileID: 5983319686959031889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2158928675226893436}
+  m_Father: {fileID: 6669224953139141914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &4213251634495131101
+--- !u!222 &3672932613770506528
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456627861916895036}
+  m_GameObject: {fileID: 5983319686959031889}
   m_CullTransparentMesh: 1
---- !u!114 &1558386608858799025
+--- !u!114 &7025246985620619059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456627861916895036}
+  m_GameObject: {fileID: 5983319686959031889}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}

@@ -2272,23 +2272,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 7000
+      value: 8000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: speed
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 125
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 7000
+      value: 8000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
-      value: 3000
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[0]
@@ -2303,6 +2315,10 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.data[4]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 7980927053916190505, guid: 5c82bcd33b92c24489e46bebd6b3e5b4, type: 3}
@@ -2314,6 +2330,10 @@ PrefabInstance:
       propertyPath: dropPrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 2658934399757328153, guid: ded180281475eec4dad89104e09f132e, type: 3}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8428247498419137211, guid: 8967cb8f1a99c6a4397d733c836d202b, type: 3}
     - target: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: m_Name
       value: Turel
@@ -2370,6 +2390,8 @@ RectTransform:
   - {fileID: 952549998}
   - {fileID: 2088762473}
   - {fileID: 868899457}
+  - {fileID: 1734965221}
+  - {fileID: 945738439}
   m_Father: {fileID: 1087952790}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4729,23 +4751,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 7000
+      value: 8000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: speed
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 125
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 7000
+      value: 8000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
-      value: 3000
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[0]
@@ -4760,6 +4794,10 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.data[4]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 7980927053916190505, guid: 5c82bcd33b92c24489e46bebd6b3e5b4, type: 3}
@@ -4771,6 +4809,10 @@ PrefabInstance:
       propertyPath: dropPrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 2658934399757328153, guid: ded180281475eec4dad89104e09f132e, type: 3}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8428247498419137211, guid: 8967cb8f1a99c6a4397d733c836d202b, type: 3}
     - target: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: m_Name
       value: Turel (2)
@@ -5672,23 +5714,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 7000
+      value: 8000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: speed
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 125
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 7000
+      value: 8000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
-      value: 3000
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[0]
@@ -5703,6 +5757,10 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.data[4]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 7980927053916190505, guid: 5c82bcd33b92c24489e46bebd6b3e5b4, type: 3}
@@ -5714,6 +5772,10 @@ PrefabInstance:
       propertyPath: dropPrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 2658934399757328153, guid: ded180281475eec4dad89104e09f132e, type: 3}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8428247498419137211, guid: 8967cb8f1a99c6a4397d733c836d202b, type: 3}
     - target: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: m_Name
       value: Turel (3)
@@ -6191,7 +6253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: fireDistance
-      value: 16.5
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
@@ -6199,7 +6261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: atackDistance
-      value: 17
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
@@ -6207,11 +6269,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[0]
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[1]
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[2]
@@ -6620,23 +6682,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 7000
+      value: 8000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: speed
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 125
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 7000
+      value: 8000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
-      value: 3000
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[0]
@@ -6651,6 +6725,10 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.data[4]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 7980927053916190505, guid: 5c82bcd33b92c24489e46bebd6b3e5b4, type: 3}
@@ -6662,6 +6740,10 @@ PrefabInstance:
       propertyPath: dropPrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 2658934399757328153, guid: ded180281475eec4dad89104e09f132e, type: 3}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8428247498419137211, guid: 8967cb8f1a99c6a4397d733c836d202b, type: 3}
     - target: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: m_Name
       value: Turel (9)
@@ -7120,6 +7202,111 @@ MonoBehaviour:
   isFree: 1
   cell: {fileID: 0}
   currentItem: {fileID: 0}
+--- !u!1001 &792954929
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 306779609}
+    m_Modifications:
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -73.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394318993603328795, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_Name
+      value: Slot17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394318993603328795, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5946904007442528903, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: number
+      value: 17
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
 --- !u!1 &797638630
 GameObject:
   m_ObjectHideFlags: 0
@@ -7479,23 +7666,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 7000
+      value: 8000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: speed
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 125
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 7000
+      value: 8000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
-      value: 3000
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[0]
@@ -7510,6 +7709,10 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.data[4]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 7980927053916190505, guid: 5c82bcd33b92c24489e46bebd6b3e5b4, type: 3}
@@ -7521,6 +7724,10 @@ PrefabInstance:
       propertyPath: dropPrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 2658934399757328153, guid: ded180281475eec4dad89104e09f132e, type: 3}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8428247498419137211, guid: 8967cb8f1a99c6a4397d733c836d202b, type: 3}
     - target: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: m_Name
       value: Turel (1)
@@ -8596,7 +8803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: fireDistance
-      value: 16.5
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
@@ -8604,7 +8811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: atackDistance
-      value: 17
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
@@ -8612,11 +8819,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[0]
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[1]
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[2]
@@ -8647,6 +8854,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 805302392373475142, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
   m_PrefabInstance: {fileID: 1896962917}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &945738439 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+  m_PrefabInstance: {fileID: 1273371991}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &952549998 stripped
 RectTransform:
@@ -8879,23 +9091,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 7000
+      value: 8000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: speed
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 125
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 7000
+      value: 8000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
-      value: 3000
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[0]
@@ -8910,6 +9134,10 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.data[4]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 7980927053916190505, guid: 5c82bcd33b92c24489e46bebd6b3e5b4, type: 3}
@@ -8921,6 +9149,10 @@ PrefabInstance:
       propertyPath: dropPrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 2658934399757328153, guid: ded180281475eec4dad89104e09f132e, type: 3}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8428247498419137211, guid: 8967cb8f1a99c6a4397d733c836d202b, type: 3}
     - target: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: m_Name
       value: Turel (4)
@@ -12058,6 +12290,111 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264066098}
   m_CullTransparentMesh: 1
+--- !u!1001 &1273371991
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 306779609}
+    m_Modifications:
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 440
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -73.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394318993603328795, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_Name
+      value: Slot18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394318993603328795, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5946904007442528903, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+      propertyPath: number
+      value: 18
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
 --- !u!1 &1277407566
 GameObject:
   m_ObjectHideFlags: 0
@@ -12459,23 +12796,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 7000
+      value: 8000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: speed
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 125
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 7000
+      value: 8000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
-      value: 3000
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[0]
@@ -12490,6 +12839,10 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.data[4]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 7980927053916190505, guid: 5c82bcd33b92c24489e46bebd6b3e5b4, type: 3}
@@ -12501,6 +12854,10 @@ PrefabInstance:
       propertyPath: dropPrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 2658934399757328153, guid: ded180281475eec4dad89104e09f132e, type: 3}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8428247498419137211, guid: 8967cb8f1a99c6a4397d733c836d202b, type: 3}
     - target: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: m_Name
       value: Turel (8)
@@ -15838,7 +16195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: fireDistance
-      value: 16.5
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
@@ -15846,7 +16203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: atackDistance
-      value: 17
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
@@ -15854,11 +16211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[0]
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[1]
-      value: 0
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[2]
@@ -15991,6 +16348,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+--- !u!224 &1734965221 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+  m_PrefabInstance: {fileID: 792954929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1740254722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17110,23 +17472,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 7000
+      value: 8000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: speed
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 125
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 7000
+      value: 8000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: repairVolume
-      value: 300
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropScrapCount
-      value: 3000
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropChance.Array.data[0]
@@ -17141,6 +17515,10 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropChance.Array.data[4]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: dropPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 7980927053916190505, guid: 5c82bcd33b92c24489e46bebd6b3e5b4, type: 3}
@@ -17152,6 +17530,10 @@ PrefabInstance:
       propertyPath: dropPrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 2658934399757328153, guid: ded180281475eec4dad89104e09f132e, type: 3}
+    - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
+      propertyPath: dropPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8428247498419137211, guid: 8967cb8f1a99c6a4397d733c836d202b, type: 3}
     - target: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: m_Name
       value: Turel (5)

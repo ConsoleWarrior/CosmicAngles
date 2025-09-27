@@ -60,6 +60,7 @@ public class EnemyRespawn : MonoBehaviour
             sectors[4].StopRespawnSector();
             sectors[5].StartRespawnSector();
             currentSector = 5;
+            pointer.SetCurrentCosmoport(5);
         }
     }
 }
