@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SplashRocketGun : Guns
 {
-
+    [SerializeField] Transform mouth;
     void Start()
     {
         audioManager.a.volume = 0.15f;
@@ -54,7 +54,7 @@ public class SplashRocketGun : Guns
 
             var bullet = gunBulletPool.Get();
             //bullet.transform.SetParent(transform);
-            bullet.transform.position = transform.position;
+            bullet.transform.position = mouth.position;
             bullet.transform.rotation = transform.rotation;
             var blt = bullet.GetComponent<SplashBullet>();
             blt.damage = damage;

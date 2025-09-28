@@ -41,8 +41,11 @@ public class MusicManager : MonoBehaviour
     }
     IEnumerator Playing()
     {
-        Do();
-        yield return new WaitForSeconds(5);
+        while (true)
+        {
+            Do();
+            yield return new WaitForSeconds(5);
+        }
     }
     void Do()
     {
