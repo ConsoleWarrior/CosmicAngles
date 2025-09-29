@@ -33,6 +33,7 @@ public class Armor : Modulus
         foreach (Cell cell in cells)
         {
             cell.UpdateArmor(-(bonus));
+            //if (cell.currentHp < 0) cell.currentHp = 1; //вернул как было
             //Debug.Log("-updategood-");
         }
     }
