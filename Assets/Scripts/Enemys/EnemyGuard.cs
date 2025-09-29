@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Pool;
 
 
-public class EnemyTurel : Enemy
+public class EnemyGuard : Enemy
 {
     private bool flag = false;
     //[SerializeField] GameObject bulletPrefab;
@@ -39,7 +39,7 @@ public class EnemyTurel : Enemy
         if (dist != 0 && dist < atackDistance)
             Atack();
         else
-            if(target != transform.position) Walking();
+            if (target != transform.position) Walking();
     }
     public override void Walking()
     {
@@ -69,19 +69,25 @@ public class EnemyTurel : Enemy
     {
         while (dist < fireDistance)
         {
-            audioManager.SoundPlay1();
-            var bullet = gunBulletPool.Get();
-            bullet.transform.position = transform.position;
-            bullet.transform.rotation = transform.rotation;
-            var blt = bullet.GetComponent<Bullet>();
-            blt.damage = damage;
-            blt.gunBulletPool = gunBulletPool;
-            blt.ReturnToPool(5);
-            //GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            bullet.transform.localScale = Vector3.one;
-            bullet.GetComponent<Rigidbody2D>().AddForce((player.position - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse);
-            //bullet.GetComponent<Bullet>().damage = damage;
-            //Destroy(bullet, 2f);
+            for (int i = -20; i < 21; i += 10)
+            {
+                var bullet = gunBulletPool.Get();
+                bullet.transform.position = transform.position;
+                bullet.transform.localScale = Vector3.one;
+
+                Vector2 direction = (player.position - transform.position).normalized;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                bullet.transform.rotation = Quaternion.Euler(0, 0, angle - 90 + i);
+
+                var blt = bullet.GetComponent<Bullet>();
+                blt.gunBulletPool = gunBulletPool;
+                blt.damage = damage;
+                blt.ReturnToPool(5);
+                Quaternion rotation = Quaternion.Euler(0, 0, i);
+                Vector2 newDirection = rotation * direction;
+                bullet.GetComponent<Rigidbody2D>().AddForce(newDirection * bulletSpeed, ForceMode2D.Impulse);
+            }
+            //audioManager.SoundPlay1();
             yield return new WaitForSeconds(reloadTime);
         }
         flag = false;
