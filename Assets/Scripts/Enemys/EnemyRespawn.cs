@@ -58,7 +58,15 @@ public class EnemyRespawn : MonoBehaviour
         else if (currentSector != 5 && player.position.y > 900 && player.position.y < 1100)
         {
             sectors[4].StopRespawnSector();
+            sectors[6].StopRespawnSector();
             sectors[5].StartRespawnSector();
+            currentSector = 5;
+            pointer.SetCurrentCosmoport(5);
+        }
+        else if (currentSector != 6 && player.position.y > 1100 && player.position.y < 1300)
+        {
+            sectors[5].StopRespawnSector();
+            sectors[6].StartRespawnSector();
             currentSector = 5;
             pointer.SetCurrentCosmoport(5);
         }
