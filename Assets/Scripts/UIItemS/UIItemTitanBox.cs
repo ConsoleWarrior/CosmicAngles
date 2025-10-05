@@ -64,6 +64,7 @@ public class UIItemTitanBox : UIItem
                 {
                     slot.isFree = false;
                     slot.currentItem = this;
+                    slot.audioManager.SoundPlay0();
                     ClearOldSlot();
                     Debug.Log("переместили titan");
                 }
@@ -75,6 +76,7 @@ public class UIItemTitanBox : UIItem
             }
             else if (startSlotTransform.GetComponent<UISlot>() != null && (target.GetComponent<CosmoportPanel>() != null || target.GetComponent<UISlotShop>() != null))
             {
+                startSlotTransform.GetComponent<UISlot>().audioManager.SoundPlay1();
                 SellScrap();
                 return;
             }

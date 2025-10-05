@@ -62,6 +62,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 4376097902590376389, guid: c01a994fbcaf85d4d882760fe2804c09, type: 3}
+  audioManager: {fileID: 0}
 --- !u!114 &320547450592841642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +288,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &304277968600306919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +380,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 202441273126468316, guid: 85eb16682fd90c447a078f6f43e4f2bd, type: 3}
+  audioManager: {fileID: 0}
 --- !u!114 &5735674729731540733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,6 +606,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &3206158508672204238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,6 +832,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &9194950038866421150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,6 +1193,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &8069334959811325122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1279,6 +1285,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &5707737852729261640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1504,6 +1511,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &3311064588891311150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1595,6 +1603,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &8856812809681632477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,6 +1695,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 2765639364575908438, guid: 0d690f9012779c64eb8db9ee8c4c38ae, type: 3}
+  audioManager: {fileID: 0}
 --- !u!114 &1801904439490062687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1777,6 +1787,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &7641052809260605547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,6 +1879,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &3420991404038882169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1959,6 +1971,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &8002321031380330272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2144,6 +2157,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &4676825333674371848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2235,6 +2249,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &4128291745285444920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2326,6 +2341,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &2572377421804081974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2417,6 +2433,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &2769731599137980940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2508,6 +2525,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &4638469411167359716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2599,6 +2617,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 1034817657263315820, guid: 4af058f167299bd4ab48841b9f924283, type: 3}
+  audioManager: {fileID: 0}
 --- !u!114 &1204286579307128205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2824,6 +2843,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 375250316590066519, guid: 95268f17f0254c143b37addb2a9867e7, type: 3}
+  audioManager: {fileID: 0}
 --- !u!114 &458826875235267531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3050,6 +3070,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 3667381911792690536, guid: ed23716cc1a93dc43be1fcf76b497a48, type: 3}
+  audioManager: {fileID: 0}
 --- !u!114 &1138109030368755980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3287,6 +3308,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &714075547613858276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3378,6 +3400,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &5253874743189839707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3470,6 +3493,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 2732077583963873387, guid: d4c4eab25d611f54386a4f9a9e4dfcdd, type: 3}
+  audioManager: {fileID: 0}
 --- !u!114 &955173941199793256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3636,6 +3660,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &3126293750290625804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3727,6 +3752,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 4694892665666456890, guid: 27d7b642d36c60f4691e78aaf01fcd8b, type: 3}
+  audioManager: {fileID: 0}
 --- !u!114 &3297639870916507848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3818,6 +3844,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &4235783161560381490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3909,6 +3936,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &4782836688901077413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4000,6 +4028,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &2196451152659697167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4063,6 +4092,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 349643988543287787}
+  - {fileID: 4411146241280758010}
   m_Father: {fileID: 3900751031493830319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4082,6 +4112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563d5496f402e1f41acf7fb9993f7362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 51966261876975878}
 --- !u!222 &3240673478725958372
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4237,6 +4268,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &8171937159350384805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4328,6 +4360,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &3140513331196197590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4419,6 +4452,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &7179727880447680747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4510,6 +4544,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &9211357896661484306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4601,6 +4636,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &8152239400134123997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4692,6 +4728,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &1432002274739050507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4783,6 +4820,7 @@ MonoBehaviour:
   currentItem: {fileID: 0}
   isFree: 1
   UIItemPrefab: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &3839825298606609402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5016,6 +5054,87 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9138835374921552087, guid: ed23716cc1a93dc43be1fcf76b497a48, type: 3}
   m_PrefabInstance: {fileID: 1484036654113058205}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4908234036271616793
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4077960743072593336}
+    m_Modifications:
+    - target: {fileID: 4946381566672173599, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: sound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946381566672173599, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: sound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 889e909f74be1f245bb50e22b351acf0, type: 3}
+    - target: {fileID: 6344218776680865069, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730798503886144483, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730798503886144483, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730798503886144483, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730798503886144483, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730798503886144483, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730798503886144483, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730798503886144483, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730798503886144483, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730798503886144483, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730798503886144483, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+--- !u!114 &51966261876975878 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4946381566672173599, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+  m_PrefabInstance: {fileID: 4908234036271616793}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d361c73be6f2d1048975f9ca4710d102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &4411146241280758010 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8730798503886144483, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+  m_PrefabInstance: {fileID: 4908234036271616793}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5870394972826688140
 PrefabInstance:

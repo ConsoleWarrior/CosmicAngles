@@ -14,6 +14,7 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
     protected Inventory inventory;
     public GameObject itemPrefab;
     [SerializeField] Color itemColor;
+    [SerializeField] AudioManager audioManager;
 
 
     void Start()
@@ -62,29 +63,31 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
     }
     public virtual void ClearOldSlot()
     {
-        if (startSlotTransform.GetComponent<UISlot>() != null)
+        var slot = startSlotTransform.GetComponent<UISlot>();
+        if (slot != null)
         {
-            startSlotTransform.GetComponent<UISlot>().isFree = true;
-            if (startSlotTransform.GetComponent<UISlot>().cell != null)
+            slot.isFree = true;
+            if (slot.cell != null)
             {
-                if (startSlotTransform.GetComponent<UISlot>().cell.module != null)
+                if (slot.cell.module != null)
                 {
-                    Destroy(startSlotTransform.GetComponent<UISlot>().cell.module.gameObject);
-                    startSlotTransform.GetComponent<UISlot>().currentItem = null;// ошибка ребута пушек
+                    Destroy(slot.cell.module.gameObject);
+                    slot.currentItem = null;// ошибка ребута пушек
                     //Debug.Log("переместили из корабля, старый слот чист");
                 }
                 else
                 {
                     //Debug.Log("переместили из трюма");
-                    startSlotTransform.GetComponent<UISlot>().currentItem = null;
+                    slot.currentItem = null;
                 }
             }
             else
             {
-                //Debug.Log("переместили из трюма");
-                startSlotTransform.GetComponent<UISlot>().currentItem = null;
+                //Debug.Log("переместили из трюма/слот фри итем нуль");
+                slot.currentItem = null;
             }
         }
+
         var startShop = startSlotTransform.GetComponent<UISlotShop>();
         if (startShop != null) //вызываем в магазе новый итем вместо старого
         {

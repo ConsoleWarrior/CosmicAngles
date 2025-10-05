@@ -18,11 +18,11 @@ public class TurelG : MonoBehaviour
 
     void Start()
     {
-        try
-        {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-        }
-        catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
+        //try
+        //{
+        //    player = GameObject.FindGameObjectWithTag("Player").transform;
+        //}
+        //catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
         var managerObj = GameObject.Find("PoolManager").GetComponent<PoolManager>();
         gunBulletPool = managerObj.flyBulletPool;
     }

@@ -15,6 +15,6 @@ public class Bullet : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         gunBulletPool.Release(this.gameObject);
-        Debug.Log(gameObject.name + " = "+ gunBulletPool.CountAll);
+        //Debug.Log(gameObject.name + " = "+ gunBulletPool.CountAll);
     }
 }

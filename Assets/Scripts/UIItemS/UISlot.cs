@@ -10,6 +10,8 @@ public class UISlot : MonoBehaviour, IPointerClickHandler //, IDropHandler
     public Cell cell;
     public UIItem currentItem;
     ItemInfo info;
+    public AudioManager audioManager;
+
 
     void Start()
     {
@@ -18,6 +20,7 @@ public class UISlot : MonoBehaviour, IPointerClickHandler //, IDropHandler
             currentItem = transform.GetComponentInChildren<UIItem>();
             isFree = false;
         }
+        audioManager.a.volume = 0.5f;
     }
     public void OnPointerClick(PointerEventData eventData)//
     {

@@ -36,6 +36,7 @@ public class UIItemGun : UIItem
             {
                 if (point.GetComponent<CosmoportPanel>() != null || point.GetComponent<UISlotShop>() != null)
                 {
+                    startSlotTransform.GetComponent<UISlot>().audioManager.SoundPlay1();
                     SellScrap();
                     return;
                 }
@@ -54,6 +55,7 @@ public class UIItemGun : UIItem
                             cell.module = c.GetComponent<Modulus>();
                             slot.currentItem = this;
                             slot.isFree = false;
+                            slot.audioManager.SoundPlay0();
                             Debug.Log("установили на корабль");
                             ClearOldSlot();
                         }
@@ -68,6 +70,7 @@ public class UIItemGun : UIItem
                     {
                         slot.currentItem = this;
                         slot.isFree = false;
+                        slot.audioManager.SoundPlay0();
                         Debug.Log("переместили в инвентарь");
                         ClearOldSlot();
                     }

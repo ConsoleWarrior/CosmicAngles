@@ -20,18 +20,20 @@ public class UIItemScrap : UIItem
             var target = eventData.pointerEnter.gameObject;
             if (target.GetComponent<CosmoportPanel>() != null || target.GetComponent<UISlotShop>() != null)
             {
+                startSlotTransform.GetComponent<UISlot>().audioManager.SoundPlay1();
                 SellScrap();
                 return;
             }
-            if (target.GetComponent<UISlot>() != null)
+            var slot = target.GetComponent<UISlot>();
+            if (slot != null)
             {
-                if (target.GetComponent<UISlot>().isFree && target.GetComponent<UISlot>().cell == null)
+                if (slot.isFree && slot.cell == null)
                 {
-                    target.GetComponent<UISlot>().isFree = false;
-                    //startSlotTransform.GetComponent<UISlot>().isFree = true;
-                    target.GetComponent<UISlot>().currentItem = this;
+                    slot.isFree = false;
+                    slot.currentItem = this;
+                    slot.audioManager.SoundPlay0();
                     ClearOldSlot();
-                    Debug.Log("переместили scrap");
+                    //Debug.Log("переместили scrap");
                 }
                 else
                 {
@@ -55,11 +57,13 @@ public class UIItemScrap : UIItem
     }
     public override void SellScrap()
     {
-        var slot = startSlotTransform.GetComponent<UISlot>();
-        slot.isFree = true;
-        slot.currentItem = null;
+        //var slot = startSlotTransform.GetComponent<UISlot>();
+        //slot.isFree = true;
+        //if (slot.isFree) Debug.Log("free");
+        //slot.currentItem = null;
+        ClearOldSlot();
         inventory.UpdateKredit(scrapItemCount * 5);
-        Debug.Log("продал металлолом за: "+ scrapItemCount * 5);
+        Debug.Log("продал металлолом за: " + scrapItemCount * 5);
         Destroy(gameObject);
     }
     public override string ReturnCharacter()
