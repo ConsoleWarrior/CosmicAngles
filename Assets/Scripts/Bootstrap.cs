@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bootstrap : MonoBehaviour
 {
     [SerializeField] GameObject inventoryPanel;
-
+    public GameObject trashPanel;
     void Start()
     {
         inventoryPanel.SetActive(true);

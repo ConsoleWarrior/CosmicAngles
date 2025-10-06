@@ -14,12 +14,13 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
     protected Inventory inventory;
     public GameObject itemPrefab;
     [SerializeField] Color itemColor;
-    [SerializeField] AudioManager audioManager;
-
+    [SerializeField] protected GameObject trashPanel;
 
     void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+        trashPanel = GameObject.Find("Bootstrap").GetComponent<Bootstrap>().trashPanel;
+
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
         group = GetComponent<CanvasGroup>();

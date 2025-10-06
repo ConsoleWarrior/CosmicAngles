@@ -62,7 +62,7 @@ public class UIItemGun : UIItem
                         else
                         {
                             ReturnBack();
-                            Debug.Log("в ядро нельзя");
+                            Debug.Log("не модуль ядра");
                             return;
                         }
                     }
@@ -91,9 +91,18 @@ public class UIItemGun : UIItem
         }
         else
         {
-            Debug.Log("eventData или eventData.pointerEnter равно null");
-            ReturnBack();
-            return;
+            if(startSlotTransform.GetComponent<UISlotShop>() != null)
+            {
+                Debug.Log("eventData или eventData.pointerEnter равно null");
+                ReturnBack();
+                return;
+            }
+            else
+            {
+                trashPanel.GetComponent<TrashPanel>().item = gameObject;
+                trashPanel.SetActive(true);
+            }
+
         }
         transform.localPosition = Vector3.zero;
         group.blocksRaycasts = true;
