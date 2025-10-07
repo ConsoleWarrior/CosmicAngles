@@ -12102,7 +12102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631566351723680566, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: m_text
-      value: Buy a new ship for 200,000 kredits
+      value: Buy a new ship for 300,000 kredits
       objectReference: {fileID: 0}
     - target: {fileID: 6015584196488082011, guid: b05f46b572cec2844b15bbbaad084867, type: 3}
       propertyPath: UIItemPrefab

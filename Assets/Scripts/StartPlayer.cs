@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StartPlayer : MonoBehaviour
@@ -21,15 +22,18 @@ public class StartPlayer : MonoBehaviour
     {
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
         var obj = Instantiate(playerPrefabs[0], gameObject.transform);
-        //player = obj.GetComponent<Player>();
-        //player.playerCamera = playerCamera;
-        //playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
-        //player.gameOver = gameOver;
-        //player.audioManager = audioManager;
-        //repairBlok.RefreshCells(player);
         Initialyze(obj);
     }
-    void TransferPlayerData(GameObject newPlayer)
+    void Initialyze(GameObject obj)
+    {
+        player = obj.GetComponent<Player>();
+        player.playerCamera = playerCamera;
+        playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
+        player.gameOver = gameOver;
+        player.audioManager = audioManager;
+        repairBlok.RefreshCells(player);
+    }
+    void TransferShipData(GameObject newPlayer)
     {
         for (int i = 0; i < player.transform.childCount; i++)
         {
@@ -42,64 +46,38 @@ public class StartPlayer : MonoBehaviour
                 cell.slot = player.transform.GetChild(i).GetComponent<Cell>().slot;
                 //cell.slot.GetComponent<UISlot>().currentItem.CallNewModule(cell);
                 //if(cell.slot.GetComponent<UISlot>().currentItem == null) Debug.Log("item нуль");
-
                 //cell.FullRepair();
-
             }
         }
     }
-    void Initialyze(GameObject obj)
+    void AddSlot(int i, int number)
     {
-        player = obj.GetComponent<Player>();
-        player.playerCamera = playerCamera;
-        playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
-        player.gameOver = gameOver;
-        player.audioManager = audioManager;
-        repairBlok.RefreshCells(player);
+        shipGrid.GetChild(i).gameObject.SetActive(true);
+        shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(number).GetComponent<Cell>();
+        player.transform.GetChild(number).GetComponent<Cell>().slot = shipGrid.GetChild(i).GetComponent<UISlot>().gameObject;
+    }
+    void DestroyOldShip()
+    {
+        player.isDestroing = true;
+        player.gameObject.SetActive(false);
+        Destroy(player.gameObject);
     }
     public void CallNewShipPrefab1()
     {
         if (inventory.kredit >= 25000 && shipLevel == 0)
         {
-            inventory.UpdateKredit(-25000);
-            player.isDestroing = true;
             var obj = Instantiate(playerPrefabs[1], gameObject.transform);
-            TransferPlayerData(obj);
-            Destroy(player.gameObject);
-
-            //player = obj.GetComponent<Player>();
-            //player.playerCamera = playerCamera;
-            //playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
-            //player.gameOver = gameOver;
-            //player.audioManager = audioManager;
-            //repairBlok.RefreshCells(player);
+            TransferShipData(obj);
+            DestroyOldShip();
             Initialyze(obj);
             for (int i = 0; i < shipGrid.childCount; i++)
             {
-                if (shipGrid.GetChild(i).name == "Slot7")
-                {
-                    shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(7).GetComponent<Cell>();
-                    player.transform.GetChild(7).GetComponent<Cell>().slot = shipGrid.GetChild(i).GetComponent<UISlot>().gameObject;
-                }
-
-                if (shipGrid.GetChild(i).name == "Slot8")
-                {
-                    shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(8).GetComponent<Cell>();
-                    player.transform.GetChild(8).GetComponent<Cell>().slot = shipGrid.GetChild(i).GetComponent<UISlot>().gameObject;
-
-                }
-                if (shipGrid.GetChild(i).name == "Slot9")
-                {
-                    shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(9).GetComponent<Cell>();
-                    player.transform.GetChild(9).GetComponent<Cell>().slot = shipGrid.GetChild(i).GetComponent<UISlot>().gameObject;
-
-                }
+                if (shipGrid.GetChild(i).name == "Slot7") AddSlot(i, 7);
+                if (shipGrid.GetChild(i).name == "Slot8") AddSlot(i, 8);
+                if (shipGrid.GetChild(i).name == "Slot9") AddSlot(i, 9);
             }
             repairBlok.RepairNowAll();
-
+            inventory.UpdateKredit(-25000);
             shipLevel = 1;
             buyButton.SetActive(false);
         }
@@ -112,38 +90,18 @@ public class StartPlayer : MonoBehaviour
     {
         if (inventory.kredit >= 50000 && shipLevel == 1)
         {
-            inventory.UpdateKredit(-50000);
-            player.isDestroing = true;
             var obj = Instantiate(playerPrefabs[2], gameObject.transform);
-            TransferPlayerData(obj);
-            Destroy(player.gameObject);
-
-            player = obj.GetComponent<Player>();
-            player.playerCamera = playerCamera;
-            playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
-            player.gameOver = gameOver;
-            player.audioManager = audioManager;
-            repairBlok.RefreshCells(player);
-
+            TransferShipData(obj);
+            DestroyOldShip();
+            Initialyze(obj);
             for (int i = 0; i < shipGrid.childCount; i++)
             {
-                if (shipGrid.GetChild(i).name == "Slot10")
-                {
-                    shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(10).GetComponent<Cell>();
-                }
-
-                if (shipGrid.GetChild(i).name == "Slot11")
-                {
-                    shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(11).GetComponent<Cell>();
-                }
-                if (shipGrid.GetChild(i).name == "Slot12")
-                {
-                    shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(12).GetComponent<Cell>();
-                }
+                if (shipGrid.GetChild(i).name == "Slot10") AddSlot(i, 10);
+                if (shipGrid.GetChild(i).name == "Slot11") AddSlot(i, 11);
+                if (shipGrid.GetChild(i).name == "Slot12") AddSlot(i, 12);
             }
+            repairBlok.RepairNowAll();
+            inventory.UpdateKredit(-50000);
             shipLevel = 2;
             buyButton2.SetActive(false);
         }
@@ -156,33 +114,17 @@ public class StartPlayer : MonoBehaviour
     {
         if (inventory.kredit >= 100000 && shipLevel == 2)
         {
-            inventory.UpdateKredit(-100000);
-            player.isDestroing = true;
             var obj = Instantiate(playerPrefabs[3], gameObject.transform);
-            TransferPlayerData(obj);
-            Destroy(player.gameObject);
-
-            player = obj.GetComponent<Player>();
-            player.playerCamera = playerCamera;
-            playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
-            player.gameOver = gameOver;
-            player.audioManager = audioManager;
-            repairBlok.RefreshCells(player);
-
+            TransferShipData(obj);
+            DestroyOldShip();
+            Initialyze(obj);
             for (int i = 0; i < shipGrid.childCount; i++)
             {
-                if (shipGrid.GetChild(i).name == "Slot13")
-                {
-                    shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(13).GetComponent<Cell>();
-                }
-
-                if (shipGrid.GetChild(i).name == "Slot14")
-                {
-                    shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(14).GetComponent<Cell>();
-                }
+                if (shipGrid.GetChild(i).name == "Slot13") AddSlot(i, 13);
+                if (shipGrid.GetChild(i).name == "Slot14") AddSlot(i, 14);
             }
+            repairBlok.RepairNowAll();
+            inventory.UpdateKredit(-100000);
             shipLevel = 3;
             buyButton3.SetActive(false);
         }
@@ -195,33 +137,17 @@ public class StartPlayer : MonoBehaviour
     {
         if (inventory.kredit >= 200000 && shipLevel == 3)
         {
-            inventory.UpdateKredit(-200000);
-            player.isDestroing = true;
             var obj = Instantiate(playerPrefabs[4], gameObject.transform);
-            TransferPlayerData(obj);
-            Destroy(player.gameObject);
-
-            player = obj.GetComponent<Player>();
-            player.playerCamera = playerCamera;
-            playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
-            player.gameOver = gameOver;
-            player.audioManager = audioManager;
-            repairBlok.RefreshCells(player);
-
+            TransferShipData(obj);
+            DestroyOldShip();
+            Initialyze(obj);
             for (int i = 0; i < shipGrid.childCount; i++)
             {
-                if (shipGrid.GetChild(i).name == "Slot15")
-                {
-                    shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(15).GetComponent<Cell>();
-                }
-
-                if (shipGrid.GetChild(i).name == "Slot16")
-                {
-                    shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(16).GetComponent<Cell>();
-                }
+                if (shipGrid.GetChild(i).name == "Slot15") AddSlot(i, 15);
+                if (shipGrid.GetChild(i).name == "Slot16") AddSlot(i, 16);
             }
+            repairBlok.RepairNowAll();
+            inventory.UpdateKredit(-200000);
             shipLevel = 4;
             buyButton4.SetActive(false);
         }
@@ -234,39 +160,23 @@ public class StartPlayer : MonoBehaviour
     {
         if (inventory.kredit >= 300000 && shipLevel == 4)
         {
-            inventory.UpdateKredit(-300000);
-            player.isDestroing = true;
             var obj = Instantiate(playerPrefabs[5], gameObject.transform);
-            TransferPlayerData(obj);
-            Destroy(player.gameObject);
-
-            player = obj.GetComponent<Player>();
-            player.playerCamera = playerCamera;
-            playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
-            player.gameOver = gameOver;
-            player.audioManager = audioManager;
-            repairBlok.RefreshCells(player);
-
+            TransferShipData(obj);
+            DestroyOldShip();
+            Initialyze(obj);
             for (int i = 0; i < shipGrid.childCount; i++)
             {
-                if (shipGrid.GetChild(i).name == "Slot17")
-                {
-                    shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(17).GetComponent<Cell>();
-                }
-
-                if (shipGrid.GetChild(i).name == "Slot18")
-                {
-                    shipGrid.GetChild(i).gameObject.SetActive(true);
-                    shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(18).GetComponent<Cell>();
-                }
+                if (shipGrid.GetChild(i).name == "Slot17") AddSlot(i, 17);
+                if (shipGrid.GetChild(i).name == "Slot18") AddSlot(i, 18);
             }
+            repairBlok.RepairNowAll();
+            inventory.UpdateKredit(-300000);
             shipLevel = 5;
             buyButton5.SetActive(false);
         }
         else
         {
-            Debug.Log("нет 200к или не куплен предыдущий апгрейд");
+            Debug.Log("нет 300к или не куплен предыдущий апгрейд");
         }
     }
 }

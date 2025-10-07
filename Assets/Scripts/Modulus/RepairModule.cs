@@ -70,8 +70,8 @@ public class RepairModule : Modulus
                         cell.currentHp = cell.maxHp;
                     cell.ReturnColor();
                 }
-                Debug.Log("cicle");
             }
+            Debug.Log("repair cicle done");
         }
     }
     public override string GetCharacter()
