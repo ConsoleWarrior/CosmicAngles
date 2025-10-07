@@ -31,7 +31,7 @@ public class Inventory : MonoBehaviour
                     if (((UIItemScrap)inventoryCellUISlot.currentItem).scrapItemCount + scrap.value <= 1000)
                     {
                         ((UIItemScrap)inventoryCellUISlot.currentItem).scrapItemCount += scrap.value;
-                        Debug.Log("collect scrap value : " + scrap.value);
+                        //Debug.Log("collect scrap value : " + scrap.value);
                         return true;
                     }
                 }
@@ -49,7 +49,7 @@ public class Inventory : MonoBehaviour
                 inventoryCellUISlot2.currentItem = newStack.GetComponent<UIItem>();
                 ((UIItemScrap)inventoryCellUISlot2.currentItem).scrapItemCount = scrap.value;
                 inventoryCellUISlot2.isFree = false;
-                Debug.Log("collect scrap in new stack : " + scrap.value);
+                //Debug.Log("collect scrap in new stack : " + scrap.value);
                 return true;
             }
         }
@@ -122,7 +122,7 @@ public class Inventory : MonoBehaviour
                 if (((UIItemTitanBox)inventoryCellUISlot.currentItem).itemCount - cost >= 0)
                 {
                     ((UIItemTitanBox)inventoryCellUISlot.currentItem).itemCount -= cost;
-                    Debug.Log("buy upgrade cost:" + cost);
+                    Debug.Log("buy upgrade for:" + cost);
                     if (((UIItemTitanBox)inventoryCellUISlot.currentItem).itemCount == 0)
                     {
                         Destroy(inventoryCellUISlot.currentItem.gameObject);

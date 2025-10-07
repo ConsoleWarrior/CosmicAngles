@@ -112,9 +112,9 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
     {
         if (cell.module == null)
         {
-            GameObject c = (GameObject)Instantiate(itemPrefab, cell.transform.position, cell.transform.rotation);
-            c.transform.SetParent(cell.transform);
-            cell.module = c.GetComponent<Modulus>();
+            var item = Instantiate(itemPrefab, cell.transform.position, cell.transform.rotation);
+            item.transform.SetParent(cell.transform);
+            cell.module = item.GetComponent<Modulus>();
             //Debug.Log("Итем вызвал новый модуль : " + c.name);
         }
     }

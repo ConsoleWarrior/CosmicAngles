@@ -7,7 +7,7 @@ public class TrashPanel : MonoBehaviour
 
     public void ConfirmDelete()
     {
-        audioManager.SoundPlay0();
+        audioManager.SoundPlay2();
         item.GetComponent<UIItem>().ClearOldSlot();
         Destroy(item);
         gameObject.SetActive(false);

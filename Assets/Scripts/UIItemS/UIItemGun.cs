@@ -22,14 +22,12 @@ public class UIItemGun : UIItem
                     {
                         Debug.Log("не слот для покупки, занят или это ядро");
                         ReturnBack();
-                        return;
                     }
                 }
                 else
                 {
                     Debug.Log("нехватает денег");
                     ReturnBack();
-                    return;
                 }
             }
             else
@@ -63,7 +61,6 @@ public class UIItemGun : UIItem
                         {
                             ReturnBack();
                             Debug.Log("не модуль ядра");
-                            return;
                         }
                     }
                     else
@@ -79,30 +76,28 @@ public class UIItemGun : UIItem
                 {
                     ReturnBack();
                     Debug.Log("слот занят");
-                    return;
                 }
             }
             else
             {
-                Debug.Log("юайслот нуль");
                 ReturnBack();
-                return;
+                Debug.Log("юайслот нуль");
             }
         }
         else
         {
-            if(startSlotTransform.GetComponent<UISlotShop>() != null)
+            if (startSlotTransform.GetComponent<UISlotShop>() != null)
             {
-                Debug.Log("eventData или eventData.pointerEnter равно null");
                 ReturnBack();
-                return;
+                Debug.Log("eventData или eventData.pointerEnter равно null");
             }
             else
             {
                 trashPanel.GetComponent<TrashPanel>().item = gameObject;
                 trashPanel.SetActive(true);
+                ReturnBack();
+                Debug.Log("eventData null, выбросить?");
             }
-
         }
         transform.localPosition = Vector3.zero;
         group.blocksRaycasts = true;

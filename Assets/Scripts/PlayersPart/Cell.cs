@@ -6,12 +6,13 @@ public class Cell : MonoBehaviour
     public float maxHp;
     public float currentHp;
     public int armorThickness;
+    public bool isDestroyed = false;
+
     public Modulus module;
     public Inventory inventory;
     public GameObject slot;
     Transform shipGrid;
     [SerializeField] AudioManager audioManager;
-    public bool isDestroyed = false;
     Player player;
 
 
@@ -21,15 +22,7 @@ public class Cell : MonoBehaviour
         player = transform.parent.GetComponent<Player>();
         shipGrid = GameObject.FindGameObjectWithTag("StartPlayer").GetComponent<StartPlayer>().shipGrid;
         audioManager.a.volume = 0.7f;
-        //try
-        //{
-        //    player = transform.parent.GetComponent<Player>();
-        //    if (player == null) { Debug.Log("player null"); }
-        //}
-        //catch
-        //{
-        //    Debug.Log("не находит player");
-        //}
+
         for (int i = 0; i < shipGrid.childCount; i++)
         {
             if (shipGrid.GetChild(i).GetComponent<UISlot>() != null)
@@ -49,21 +42,19 @@ public class Cell : MonoBehaviour
         if (currentHp <= 0 && !isDestroyed)
         {
             if (module != null) //module.gameObject.SetActive(false);
+            {
+                slot.GetComponent<UISlot>().currentItem.group.blocksRaycasts = false;
                 Destroy(module.gameObject);
+            }
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            //gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-            if (slot != null) slot.SetActive(false);
+            //gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+            //if (slot != null) slot.SetActive(false);
             isDestroyed = true;
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        //if (other.gameObject.CompareTag("Scrap"))
-        //{
-        //    inventory.TryCollectScrap(other.gameObject);
-        //    //audioManager.SoundPlay0();
-        //}
         if (other.gameObject.CompareTag("Scrap"))
         {
             var scrap = other.gameObject.GetComponent<Scrap>();
@@ -138,20 +129,20 @@ public class Cell : MonoBehaviour
     {
         currentHp = maxHp;
         ReturnColor();
-        if (slot != null) slot.SetActive(true);
+        //if (slot != null) slot.SetActive(true);
         //if (module != null) module.gameObject.SetActive(true);
-        if (slot.GetComponent<UISlot>().currentItem != null)
+        var item = slot.GetComponent<UISlot>().currentItem;
+        if (item != null)
         {
-            slot.GetComponent<UISlot>().currentItem.CallNewModule(this);
+            item.group.blocksRaycasts = true;
+            item.CallNewModule(this);
         }
         gameObject.GetComponent<CircleCollider2D>().enabled = true;
-
         isDestroyed = false;
     }
-    public void UpdateArmor(float bonus)
+    public void UpdateCellHp(float bonus)
     {
         currentHp += bonus;
         maxHp += bonus;
-        //Debug.Log("updateArmor");
     }
 }

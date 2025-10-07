@@ -18,7 +18,7 @@ public class RepairModule : Modulus
 
     void OnDestroy()
     {
-        if (player != null && !player.GetComponent<Player>().isDestroing)
+        //if (player != null && !player.GetComponent<Player>().isDestroing)
             DisconnectFromShip();
     }
     public void ConnectToShip()
@@ -35,7 +35,7 @@ public class RepairModule : Modulus
         //    //Debug.Log("-updategood-");
         //}
         StopAllCoroutines();
-        Debug.Log("StopAllCoroutines");
+        Debug.Log("repair disconnect StopAllCoroutines");
 
     }
     void RememberCell()
@@ -53,13 +53,14 @@ public class RepairModule : Modulus
                 }
             }
         }
-        catch (NullReferenceException) { Debug.Log("поймал нуль эксепшн, все ок"); }
+        catch (NullReferenceException) { Debug.Log("поймал нуль эксепшн, все ок?"); }
 
     }
     IEnumerator AvtoRepairCoro()
     {
         while (true)
         {
+            yield return new WaitForSeconds(repairTime);
             foreach (Cell cell in cells)
             {
                 if (!cell.isDestroyed)
@@ -71,7 +72,6 @@ public class RepairModule : Modulus
                 }
                 Debug.Log("cicle");
             }
-            yield return new WaitForSeconds(repairTime);
         }
     }
     public override string GetCharacter()

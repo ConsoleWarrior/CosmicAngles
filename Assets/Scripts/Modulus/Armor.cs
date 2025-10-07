@@ -23,7 +23,7 @@ public class Armor : Modulus
         RememberCell();
         foreach (Cell cell in cells)
         {
-            cell.UpdateArmor(bonus);
+            cell.UpdateCellHp(bonus);
             //Debug.Log("+updategood+");
         }
     }
@@ -32,7 +32,7 @@ public class Armor : Modulus
         RememberCell();
         foreach (Cell cell in cells)
         {
-            cell.UpdateArmor(-(bonus));
+            cell.UpdateCellHp(-(bonus));
             //if (cell.currentHp < 0) cell.currentHp = 1; //вернул как было
             //Debug.Log("-updategood-");
         }

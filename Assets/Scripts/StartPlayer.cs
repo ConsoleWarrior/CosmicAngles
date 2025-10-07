@@ -21,12 +21,13 @@ public class StartPlayer : MonoBehaviour
     {
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
         var obj = Instantiate(playerPrefabs[0], gameObject.transform);
-        player = obj.GetComponent<Player>();
-        player.playerCamera = playerCamera;
-        playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
-        player.gameOver = gameOver;
-        player.audioManager = audioManager;
-        repairBlok.RefreshCells(player);
+        //player = obj.GetComponent<Player>();
+        //player.playerCamera = playerCamera;
+        //playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
+        //player.gameOver = gameOver;
+        //player.audioManager = audioManager;
+        //repairBlok.RefreshCells(player);
+        Initialyze(obj);
     }
     void TransferPlayerData(GameObject newPlayer)
     {
@@ -37,8 +38,24 @@ public class StartPlayer : MonoBehaviour
                 var cell = newPlayer.transform.GetChild(i).GetComponent<Cell>();
                 cell.armorThickness = player.transform.GetChild(i).GetComponent<Cell>().armorThickness;
                 cell.UpgradeCellSprite(cell.armorThickness);
+
+                cell.slot = player.transform.GetChild(i).GetComponent<Cell>().slot;
+                //cell.slot.GetComponent<UISlot>().currentItem.CallNewModule(cell);
+                //if(cell.slot.GetComponent<UISlot>().currentItem == null) Debug.Log("item нуль");
+
+                //cell.FullRepair();
+
             }
         }
+    }
+    void Initialyze(GameObject obj)
+    {
+        player = obj.GetComponent<Player>();
+        player.playerCamera = playerCamera;
+        playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
+        player.gameOver = gameOver;
+        player.audioManager = audioManager;
+        repairBlok.RefreshCells(player);
     }
     public void CallNewShipPrefab1()
     {
@@ -50,32 +67,39 @@ public class StartPlayer : MonoBehaviour
             TransferPlayerData(obj);
             Destroy(player.gameObject);
 
-            player = obj.GetComponent<Player>();
-            player.playerCamera = playerCamera;
-            playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
-            player.gameOver = gameOver;
-            player.audioManager = audioManager;
-            repairBlok.RefreshCells(player);
-
+            //player = obj.GetComponent<Player>();
+            //player.playerCamera = playerCamera;
+            //playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
+            //player.gameOver = gameOver;
+            //player.audioManager = audioManager;
+            //repairBlok.RefreshCells(player);
+            Initialyze(obj);
             for (int i = 0; i < shipGrid.childCount; i++)
             {
                 if (shipGrid.GetChild(i).name == "Slot7")
                 {
                     shipGrid.GetChild(i).gameObject.SetActive(true);
                     shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(7).GetComponent<Cell>();
+                    player.transform.GetChild(7).GetComponent<Cell>().slot = shipGrid.GetChild(i).GetComponent<UISlot>().gameObject;
                 }
 
                 if (shipGrid.GetChild(i).name == "Slot8")
                 {
                     shipGrid.GetChild(i).gameObject.SetActive(true);
                     shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(8).GetComponent<Cell>();
+                    player.transform.GetChild(8).GetComponent<Cell>().slot = shipGrid.GetChild(i).GetComponent<UISlot>().gameObject;
+
                 }
                 if (shipGrid.GetChild(i).name == "Slot9")
                 {
                     shipGrid.GetChild(i).gameObject.SetActive(true);
                     shipGrid.GetChild(i).GetComponent<UISlot>().cell = player.transform.GetChild(9).GetComponent<Cell>();
+                    player.transform.GetChild(9).GetComponent<Cell>().slot = shipGrid.GetChild(i).GetComponent<UISlot>().gameObject;
+
                 }
             }
+            repairBlok.RepairNowAll();
+
             shipLevel = 1;
             buyButton.SetActive(false);
         }

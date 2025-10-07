@@ -15,6 +15,14 @@ public class RebootGuns : MonoBehaviour
         ClearGunS();
         LoadGuns();
     }
+    //public static void DoRebootStatic()
+    //{
+    //    var cells = new List<Cell>();
+    //    var player = GameObject.FindGameObjectWithTag("Player").transform;
+    //    RebootGuns.RememberGunsSetup();
+    //    ClearGunS();
+    //    LoadGuns();
+    //}
     void RememberGunsSetup()
     {
         for (int i = 0; i < player.childCount; i++)

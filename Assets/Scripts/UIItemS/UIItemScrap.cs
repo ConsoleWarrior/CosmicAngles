@@ -33,7 +33,9 @@ public class UIItemScrap : UIItem
                     slot.currentItem = this;
                     slot.audioManager.SoundPlay0();
                     ClearOldSlot();
-                    //Debug.Log("переместили scrap");
+                    transform.localPosition = Vector3.zero;
+                    group.blocksRaycasts = true;
+                    Debug.Log("переместили scrap");
                 }
                 else
                 {
@@ -49,11 +51,13 @@ public class UIItemScrap : UIItem
         }
         else
         {
-            Debug.Log("нет ивент даты");
+            trashPanel.GetComponent<TrashPanel>().item = gameObject;
+            trashPanel.SetActive(true);
+
             ReturnBack();
+            Debug.Log("eventData null, выбросить?");
         }
-        transform.localPosition = Vector3.zero;
-        group.blocksRaycasts = true;
+
     }
     public override void SellScrap()
     {
