@@ -48,6 +48,6 @@ public class RocketBullet : Bullet
         yield return new WaitForSeconds(time);
         flag = false;
         gunBulletPool.Release(this.gameObject);
-        Debug.Log(gameObject.name + " = " + gunBulletPool.CountAll);
+        //Debug.Log(gameObject.name + " = " + gunBulletPool.CountAll);
     }
 }

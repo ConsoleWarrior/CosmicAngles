@@ -22,7 +22,7 @@ public class UISlot : MonoBehaviour, IPointerClickHandler //, IDropHandler
         }
         audioManager.a.volume = 0.5f;
     }
-    public void OnPointerClick(PointerEventData eventData)//
+    public void ChooseCell()
     {
         if (cell != null)
         {
@@ -32,19 +32,25 @@ public class UISlot : MonoBehaviour, IPointerClickHandler //, IDropHandler
             info = obj.GetChild(1).GetComponent<ItemInfo>();
             info.transform.GetChild(2).GetComponent<Button>().onClick.RemoveAllListeners();
             info.gameObject.SetActive(true);
-            info.type.text = "MaxHp = " + cell.maxHp + "\ncurrentHp = " + cell.currentHp + "\narmorThickness = " + cell.armorThickness;
-            info.characteristics.text = "1 Armor = -10% damage, Max -50%\nUpgrade armor cost "+ (cell.armorThickness +1) + " TitanBox";
+            info.type.text = "                  "+cell.name + "\nMaxHp= " + cell.maxHp + ",currentHp= " + cell.currentHp + "\narmorThickness= " + cell.armorThickness;
+            info.characteristics.text = "1 Armor = -10% damage, Max -50%\nNext Upgrade cost " + (cell.armorThickness + 1) + " TitanBox";
             info.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(UpgradeArmor);
+
+            //transform.GetChild(0).GetComponent<Image>().color = Color.green;
         }
+    }
+    public void OnPointerClick(PointerEventData eventData)//
+    {
+        ChooseCell();
     }
     public void UpgradeArmor()
     {
-        if (cell.armorThickness < 5 && cell.inventory.TryBuyCellUpgrade(cell.armorThickness+1))
+        if (cell.armorThickness < 5 && cell.inventory.TryBuyCellUpgrade(cell.armorThickness + 1))
         {
             cell.armorThickness += 1;
             cell.UpgradeCellSprite(cell.armorThickness);
-            info.type.text = "MaxHp = " + cell.maxHp + "\ncurrentHp = " + cell.currentHp + "\narmorThickness = " + cell.armorThickness;
-            info.characteristics.text = "1 Armor = -10% damage, Max -50%\nUpgrade armor cost " + (cell.armorThickness + 1) + " TitanBox";
+            info.type.text = cell.name + "\nMaxHp= " + cell.maxHp + ",currentHp= " + cell.currentHp + "\narmorThickness= " + cell.armorThickness;
+            info.characteristics.text = "1 Armor = -10% damage, Max -50%\nNext Upgrade cost " + (cell.armorThickness + 1) + " TitanBox";
         }
     }
     //public void OnDrop(PointerEventData eventData)
