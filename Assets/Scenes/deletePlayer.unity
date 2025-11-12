@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede006aaf9270074f93112f28f26d2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kredit: 999000
+  kredit: 1500
   tmpKredit: {fileID: 1936960106}
   inventoryGrid: {fileID: 1717957669}
 --- !u!4 &148060770
@@ -20773,6 +20773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2000914553}
+  - component: {fileID: 2000914554}
   m_Layer: 5
   m_Name: Panels
   m_TagString: ItemInfo
@@ -20801,6 +20802,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2000914554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000914552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72c48b24079b494e96198d8dc5f2074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotPanel: {fileID: 2068048002}
+  itemPanel: {fileID: 311034069}
 --- !u!114 &2020121320 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8064499530138638677, guid: b05f46b572cec2844b15bbbaad084867, type: 3}

@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reload: 0.1
-  damage: 3.6
+  damage: 3.4
   audioManager: {fileID: 7560698117225401}
   sprite: {fileID: 5358737661373370561}
   line: {fileID: 7013230394884487513}

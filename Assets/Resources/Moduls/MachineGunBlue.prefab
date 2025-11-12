@@ -133,10 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7765f7da11dfd384b8caae7e5c69d9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3984394470041740971, guid: 1bb232a95918fb842a6382ce3f3a1b79, type: 3}
   bulletSpeed: 10
   reload: 0.1
-  damage: 4.4
+  damage: 4.6
   audioManager: {fileID: 7195694414801024019}
   sprite: {fileID: 3902969974721726578}
 --- !u!212 &3699509820165794377

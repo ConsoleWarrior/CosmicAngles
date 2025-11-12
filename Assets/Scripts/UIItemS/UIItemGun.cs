@@ -22,12 +22,14 @@ public class UIItemGun : UIItem
                     {
                         Debug.Log("не слот дл€ покупки, зан€т или это €дро");
                         ReturnBack();
+                        return;
                     }
                 }
                 else
                 {
                     Debug.Log("нехватает денег");
                     ReturnBack();
+                    return;
                 }
             }
             else

@@ -26,10 +26,10 @@ public class UISlot : MonoBehaviour, IPointerClickHandler //, IDropHandler
     {
         if (cell != null)
         {
-            var obj = GameObject.FindGameObjectWithTag("ItemInfo").transform;
-            obj.GetChild(0).gameObject.SetActive(false);
-            obj.GetChild(1).gameObject.SetActive(true);
-            info = obj.GetChild(1).GetComponent<ItemInfo>();
+            var obj = GameObject.FindGameObjectWithTag("ItemInfo").GetComponent<PanelsInfo>();
+            obj.itemPanel.gameObject.SetActive(false);
+            obj.slotPanel.gameObject.SetActive(true);
+            info = obj.slotPanel;
             info.transform.GetChild(2).GetComponent<Button>().onClick.RemoveAllListeners();
             info.gameObject.SetActive(true);
             info.type.text = "                  "+cell.name + "\nMaxHp= " + cell.maxHp + ",currentHp= " + cell.currentHp + "\narmorThickness= " + cell.armorThickness;

@@ -120,10 +120,10 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
     }
     public void ShowInfo()
     {
-        var obj = GameObject.FindGameObjectWithTag("ItemInfo").transform;
-        obj.GetChild(1).gameObject.SetActive(false);
-        obj.GetChild(0).gameObject.SetActive(true);
-        ItemInfo info = obj.GetChild(0).GetComponent<ItemInfo>();
+        var obj = GameObject.FindGameObjectWithTag("ItemInfo").GetComponent<PanelsInfo>();
+        obj.slotPanel.gameObject.SetActive(false);
+        obj.itemPanel.gameObject.SetActive(true);
+        ItemInfo info = obj.itemPanel;
         if (info == null) { Debug.Log("info == null"); }
         info.itemName.text = "name: " + itemPrefab.name;
         info.type.text = "type: " + type;
