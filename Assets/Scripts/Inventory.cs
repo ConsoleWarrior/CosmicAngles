@@ -83,7 +83,7 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < inventoryGrid.childCount; i++) //пробую запихнуть в неполный стак
         {
             var inventoryCellUISlot = inventoryGrid.GetChild(i).gameObject.GetComponent<UISlot>();
-            if (!inventoryCellUISlot.isFree && inventoryCellUISlot.currentItem.name == "TitanBoxItem(Clone)")
+            if (!inventoryCellUISlot.isFree && (inventoryCellUISlot.currentItem.name == "TitanBoxItem(Clone)" || inventoryCellUISlot.currentItem.name == "TitanBoxItem"))
             {
                 if (((UIItemTitanBox)inventoryCellUISlot.currentItem).itemCount + 1 <= 1000)
                 {
@@ -117,7 +117,7 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < inventoryGrid.childCount; i++)
         {
             var inventoryCellUISlot = inventoryGrid.GetChild(i).gameObject.GetComponent<UISlot>();
-            if (!inventoryCellUISlot.isFree && inventoryCellUISlot.currentItem.name == "TitanBoxItem(Clone)")// || inventoryCellUISlot.currentItem.name == "TitanBoxItem")
+            if (!inventoryCellUISlot.isFree && (inventoryCellUISlot.currentItem.name == "TitanBoxItem(Clone)" || inventoryCellUISlot.currentItem.name == "TitanBoxItem"))
             {
                 if (((UIItemTitanBox)inventoryCellUISlot.currentItem).itemCount - cost >= 0)
                 {
