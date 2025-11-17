@@ -5,7 +5,7 @@ using UnityEngine.Pool;
 
 public class TurelG : MonoBehaviour
 {
-    protected Transform player;
+    Transform player;
 
 
     private bool fireFlag = false;
@@ -13,8 +13,9 @@ public class TurelG : MonoBehaviour
     [SerializeField] float reloadTime;
     [SerializeField] float damage;
     ObjectPool<GameObject> gunBulletPool;
-    protected float dist;
+    float dist;
     [SerializeField] float atackDistance;
+    [SerializeField] AudioManager audioManager;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class TurelG : MonoBehaviour
         //catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
         var managerObj = GameObject.Find("PoolManager").GetComponent<PoolManager>();
         gunBulletPool = managerObj.flyBulletPool;
+        audioManager.a.volume = 0.3f;
     }
     void FixedUpdate()
     {
@@ -62,14 +64,14 @@ public class TurelG : MonoBehaviour
             Vector2 direction = (player.position - transform.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle - 90);
-            //audioManager.SoundPlay1();
+            audioManager.SoundPlay0();
             var bullet = gunBulletPool.Get();
             bullet.transform.position = transform.position;
             bullet.transform.rotation = transform.rotation;
             var blt = bullet.GetComponent<Bullet>();
             blt.damage = damage;
             blt.gunBulletPool = gunBulletPool;
-            bullet.transform.localScale = new(0.15f, 0.15f, 1);
+            //bullet.transform.localScale = new(0.15f, 0.15f, 1);
             blt.ReturnToPool(2);
             bullet.GetComponent<Rigidbody2D>().AddForce((player.position - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse);
             yield return new WaitForSeconds(reloadTime);

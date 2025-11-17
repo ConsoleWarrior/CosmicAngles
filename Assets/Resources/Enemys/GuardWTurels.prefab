@@ -67,7 +67,7 @@ MonoBehaviour:
   atackDistance: 14
   sprite: {fileID: 0}
   bulletSpeed: 9
-  reloadTime: 1.1
+  reloadTime: 3
   damage: 100
   repairReloadTime: 15
   repairVolume: 300

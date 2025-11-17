@@ -27,7 +27,7 @@ public class EnemyGuard : Enemy
     void Initialize()
     {
         var managerObj = GameObject.Find("PoolManager").GetComponent<PoolManager>();
-        gunBulletPool = managerObj.flyBulletPool;
+        gunBulletPool = managerObj.turelBulletPool;
         enemyPool = managerObj.turelPool;
         animPool = managerObj.destroyAnimPool;
     }
@@ -73,7 +73,7 @@ public class EnemyGuard : Enemy
             {
                 var bullet = gunBulletPool.Get();
                 bullet.transform.position = transform.position;
-                bullet.transform.localScale = Vector3.one;
+                //bullet.transform.localScale = Vector3.one;
 
                 Vector2 direction = (player.position - transform.position).normalized;
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -87,7 +87,7 @@ public class EnemyGuard : Enemy
                 Vector2 newDirection = rotation * direction;
                 bullet.GetComponent<Rigidbody2D>().AddForce(newDirection * bulletSpeed, ForceMode2D.Impulse);
             }
-            //audioManager.SoundPlay1();
+            audioManager.SoundPlay1();
             yield return new WaitForSeconds(reloadTime);
         }
         flag = false;

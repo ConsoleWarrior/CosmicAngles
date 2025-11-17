@@ -20,6 +20,8 @@ public class PoolManager : MonoBehaviour
     [SerializeField] GameObject mommyBulletPrefab;
     public ObjectPool<GameObject> daddyBulletPool;
     [SerializeField] GameObject daddyBulletPrefab;
+    public ObjectPool<GameObject> turelBulletPool;
+    [SerializeField] GameObject turelBulletPrefab;
 
     public ObjectPool<GameObject> flyPool;
     [SerializeField] GameObject flyPrefab;
@@ -53,6 +55,7 @@ public class PoolManager : MonoBehaviour
         destroyerBulletPool = new ObjectPool<GameObject>(createFunc: () => { var obj = Instantiate(destroyerBulletPrefab); obj.transform.SetParent(transform); obj.SetActive(false); return obj; }, actionOnGet: (obj) => obj.SetActive(true), actionOnRelease: (obj) => obj.SetActive(false), actionOnDestroy: (obj) => Destroy(obj), collectionCheck: false, defaultCapacity: 256, maxSize: 512);
         mommyBulletPool = new ObjectPool<GameObject>(createFunc: () => { var obj = Instantiate(mommyBulletPrefab); obj.transform.SetParent(transform); obj.SetActive(false); return obj; }, actionOnGet: (obj) => obj.SetActive(true), actionOnRelease: (obj) => obj.SetActive(false), actionOnDestroy: (obj) => Destroy(obj), collectionCheck: false, defaultCapacity: 256, maxSize: 512);
         daddyBulletPool = new ObjectPool<GameObject>(createFunc: () => { var obj = Instantiate(daddyBulletPrefab); obj.transform.SetParent(transform); obj.SetActive(false); return obj; }, actionOnGet: (obj) => obj.SetActive(true), actionOnRelease: (obj) => obj.SetActive(false), actionOnDestroy: (obj) => Destroy(obj), collectionCheck: false, defaultCapacity: 256, maxSize: 512);
+        turelBulletPool = new ObjectPool<GameObject>(createFunc: () => { var obj = Instantiate(turelBulletPrefab); obj.transform.SetParent(transform); obj.SetActive(false); return obj; }, actionOnGet: (obj) => obj.SetActive(true), actionOnRelease: (obj) => obj.SetActive(false), actionOnDestroy: (obj) => Destroy(obj), collectionCheck: false, defaultCapacity: 256, maxSize: 512);
 
         flyPool = new ObjectPool<GameObject>(createFunc: () => { var obj = Instantiate(flyPrefab); obj.transform.SetParent(transform); obj.SetActive(false); return obj; }, actionOnGet: (obj) => obj.SetActive(true), actionOnRelease: (obj) => obj.SetActive(false), actionOnDestroy: (obj) => Destroy(obj), collectionCheck: false, defaultCapacity: 256, maxSize: 512);
         kamikadzePool = new ObjectPool<GameObject>(createFunc: () => { var obj = Instantiate(kamikadzePrefab); obj.transform.SetParent(transform); obj.SetActive(false); return obj; }, actionOnGet: (obj) => obj.SetActive(true), actionOnRelease: (obj) => obj.SetActive(false), actionOnDestroy: (obj) => Destroy(obj), collectionCheck: false, defaultCapacity: 64, maxSize: 128);

@@ -51,7 +51,8 @@ public class Gun : Guns
             var bullet = gunBulletPool.Get();
             //bullet.transform.SetParent(transform);
             bullet.transform.position = transform.position;
-            bullet.transform.rotation = transform.rotation;
+            bullet.transform.rotation = sprite.rotation;
+            //bullet.transform.localScale = new(0.04f, 0.04f);
             var blt = bullet.GetComponent<Bullet>();
             blt.damage = damage;
             blt.gunBulletPool = gunBulletPool;

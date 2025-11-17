@@ -57,7 +57,7 @@ public class EnemyBurner : Enemy
             var blt = bullet.GetComponent<Bullet>();
             blt.damage = damage;
             blt.gunBulletPool = gunBulletPool;
-            bullet.transform.localScale = new(0.15f, 0.15f, 1);
+            //bullet.transform.localScale = new(0.15f, 0.15f, 1);
             blt.ReturnToPool(2);
             //GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
             bullet.GetComponent<Rigidbody2D>().AddForce((player.position - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse);

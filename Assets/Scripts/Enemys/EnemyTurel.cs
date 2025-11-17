@@ -27,7 +27,7 @@ public class EnemyTurel : Enemy
     void Initialize()
     {
         var managerObj = GameObject.Find("PoolManager").GetComponent<PoolManager>();
-        gunBulletPool = managerObj.flyBulletPool;
+        gunBulletPool = managerObj.turelBulletPool;
         enemyPool = managerObj.turelPool;
         animPool = managerObj.destroyAnimPool;
     }
@@ -39,7 +39,7 @@ public class EnemyTurel : Enemy
         if (dist != 0 && dist < atackDistance)
             Atack();
         else
-            if(target != transform.position) Walking();
+            if (target != transform.position) Walking();
     }
     public override void Walking()
     {
@@ -78,7 +78,7 @@ public class EnemyTurel : Enemy
             blt.gunBulletPool = gunBulletPool;
             blt.ReturnToPool(5);
             //GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            bullet.transform.localScale = Vector3.one;
+            //bullet.transform.localScale = new Vector2(0.1f, 0.1f);
             bullet.GetComponent<Rigidbody2D>().AddForce((player.position - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse);
             //bullet.GetComponent<Bullet>().damage = damage;
             //Destroy(bullet, 2f);

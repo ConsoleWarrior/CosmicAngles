@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede006aaf9270074f93112f28f26d2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kredit: 1500
+  kredit: 999999
   tmpKredit: {fileID: 1936960106}
   inventoryGrid: {fileID: 1717957669}
 --- !u!4 &148060770
@@ -19888,10 +19888,11 @@ MonoBehaviour:
   rocketBulletPrefab: {fileID: 5091863379858687263, guid: d415cc50431173c4fba9493ab890d54d, type: 3}
   blasterBulletPrefab: {fileID: 8383149672375207215, guid: 24af95a984fea2d48bba983c8e591ece, type: 3}
   splashBulletPrefab: {fileID: 4398295918424237966, guid: 6dc8e72f0f44e57459629ad8708da51f, type: 3}
-  flyBulletPrefab: {fileID: 3984394470041740971, guid: d139fe15cdcbcba4d9dbdc6fefd6e344, type: 3}
+  flyBulletPrefab: {fileID: 3691520395159149181, guid: 9c694914323b7144ca5d255051b7e0c5, type: 3}
   destroyerBulletPrefab: {fileID: 2179432269079511556, guid: 754dfa78443d8ee4890c7a6d277079b3, type: 3}
   mommyBulletPrefab: {fileID: 3062242358514997324, guid: 4c307b525c0ebdd47a58e18009e8447f, type: 3}
   daddyBulletPrefab: {fileID: 6539803145367729047, guid: 9898030637b450c4ea9a005faa8e20a6, type: 3}
+  turelBulletPrefab: {fileID: 3984394470041740971, guid: d139fe15cdcbcba4d9dbdc6fefd6e344, type: 3}
   flyPrefab: {fileID: 1518333895789308286, guid: 52ffbaab5d7462246a6ad0b68587eca2, type: 3}
   kamikadzePrefab: {fileID: 7443552582876438875, guid: 55e94c62a100d8e42b48d2496854383d, type: 3}
   burnerPrefab: {fileID: 2149881737884762687, guid: 5a5f8f51afe2eb84eb2e06660a9242e1, type: 3}
