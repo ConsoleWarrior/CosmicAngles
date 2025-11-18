@@ -7,6 +7,7 @@ public class StartPlayer : MonoBehaviour
     Player player;
     Inventory inventory;
     public Camera playerCamera;
+    public Transform background;
     [SerializeField] GameObject gameOver;
     [SerializeField] AudioManager audioManager;
     public Transform shipGrid;
@@ -30,6 +31,7 @@ public class StartPlayer : MonoBehaviour
         player.playerCamera = playerCamera;
         playerCamera.gameObject.GetComponent<PlayerCamera>().player = obj.transform;
         player.gameOver = gameOver;
+        player.backGround = background;
         player.audioManager = audioManager;
         repairBlok.RefreshCells(player);
     }

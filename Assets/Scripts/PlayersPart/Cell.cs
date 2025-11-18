@@ -122,7 +122,7 @@ public class Cell : MonoBehaviour
     {
         float x = maxHp - currentHp;
         if (isDestroyed && slot.GetComponent<UISlot>().currentItem != null)
-            x += slot.GetComponent<UISlot>().currentItem.price / 100;
+            x += slot.GetComponent<UISlot>().currentItem.price * 0.03f; //процент стоимости модуля
         return x;
     }
     public void FullRepair()

@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] float xp;
     [SerializeField] Cell core;
     public Camera playerCamera;
+    public Transform backGround;
     public GameObject gameOver;
     [SerializeField] Animator animator;
     //public bool isLooting = false;
@@ -41,13 +42,21 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            var oldPosition = transform.position;
+
             Vector3 objPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             objPosition.z = transform.position.z;
             transform.position = Vector3.MoveTowards(transform.position, objPosition, speed * Time.deltaTime);
-
-            Vector2 direction = (objPosition - transform.position).normalized;
+            Vector3 direction = (objPosition - transform.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+
+            //backGround.position = Vector3.MoveTowards(transform.position, (transform.position - objPosition).normalized, Time.deltaTime);
+            Vector3 deltaMovement = oldPosition - transform.position;
+            backGround.position = new Vector2(backGround.position.x + deltaMovement.x * 0.1f, backGround.position.y + deltaMovement.y * 0.1f);
+
+            //backGround.position = Vector3.MoveTowards(backGround.position, transform.position, speed * Time.deltaTime/3);
+            //backGround.position = (transform.position - objPosition).normalized;
 
             if (!animator.GetBool("IsMoving"))
             {
@@ -65,5 +74,6 @@ public class Player : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle + 90);
         }
+        //else backGround.position = transform.position;
     }
 }

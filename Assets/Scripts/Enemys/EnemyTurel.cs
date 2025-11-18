@@ -79,7 +79,11 @@ public class EnemyTurel : Enemy
             blt.ReturnToPool(5);
             //GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
             //bullet.transform.localScale = new Vector2(0.1f, 0.1f);
-            bullet.GetComponent<Rigidbody2D>().AddForce((player.position - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse);
+            try
+            {
+                bullet.GetComponent<Rigidbody2D>().AddForce((player.position - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse);//ошибка при апгрейде шипа
+            }
+            catch { Debug.Log("Error: потеря при покупке апгрейда корабля, нормально"); }
             //bullet.GetComponent<Bullet>().damage = damage;
             //Destroy(bullet, 2f);
             yield return new WaitForSeconds(reloadTime);
