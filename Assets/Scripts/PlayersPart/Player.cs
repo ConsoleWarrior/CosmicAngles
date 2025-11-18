@@ -30,13 +30,11 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             animator.SetBool("IsMoving", false);
-            //Debug.Log(false);
         }
     }
     void FixedUpdate()
     {
         Moving();
-
     }
     void Moving()
     {
@@ -51,17 +49,12 @@ public class Player : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle - 90);
 
-            //backGround.position = Vector3.MoveTowards(transform.position, (transform.position - objPosition).normalized, Time.deltaTime);
             Vector3 deltaMovement = oldPosition - transform.position;
-            backGround.position = new Vector2(backGround.position.x + deltaMovement.x * 0.1f, backGround.position.y + deltaMovement.y * 0.1f);
-
-            //backGround.position = Vector3.MoveTowards(backGround.position, transform.position, speed * Time.deltaTime/3);
-            //backGround.position = (transform.position - objPosition).normalized;
+            backGround.position = new Vector2(backGround.position.x + deltaMovement.x * 0.13f, backGround.position.y + deltaMovement.y * 0.13f);
 
             if (!animator.GetBool("IsMoving"))
             {
                 animator.SetBool("IsMoving", true);
-                //Debug.Log(true);
             }
         }
         else if (Input.GetMouseButton(1))
@@ -74,6 +67,5 @@ public class Player : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle + 90);
         }
-        //else backGround.position = transform.position;
     }
 }

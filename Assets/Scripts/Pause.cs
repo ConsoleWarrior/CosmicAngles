@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.Pool;
-using UnityEngine.UIElements;
 
 public class Pause : MonoBehaviour
 {
@@ -24,11 +22,7 @@ public class Pause : MonoBehaviour
     public void Play()
     {
         InventarPanel.SetActive(false);
-        //foreach (var i in cosmoPortPanels)
-        //{
-        //    i.SetActive(false);
-        //}
-        for (int i = 0;i<cosmoPorts.childCount;i++)
+        for (int i = 0; i < cosmoPorts.childCount; i++)
         {
             cosmoPorts.GetChild(i).GetComponent<Cosmoport>().panel.SetActive(false);
             cosmoPorts.GetChild(i).GetComponent<Cosmoport>().ColliderActivate();
