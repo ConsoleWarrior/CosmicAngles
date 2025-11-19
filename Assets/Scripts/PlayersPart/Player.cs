@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     public Transform backGround;
     public GameObject gameOver;
     [SerializeField] Animator animator;
-    //public bool isLooting = false;
     public bool isDestroing = false;
     public AudioManager audioManager;
     public GameObject shieldFront;
@@ -24,7 +23,8 @@ public class Player : MonoBehaviour
         {
             gameOver.SetActive(true);
             audioManager.SoundPlay0();
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
+            GameObject.Find("ButtonPause").SetActive(false);
             Time.timeScale = 0;
         }
         if (Input.GetMouseButtonUp(0))
@@ -38,20 +38,21 @@ public class Player : MonoBehaviour
     }
     void Moving()
     {
+        var oldPosition = transform.position;
+
         if (Input.GetMouseButton(0))
         {
-            var oldPosition = transform.position;
-
             Vector3 objPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             objPosition.z = transform.position.z;
             transform.position = Vector3.MoveTowards(transform.position, objPosition, speed * Time.deltaTime);
+
             Vector3 direction = (objPosition - transform.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+            //transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle - 90), 5 * Time.deltaTime);
 
             Vector3 deltaMovement = oldPosition - transform.position;
-            backGround.position = new Vector2(backGround.position.x + deltaMovement.x * 0.13f, backGround.position.y + deltaMovement.y * 0.13f);
-
+            backGround.position = new Vector2(backGround.position.x + deltaMovement.x * 0.12f, backGround.position.y + deltaMovement.y * 0.12f);
             if (!animator.GetBool("IsMoving"))
             {
                 animator.SetBool("IsMoving", true);
@@ -61,11 +62,15 @@ public class Player : MonoBehaviour
         {
             Vector3 objPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             objPosition.z = transform.position.z;
-            transform.position = Vector3.MoveTowards(transform.position, objPosition, speed * Time.deltaTime / 2);
+            transform.position = Vector3.MoveTowards(transform.position, objPosition, 2 * Time.deltaTime);// speed/2
 
             Vector2 direction = (objPosition - transform.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle + 90);
+            //transform.rotation = Quaternion.Euler(0, 0, angle + 90);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle + 90), 5 * Time.deltaTime);
+
+            Vector3 deltaMovement = oldPosition - transform.position;
+            backGround.position = new Vector2(backGround.position.x + deltaMovement.x * 0.06f, backGround.position.y + deltaMovement.y * 0.06f);
         }
     }
 }

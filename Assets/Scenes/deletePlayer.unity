@@ -567,9 +567,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4791172002457868617, guid: 9ec9c44ccddf20d4daf01e03c1eb574f, type: 3}
+      propertyPath: maxHp
+      value: 25000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791172002457868617, guid: 9ec9c44ccddf20d4daf01e03c1eb574f, type: 3}
+      propertyPath: damage
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791172002457868617, guid: 9ec9c44ccddf20d4daf01e03c1eb574f, type: 3}
+      propertyPath: currentHp
+      value: 25000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791172002457868617, guid: 9ec9c44ccddf20d4daf01e03c1eb574f, type: 3}
+      propertyPath: fireDistance
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791172002457868617, guid: 9ec9c44ccddf20d4daf01e03c1eb574f, type: 3}
+      propertyPath: repairVolume
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 5742634376312241214, guid: 9ec9c44ccddf20d4daf01e03c1eb574f, type: 3}
+      propertyPath: atackDistance
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6687721878885907248, guid: 9ec9c44ccddf20d4daf01e03c1eb574f, type: 3}
       propertyPath: m_Name
       value: GuardWTurels
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905046936487601600, guid: 9ec9c44ccddf20d4daf01e03c1eb574f, type: 3}
+      propertyPath: atackDistance
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3127,15 +3155,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 25000
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 200
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 25000
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: reloadTime
@@ -3143,7 +3171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: bulletSpeed
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: fireDistance
@@ -3203,7 +3231,7 @@ PrefabInstance:
       objectReference: {fileID: 1695509573006552178, guid: 3ae8bfb32beb5e94d9e18c0e4849801e, type: 3}
     - target: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: m_Name
-      value: Turel (7)
+      value: TurelB2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3357,6 +3385,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2084230620}
     m_Modifications:
+    - target: {fileID: 2859766746173220665, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859766746173220665, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: fireDistance
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859766746173220665, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: repairVolume
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -3367,11 +3407,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.54
+      value: 39.3
       objectReference: {fileID: 0}
     - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 46.89
+      value: 5.7
       objectReference: {fileID: 0}
     - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6582,7 +6622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 150
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
@@ -6590,11 +6630,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: reloadTime
-      value: 1.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: bulletSpeed
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: fireDistance
@@ -6638,7 +6678,7 @@ PrefabInstance:
       objectReference: {fileID: 2658934399757328153, guid: ded180281475eec4dad89104e09f132e, type: 3}
     - target: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: m_Name
-      value: Turel (6)
+      value: TurelB
       objectReference: {fileID: 0}
     - target: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: m_IsActive
@@ -8367,15 +8407,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 25000
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 25000
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: reloadTime
@@ -8383,7 +8423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: bulletSpeed
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: fireDistance
@@ -8443,7 +8483,7 @@ PrefabInstance:
       objectReference: {fileID: 1695509573006552178, guid: 3ae8bfb32beb5e94d9e18c0e4849801e, type: 3}
     - target: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: m_Name
-      value: Turel (7)
+      value: TurelB2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9014,15 +9054,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 25000
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 200
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 25000
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: reloadTime
@@ -9030,7 +9070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: bulletSpeed
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: fireDistance
@@ -9090,7 +9130,7 @@ PrefabInstance:
       objectReference: {fileID: 1695509573006552178, guid: 3ae8bfb32beb5e94d9e18c0e4849801e, type: 3}
     - target: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: m_Name
-      value: Turel (6)
+      value: TurelB1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11865,15 +11905,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 25000
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 25000
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: reloadTime
@@ -11881,7 +11921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: bulletSpeed
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: fireDistance
@@ -11941,7 +11981,7 @@ PrefabInstance:
       objectReference: {fileID: 1695509573006552178, guid: 3ae8bfb32beb5e94d9e18c0e4849801e, type: 3}
     - target: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: m_Name
-      value: Turel (6)
+      value: TurelB1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21215,15 +21255,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: maxHp
-      value: 25000
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: damage
-      value: 175
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: currentHp
-      value: 25000
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: reloadTime
@@ -21231,7 +21271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: bulletSpeed
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6630234432745346199, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: fireDistance
@@ -21275,7 +21315,7 @@ PrefabInstance:
       objectReference: {fileID: 2658934399757328153, guid: ded180281475eec4dad89104e09f132e, type: 3}
     - target: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
       propertyPath: m_Name
-      value: Turel (6)
+      value: TurelB
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23890,6 +23930,7 @@ Transform:
   - {fileID: 1639999589}
   - {fileID: 382121262}
   - {fileID: 572657986}
+  - {fileID: 2129837511}
   m_Father: {fileID: 736358769}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &2088762473 stripped
@@ -24006,6 +24047,88 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}
+--- !u!1001 &2129837510
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2084230620}
+    m_Modifications:
+    - target: {fileID: 2859766746173220665, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859766746173220665, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: fireDistance
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859766746173220665, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: repairVolume
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -30.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932383475805323818, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+      propertyPath: m_Name
+      value: Guard (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+--- !u!4 &2129837511 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
+  m_PrefabInstance: {fileID: 2129837510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2131162647 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3155564551265368548, guid: 2c9f82ee28a257646b5a3e589036163e, type: 3}

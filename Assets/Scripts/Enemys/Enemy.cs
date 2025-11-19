@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected Image hpBar;
     [SerializeField] protected GameObject hpBarCanvas;
     [SerializeField] protected AudioManager audioManager;
-    //protected Animator animator;
     protected Transform player;
     [SerializeField] protected float xp;
     [SerializeField] protected float speed;
@@ -24,7 +23,7 @@ public class Enemy : MonoBehaviour
     protected bool evolved = false;
     protected MapSector sector;
     protected ObjectPool<GameObject> enemyPool;
-    protected bool destroyFlag = false;
+    bool destroyFlag = false;
     [SerializeField] protected Sprite sprite;
     protected ObjectPool<GameObject> animPool;
 
@@ -40,7 +39,6 @@ public class Enemy : MonoBehaviour
     //    sector = transform.parent.GetComponent<MapSector>();
     //    target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
     //    audioManager.a.volume = 0.5f;
-
     //    Invoke("Evolve", 300);
     //    Invoke("EvolveLevel2", 600);
     //}
@@ -50,15 +48,10 @@ public class Enemy : MonoBehaviour
         if (currentHp <= 0 && !destroyFlag)
         {
             destroyFlag = true;
-            //animator.SetBool("Destroy", true);
-            //audioManager.a.volume = 1;
-            //audioManager.SoundPlay0();
-            //transform.GetComponent<CircleCollider2D>().enabled = false;
             var obj = animPool.Get();
             obj.transform.position = transform.position;
             obj.GetComponent<AnimDestroy>().animPool = animPool;
             CalculateAndCallDrop();
-            //Invoke("Destroying", 0.4f);
             Destroying();
         }
     }
@@ -142,8 +135,6 @@ public class Enemy : MonoBehaviour
 
         hpBar.fillAmount = currentHp / maxHp;
         destroyFlag = false;
-        //if (animator != null)
-        //    animator.SetBool("Destroy", false);
         audioManager.a.volume = 0.5f;
     }
 }
