@@ -3,7 +3,6 @@ using UnityEngine.EventSystems;
 
 public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerClickHandler
 {
-    //public string itemName;
     public string type;
     public int price;
     protected RectTransform rectTransform;
@@ -57,7 +56,7 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
 
     public virtual void SellScrap()
     {
-        inventory.UpdateKredit(price*0.3f);
+        inventory.UpdateKredit(price * 0.3f);
         Debug.Log("продал за " + System.Math.Round(price * 0.3f, 0));
         ClearOldSlot();
         Destroy(gameObject);
@@ -124,7 +123,7 @@ public class UIItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHa
         obj.slotPanel.gameObject.SetActive(false);
         obj.itemPanel.gameObject.SetActive(true);
         ItemInfo info = obj.itemPanel;
-        if (info == null) { Debug.Log("info == null"); }
+        //if (info == null) { Debug.Log("info == null"); }
         info.itemName.text = "name: " + itemPrefab.name;
         info.type.text = "type: " + type;
         info.characteristics.text = ReturnCharacter();

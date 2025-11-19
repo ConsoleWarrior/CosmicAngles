@@ -11,19 +11,20 @@ public class RepairBlok : MonoBehaviour
 
     Inventory inventory;
     Player player;
-
+    TempValues tempValues;
 
     void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+        tempValues = GameObject.FindGameObjectWithTag("Inventory").GetComponentInChildren<TempValues>();
     }
-    void Update()
-    {
-        foreach(var tmp in tmpCosts)
-        {
-            tmp.text = CalculateRepairCellsCost().ToString();
-        }
-    }
+    //void Update()
+    //{
+    //    foreach(var tmp in tmpCosts)
+    //    {
+    //        tmp.text = CalculateRepairCellsCost().ToString();
+    //    }
+    //}
     public void RefreshCells(Player _player)
     {
         player = _player;
@@ -44,8 +45,10 @@ public class RepairBlok : MonoBehaviour
             manager.SoundPlay0();
             inventory.UpdateKredit(-cost);
             RepairNowAll();
+            tempValues.accelerationModule.RefillFullTank();
             //tmpCost.text = CalculateRepairCellsCost().ToString();
             Debug.Log("выполнен ремонт за " + cost);
+            OutputRepairAndRefillCost();
         }
         else
         {
@@ -59,7 +62,16 @@ public class RepairBlok : MonoBehaviour
         {
             x += cell.CalculateRepairHPCost();
         }
+        if (tempValues.accelerationModule != null) x += tempValues.accelerationModule.CostRefillFullTank();
         return (float)System.Math.Round(x * repair1HPCost, 0);
+    }
+    public void OutputRepairAndRefillCost()
+    {
+        var cost = CalculateRepairCellsCost();
+        foreach (var tmp in tmpCosts)
+        {
+            tmp.text = cost.ToString();
+        }
     }
     public void RepairNowAll()
     {

@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class TempValues : MonoBehaviour
 {
-    public float accelerationTank;
-    public int currentAccelerationQuality;
+    //public float currentTank;
+    //public float fullTank;
+    //public int currentAccelerationQuality;
+    public Acceleration accelerationModule;
 
 }

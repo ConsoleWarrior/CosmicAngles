@@ -3,23 +3,24 @@ using UnityEngine;
 
 public class Acceleration : Modulus
 {
-    Player player;
-    //[SerializeField] float duration;
+
     [SerializeField] float accelerationSpeed;
-    //bool flag = false;
-    float temp;
-    [SerializeField] float tank;
+    [SerializeField] float currentTank;
+    [SerializeField] float fullTank;
     [SerializeField] float refillValues;
     [SerializeField] SpriteRenderer activateSprite;
-    [SerializeField] TempValues tempValues;
-    public int quality;
+    Player player;
+    float temp;
+    //[SerializeField] TempValues tempValues;
+    //public int quality;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         temp = player.speed;
-        tempValues = GameObject.FindGameObjectWithTag("Inventory").GetComponentInChildren<TempValues>();
-        if (tempValues.currentAccelerationQuality != quality) { tempValues.accelerationTank = tank; tempValues.currentAccelerationQuality = quality; }
+        GameObject.FindGameObjectWithTag("Inventory").GetComponentInChildren<TempValues>().accelerationModule = this;
+
+        //if (tempValues.currentAccelerationQuality != quality) { tempValues.currentTank = tank; tempValues.currentAccelerationQuality = quality; }
         StartCoroutine(Refill());
     }
     void Update()
@@ -29,9 +30,9 @@ public class Acceleration : Modulus
         //    flag = true;
         //    Activate();
         //}
-        if (Input.GetKey(KeyCode.Space) && tempValues.accelerationTank > 0)
+        if (Input.GetKey(KeyCode.Space) && currentTank > 0)
         {
-            tempValues.accelerationTank -= Time.deltaTime * 10;
+            currentTank -= Time.deltaTime * 10;
             player.speed = accelerationSpeed;
             activateSprite.enabled = true;
             //transform.GetComponent<SpriteRenderer>().color = Color.red;
@@ -49,9 +50,9 @@ public class Acceleration : Modulus
     }
     public void PushDownAndroidButton()
     {
-        if (tempValues.accelerationTank > 0)
+        if (currentTank > 0)
         {
-            tempValues.accelerationTank -= Time.deltaTime * 10;
+            currentTank -= Time.deltaTime * 10;
             player.speed = accelerationSpeed;
             activateSprite.enabled = true;
             //transform.GetComponent<SpriteRenderer>().color = Color.red;
@@ -87,22 +88,30 @@ public class Acceleration : Modulus
     //    transform.GetComponent<SpriteRenderer>().color = Color.white;
     //    flag = false;
     //}
-    public override string GetCharacter()
-    {
-        return "AccelerationSpeed = " + accelerationSpeed + "\nTank = " + tank;
-    }
+
     IEnumerator Refill()
     {
         while (true)
         {
-            if (tempValues.accelerationTank <= tank) tempValues.accelerationTank += refillValues;
-            transform.GetComponent<SpriteRenderer>().color = new Color(tempValues.accelerationTank / tank, tempValues.accelerationTank / tank, tempValues.accelerationTank / tank, 1);
+            if (currentTank < fullTank) currentTank += refillValues;
+            transform.GetComponent<SpriteRenderer>().color = new Color(currentTank / fullTank, currentTank / fullTank, currentTank / fullTank, 1);
             yield return new WaitForSeconds(1);
         }
     }
+    public float CostRefillFullTank()
+    {
+        return fullTank - currentTank;
+    }
     public void RefillFullTank()
     {
-        tempValues = GameObject.FindGameObjectWithTag("Inventory").GetComponentInChildren<TempValues>();
-        tempValues.accelerationTank = tank;
+        //tempValues = GameObject.FindGameObjectWithTag("Inventory").GetComponentInChildren<TempValues>();
+        //tempValues.currentTank = tank;
+        currentTank = fullTank;
+        transform.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+    }
+
+    public override string GetCharacter()
+    {
+        return "AccelerationSpeed = " + accelerationSpeed + "\nfulltank = " + fullTank + "l\nrefillValues = " + refillValues + "l/s";
     }
 }

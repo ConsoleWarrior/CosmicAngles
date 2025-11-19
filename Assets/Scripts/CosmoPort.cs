@@ -3,9 +3,9 @@ using UnityEngine;
 public class Cosmoport : MonoBehaviour
 {
     public GameObject panel;
-    public Pause pause;
+    [SerializeField] Pause pause;
+    [SerializeField] RepairBlok repairBlok;
     public int number;
-
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,6 +14,7 @@ public class Cosmoport : MonoBehaviour
             gameObject.GetComponent<Collider2D>().enabled = false;
             pause.PauseOpenInventory();
             panel.SetActive(true);
+            repairBlok.OutputRepairAndRefillCost();
             //pause.cosmoPortPanels[number].SetActive(true);
         }
     }

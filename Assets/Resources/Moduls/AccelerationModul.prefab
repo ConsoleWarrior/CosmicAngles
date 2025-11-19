@@ -132,11 +132,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accelerationSpeed: 10
-  tank: 1000
+  currentTank: 100
+  fullTank: 100
   refillValues: 2
   activateSprite: {fileID: 7258987490339741438}
-  tempValues: {fileID: 0}
-  quality: 1
 --- !u!212 &6775692162401514243
 SpriteRenderer:
   m_ObjectHideFlags: 0

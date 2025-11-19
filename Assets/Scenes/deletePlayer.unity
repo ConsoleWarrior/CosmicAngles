@@ -5157,6 +5157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1042851994}
   pause: {fileID: 1022071825}
+  repairBlok: {fileID: 1239628235749716419}
   number: 0
 --- !u!1001 &446804653
 PrefabInstance:
@@ -6808,8 +6809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5e295a38f08e74ab03823703dfb271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelerationTank: 0
-  currentAccelerationQuality: 0
+  accelerationModule: {fileID: 0}
 --- !u!4 &572657986 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4442085539740032709, guid: 2ee14d873b6789d418c8d1848cdee725, type: 3}
@@ -7917,6 +7917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 233703721}
   pause: {fileID: 1022071825}
+  repairBlok: {fileID: 1239628235749716419}
   number: 4
 --- !u!1 &684089053
 GameObject:
@@ -9549,6 +9550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1397294154}
   pause: {fileID: 1022071825}
+  repairBlok: {fileID: 1239628235749716419}
   number: 2
 --- !u!224 &768553155 stripped
 RectTransform:
@@ -16358,6 +16360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1178555941}
   pause: {fileID: 1022071825}
+  repairBlok: {fileID: 1239628235749716419}
   number: 3
 --- !u!1 &1261480580
 GameObject:
@@ -17842,6 +17845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1193373461}
   pause: {fileID: 1022071825}
+  repairBlok: {fileID: 1239628235749716419}
   number: 1
 --- !u!1 &1423943246
 GameObject:
@@ -18347,6 +18351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1089384357}
   pause: {fileID: 1022071825}
+  repairBlok: {fileID: 1239628235749716419}
   number: 5
 --- !u!1 &1461473331
 GameObject:
