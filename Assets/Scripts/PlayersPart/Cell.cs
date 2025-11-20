@@ -44,6 +44,8 @@ public class Cell : MonoBehaviour
             if (module != null) //module.gameObject.SetActive(false);
             {
                 slot.GetComponent<UISlot>().currentItem.group.blocksRaycasts = false;
+                slot.transform.Find("LockImg").gameObject.SetActive(true);
+                slot.transform.Find("LockImg").SetAsLastSibling();
                 Destroy(module.gameObject);
             }
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
@@ -135,6 +137,7 @@ public class Cell : MonoBehaviour
         if (item != null)
         {
             item.group.blocksRaycasts = true;
+            slot.transform.Find("LockImg").gameObject.SetActive(false);
             item.CallNewModule(this);
         }
         gameObject.GetComponent<CircleCollider2D>().enabled = true;

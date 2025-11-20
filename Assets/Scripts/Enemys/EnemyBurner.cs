@@ -22,7 +22,7 @@ public class EnemyBurner : Enemy
         //animator = GetComponent<Animator>();
         sector = transform.parent.GetComponent<MapSector>();
         target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
-        audioManager.a.volume = 0.5f;
+        audioManager.a.volume = 0.3f;
         var managerObj = GameObject.Find("PoolManager").GetComponent<PoolManager>();
         gunBulletPool = managerObj.flyBulletPool;
         enemyPool = managerObj.burnerPool;

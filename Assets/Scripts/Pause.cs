@@ -33,6 +33,10 @@ public class Pause : MonoBehaviour
     {
         if (player == null) player = GameObject.FindGameObjectWithTag("Player").transform;
         player.rotation = Quaternion.identity;
+        var slot = player.gameObject.GetComponent<Player>().core.slot;
+        slot.transform.Find("LockImg").gameObject.SetActive(true);
+        if(slot.GetComponent<UISlot>().currentItem != null)
+        slot.GetComponent<UISlot>().currentItem.group.blocksRaycasts = false;
         InventarPanel.SetActive(true);
         Time.timeScale = 0f;
     }

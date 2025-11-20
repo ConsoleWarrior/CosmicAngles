@@ -135,6 +135,6 @@ public class Enemy : MonoBehaviour
 
         hpBar.fillAmount = currentHp / maxHp;
         destroyFlag = false;
-        audioManager.a.volume = 0.5f;
+        //audioManager.a.volume = 0.5f;
     }
 }

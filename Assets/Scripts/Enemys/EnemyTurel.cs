@@ -19,7 +19,7 @@ public class EnemyTurel : Enemy
     {
         //animator = GetComponent<Animator>();
         target = transform.position;
-        audioManager.a.volume = 0.3f;
+        audioManager.a.volume = 0.25f;
         //Invoke("Initialize",0.5f);
         StartCoroutine(RepairTic());
         Initialize();

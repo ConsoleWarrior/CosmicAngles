@@ -45,7 +45,7 @@ public class RepairBlok : MonoBehaviour
             manager.SoundPlay0();
             inventory.UpdateKredit(-cost);
             RepairNowAll();
-            tempValues.accelerationModule.RefillFullTank();
+            if (tempValues.accelerationModule != null) tempValues.accelerationModule.RefillFullTank();
             //tmpCost.text = CalculateRepairCellsCost().ToString();
             Debug.Log("выполнен ремонт за " + cost);
             OutputRepairAndRefillCost();
@@ -72,6 +72,9 @@ public class RepairBlok : MonoBehaviour
         {
             tmp.text = cost.ToString();
         }
+        cells[0].slot.transform.Find("LockImg").gameObject.SetActive(false);
+        if (cells[0].slot.GetComponent<UISlot>().currentItem != null)
+            cells[0].slot.GetComponent<UISlot>().currentItem.group.blocksRaycasts = true;
     }
     public void RepairNowAll()
     {

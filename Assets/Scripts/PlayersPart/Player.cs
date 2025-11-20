@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     public float speed;
     [SerializeField] float xp;
-    [SerializeField] Cell core;
+    public Cell core;
     public Camera playerCamera;
     public Transform backGround;
     public GameObject gameOver;
