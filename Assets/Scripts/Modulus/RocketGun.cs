@@ -50,7 +50,7 @@ public class RocketGun : Guns
 
             audioManager.SoundPlay0();
             var bullet = gunBulletPool.Get();
-            bullet.transform.position = transform.position;
+            bullet.transform.position = mouth.position;
             bullet.transform.rotation = transform.rotation;
             var blt = bullet.GetComponent<RocketBullet>();
             blt.damage = damage;

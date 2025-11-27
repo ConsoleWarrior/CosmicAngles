@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SplashRocketGun : Guns
 {
-    [SerializeField] Transform mouth;
+    //[SerializeField] Transform mouth;
     void Start()
     {
         audioManager.a.volume = 0.15f;

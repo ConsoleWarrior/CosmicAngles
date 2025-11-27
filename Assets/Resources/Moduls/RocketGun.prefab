@@ -29,7 +29,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6739135529202844719}
   m_Father: {fileID: 4775941174715078118}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2205295281907173590
@@ -133,12 +134,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc6f6d91082bfb43a9d8004be873c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5091863379858687263, guid: d415cc50431173c4fba9493ab890d54d, type: 3}
   bulletSpeed: 5
   reload: 1
   damage: 32
   audioManager: {fileID: 6985673061869061873}
   sprite: {fileID: 9118484515783751303}
+  mouth: {fileID: 6739135529202844719}
 --- !u!212 &2156701202688078063
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -269,6 +270,37 @@ PolygonCollider2D:
       - {x: 0.0021440387, y: 0.35898855}
       - {x: 5.9959016, y: 9.98014}
   m_UseDelaunayMesh: 0
+--- !u!1 &2963739758886852353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6739135529202844719}
+  m_Layer: 0
+  m_Name: Mouth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6739135529202844719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2963739758886852353}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.004, y: 0.453, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9118484515783751303}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2618574287034940654
 PrefabInstance:
   m_ObjectHideFlags: 0

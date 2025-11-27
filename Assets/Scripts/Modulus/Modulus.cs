@@ -21,6 +21,8 @@ public class Guns : Modulus
     protected bool flag = false;
     [SerializeField] protected Transform sprite;
     protected ObjectPool<GameObject> gunBulletPool;
+    [SerializeField] protected Transform mouth;
+
 
     void Start()
     {
