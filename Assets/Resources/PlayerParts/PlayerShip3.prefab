@@ -115,10 +115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7559a016d434744abbed96ca02693e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 4.5
   xp: 0
   core: {fileID: 9112964128552125743}
   playerCamera: {fileID: 0}
+  backGround: {fileID: 0}
   gameOver: {fileID: 0}
   animator: {fileID: 2299181600473358969}
   isDestroing: 0

@@ -51,12 +51,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a526a88139000245959de13db8bbaa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
   type: Module
   price: 2000
   group: {fileID: 0}
   itemPrefab: {fileID: 1302174585214053987, guid: f16e9d6a96e9c7b4f9af68124a81062e, type: 3}
   itemColor: {r: 0.7960785, g: 0.83921576, b: 0.882353, a: 1}
+  trashPanel: {fileID: 0}
 --- !u!222 &1153233118834284916
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 959207c61863e894385ae188ddd11a11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45c6e1b9b9465d246ad2c37da5e0be08, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

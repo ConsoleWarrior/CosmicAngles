@@ -300,10 +300,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7559a016d434744abbed96ca02693e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 5.5
   xp: 0
   core: {fileID: 7671899894952911469}
   playerCamera: {fileID: 0}
+  backGround: {fileID: 0}
   gameOver: {fileID: 0}
   animator: {fileID: 6632515101255414485}
   isDestroing: 0
