@@ -6,42 +6,24 @@ public class Enemy : MonoBehaviour
 {
     public float maxHp;
     public float currentHp;
+    [SerializeField] protected float speed;
+    [SerializeField] protected float atackDistance;
+    [SerializeField] protected float fireDistance;
     [SerializeField] protected Image hpBar;
     [SerializeField] protected GameObject hpBarCanvas;
     [SerializeField] protected AudioManager audioManager;
-    protected Transform player;
-    [SerializeField] protected float xp;
-    [SerializeField] protected float speed;
     [SerializeField] protected int dropScrapCount;
     [SerializeField] protected List<GameObject> dropPrefabs;
     [SerializeField] protected List<int> dropChance;
-    [SerializeField] protected float fireDistance;
-    [SerializeField] protected float atackDistance;
 
+    protected ObjectPool<GameObject> enemyPool;
+    protected ObjectPool<GameObject> animPool;
+    protected MapSector sector;
+    protected Transform player;
     protected float dist;
     protected Vector3 target;
-    protected bool evolved = false;
-    protected MapSector sector;
-    protected ObjectPool<GameObject> enemyPool;
     bool destroyFlag = false;
-    [SerializeField] protected Sprite sprite;
-    protected ObjectPool<GameObject> animPool;
 
-
-    //void Start()
-    //{
-    //    try
-    //    {
-    //        player = GameObject.FindGameObjectWithTag("Player").transform;
-    //    }
-    //    catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
-    //    animator = GetComponent<Animator>();
-    //    sector = transform.parent.GetComponent<MapSector>();
-    //    target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
-    //    audioManager.a.volume = 0.5f;
-    //    Invoke("Evolve", 300);
-    //    Invoke("EvolveLevel2", 600);
-    //}
 
     void Update()
     {

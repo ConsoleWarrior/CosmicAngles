@@ -10,7 +10,6 @@ public class EnemyKamikadze : Enemy
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
         catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
-        //animator = GetComponent<Animator>();
         if (transform.parent != null)
         {
             sector = transform.parent.GetComponent<MapSector>();

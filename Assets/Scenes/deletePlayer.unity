@@ -8992,6 +8992,7 @@ MonoBehaviour:
   - {fileID: 40231074154112848, guid: 923601f41b5444c4da26c419ab795151, type: 3}
   - {fileID: 1966217322691734320, guid: e79406876dfed084687815170551ded0, type: 3}
   - {fileID: 2600920385395749974, guid: 240370b4b454edf4c8b9bea385fd501a, type: 3}
+  - {fileID: 3079527193585557018, guid: 539569ca162644f4699dcd9b98949806, type: 3}
   minX: -100
   maxX: 100
   minY: 1100
@@ -11451,7 +11452,6 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 6785384662722177404, guid: 2c8609e2d18e5594986f65a0bcf02bce, type: 3}
   - {fileID: 40231074154112848, guid: 923601f41b5444c4da26c419ab795151, type: 3}
-  - {fileID: 2149881737884762687, guid: 5a5f8f51afe2eb84eb2e06660a9242e1, type: 3}
   minX: -100
   maxX: 100
   minY: 700
@@ -22592,6 +22592,7 @@ MonoBehaviour:
   mommyPrefab: {fileID: 1966217322691734320, guid: e79406876dfed084687815170551ded0, type: 3}
   turelPrefab: {fileID: 7461061626592026143, guid: f2d0777de14202a41b868e1b4c9c67b6, type: 3}
   daddyPrefab: {fileID: 40231074154112848, guid: 923601f41b5444c4da26c419ab795151, type: 3}
+  foxPrefab: {fileID: 3079527193585557018, guid: 539569ca162644f4699dcd9b98949806, type: 3}
   DestroyAnimPrefab: {fileID: 7731156539205331611, guid: 9c9cb33ee6b9ace459515995c8a3d0cb, type: 3}
 --- !u!4 &1864523439
 Transform:
@@ -23513,9 +23514,9 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 6785384662722177404, guid: 2c8609e2d18e5594986f65a0bcf02bce, type: 3}
   - {fileID: 40231074154112848, guid: 923601f41b5444c4da26c419ab795151, type: 3}
-  - {fileID: 2149881737884762687, guid: 5a5f8f51afe2eb84eb2e06660a9242e1, type: 3}
   - {fileID: 1966217322691734320, guid: e79406876dfed084687815170551ded0, type: 3}
   - {fileID: 2600920385395749974, guid: 240370b4b454edf4c8b9bea385fd501a, type: 3}
+  - {fileID: 3079527193585557018, guid: 539569ca162644f4699dcd9b98949806, type: 3}
   minX: -100
   maxX: 100
   minY: 900

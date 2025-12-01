@@ -14,7 +14,6 @@ public class EnemyMoscito : Enemy
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
         catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
-        //animator = GetComponent<Animator>();
         sector = transform.parent.GetComponent<MapSector>();
         target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
         audioManager.a.volume = 0.5f;
@@ -23,21 +22,7 @@ public class EnemyMoscito : Enemy
         animPool = managerObj.destroyAnimPool;
 
     }
-    //void Update()
-    //{
-    //    if (currentHp <= 0 && !destroyFlag)
-    //    {
-    //        destroyFlag = true;
-    //        animator.SetBool("Destroy", true);
-    //        audioManager.a.volume = 1;
-    //        audioManager.SoundPlay0();
-    //        //transform.GetComponent<CircleCollider2D>().enabled = false;
-    //        CalculateAndCallDrop();
-    //        Invoke("Destroying", 0.5f);
 
-    //        //Destroy(this.gameObject, 0.5f);
-    //    }
-    //}
     public override void Atack()
     {
         if (!fireFlag && dist < fireDistance)

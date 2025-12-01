@@ -68,7 +68,6 @@ MonoBehaviour:
   dropChance: 28000000140000000a000000e80300003c000000
   fireDistance: 8
   atackDistance: 11
-  sprite: {fileID: 0}
   fireFlag: 0
   reloadTime: 0.2
   gun1: {fileID: 40525463567446463}
@@ -367,19 +366,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1374689928089531423, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 2.4112
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1374689928089531423, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.7695
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1374689928089531423, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1374689928089531423, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1374689928089531423, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -430,8 +429,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1505529625527955365, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505529625527955365, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505529625527955365, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.845
+      value: 0.884
       objectReference: {fileID: 0}
     - target: {fileID: 5836930774537257518, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
       propertyPath: m_PresetInfoIsWorld

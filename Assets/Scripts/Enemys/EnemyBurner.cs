@@ -6,7 +6,6 @@ using UnityEngine.Pool;
 public class EnemyBurner : Enemy
 {
     private bool fireFlag = false;
-    [SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletSpeed;
     [SerializeField] float reloadTime;
     [SerializeField] float damage;
@@ -19,10 +18,9 @@ public class EnemyBurner : Enemy
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
         catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
-        //animator = GetComponent<Animator>();
         sector = transform.parent.GetComponent<MapSector>();
         target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
-        audioManager.a.volume = 0.3f;
+        audioManager.a.volume = 0.05f;
         var managerObj = GameObject.Find("PoolManager").GetComponent<PoolManager>();
         gunBulletPool = managerObj.flyBulletPool;
         enemyPool = managerObj.burnerPool;
@@ -57,12 +55,8 @@ public class EnemyBurner : Enemy
             var blt = bullet.GetComponent<Bullet>();
             blt.damage = damage;
             blt.gunBulletPool = gunBulletPool;
-            //bullet.transform.localScale = new(0.15f, 0.15f, 1);
             blt.ReturnToPool(2);
-            //GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
             bullet.GetComponent<Rigidbody2D>().AddForce((player.position - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse);
-            //bullet.GetComponent<Bullet>().damage = damage;
-            //Destroy(bullet, 2f);
             yield return new WaitForSeconds(reloadTime);
         }
         fireFlag = false;

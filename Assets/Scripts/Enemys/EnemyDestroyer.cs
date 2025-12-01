@@ -18,14 +18,12 @@ public class EnemyDestroyer : Enemy
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
         catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
-        //animator = GetComponent<Animator>();
         sector = transform.parent.GetComponent<MapSector>();
         target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
         audioManager.a.volume = 0.5f;
         var managerObj = GameObject.Find("PoolManager").GetComponent<PoolManager>();
         enemyPool = managerObj.destroyerPool;
         animPool = managerObj.destroyAnimPool;
-
     }
     public override void Atack()
     {
@@ -69,8 +67,8 @@ public class EnemyDestroyer : Enemy
         fireFlag = false;
         gun1.damage = 4f;
         gun2.damage = 4f;
-        maxHp = 400;
-        currentHp = 400;
+        maxHp = 450;
+        currentHp = 450;
         transform.localScale = new Vector3(1f, 1f, 1);
         dropScrapCount = 12;
     }
@@ -79,8 +77,8 @@ public class EnemyDestroyer : Enemy
         fireFlag = false;
         gun1.damage = 5f;
         gun2.damage = 5f;
-        maxHp = 500;
-        currentHp = 500;
+        maxHp = 600;
+        currentHp = 600;
         transform.localScale = new Vector3(1.2f, 1.2f, 1);
         dropScrapCount = 14;
     }

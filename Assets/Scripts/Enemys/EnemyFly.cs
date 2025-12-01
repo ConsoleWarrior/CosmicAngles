@@ -6,12 +6,10 @@ using UnityEngine.Pool;
 public class EnemyFly : Enemy
 {
     bool fireFlag = false;
-    //[SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletSpeed;
     [SerializeField] float reloadTime;
     [SerializeField] float damage;
     ObjectPool<GameObject> gunBulletPool;
-    //ObjectPool<GameObject> enemyPool;
 
 
     void Start()

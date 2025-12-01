@@ -6,7 +6,6 @@ using UnityEngine.Pool;
 public class EnemyMommy : Enemy
 {
     private bool fireFlag = false;
-    //[SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletSpeed;
     [SerializeField] float reloadTime;
     [SerializeField] float damage;
@@ -20,7 +19,6 @@ public class EnemyMommy : Enemy
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
         catch { Debug.Log("player is not active"); }//Debug.Log("player is not active"); }
-        //animator = GetComponent<Animator>();
         sector = transform.parent.GetComponent<MapSector>();
         target = new Vector3(Random.Range(sector.minX, sector.maxX), Random.Range(sector.minY, sector.maxY), 0);
         audioManager.a.volume = 0.5f;
@@ -57,15 +55,10 @@ public class EnemyMommy : Enemy
             bullet.transform.rotation = transform.rotation;
             bullet.transform.GetComponent<CircleCollider2D>().enabled = true;
 
-            //bullet.transform.localScale = new Vector3(0.5f, 0.5f, 1);
             var blt = bullet.GetComponent<MommyRocket>();
             blt.SetParameters(damage);
             blt.gunBulletPool = gunBulletPool;
             blt.ReturnToPool(3.5f);
-
-            //GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            //bullet.transform.localScale = new Vector3(0.5f, 0.5f, 1);
-            //Destroy(bullet, 3.5f);
             yield return new WaitForSeconds(reloadTime);
         }
         fireFlag = false;

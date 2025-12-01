@@ -100,6 +100,7 @@ public class MapSector : MonoBehaviour
                     case "Destroyer": { enemyObject = poolManager.destroyerPool.Get(); enemyObject.transform.SetParent(transform, true); enemyObject.transform.position = position; break; }
                     case "Turel": { enemyObject = poolManager.turelPool.Get(); enemyObject.transform.SetParent(transform, true); enemyObject.transform.position = position; break; }
                     case "Daddy": { enemyObject = poolManager.daddyPool.Get(); enemyObject.transform.SetParent(transform, true); enemyObject.transform.position = position; break; }
+                    case "Fox": { enemyObject = poolManager.foxPool.Get(); enemyObject.transform.SetParent(transform, true); enemyObject.transform.position = position; break; }
 
                 }
             }
@@ -136,6 +137,8 @@ public class MapSector : MonoBehaviour
                 case "Destroyer(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.destroyerPool.Release(c); break; }
                 case "Turel(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.turelPool.Release(c); break; }
                 case "Daddy(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.daddyPool.Release(c); break; }
+                case "Fox(Clone)": { c.transform.SetParent(poolManager.transform); poolManager.foxPool.Release(c); break; }
+
 
             }
             yield return new WaitForSeconds(3f);

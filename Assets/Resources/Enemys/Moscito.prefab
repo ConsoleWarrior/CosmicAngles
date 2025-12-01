@@ -104,11 +104,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 220
   currentHp: 220
+  speed: 2.9
+  atackDistance: 10
+  fireDistance: 7
   hpBar: {fileID: 6347079244391649674}
   hpBarCanvas: {fileID: 4146785028725198410}
   audioManager: {fileID: 2051228060596244335}
-  xp: 1
-  speed: 2.9
   dropScrapCount: 8
   dropPrefabs:
   - {fileID: 4854596453853521963, guid: c98b4b85b91ca81439a9cf7174dc254a, type: 3}
@@ -117,9 +118,6 @@ MonoBehaviour:
   - {fileID: 3617159770173728927, guid: 4e48d92f944fa5340a3d4e7f7aefa36e, type: 3}
   - {fileID: 86772473382699015, guid: d67e0626c182f57499577eb05a039f7b, type: 3}
   dropChance: 28000000140000000a000000e80300001e000000
-  fireDistance: 7
-  atackDistance: 10
-  sprite: {fileID: 0}
   fireFlag: 0
   gun: {fileID: 897086974167819299}
 --- !u!58 &3578079715457257352
@@ -5064,7 +5062,7 @@ MonoBehaviour:
   line: {fileID: 1099217951968419389}
   LLHitEffect: {fileID: 799717672652009318}
   audioManager: {fileID: 4203049675146151135}
-  damage: 2
+  damage: 2.5
   reload: 0.1
   coroIsWorkNow: 0
 --- !u!120 &1099217951968419389
@@ -5290,11 +5288,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1374689928089531423, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 2.4112
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1374689928089531423, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.7695
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1374689928089531423, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5330,7 +5328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1374689928089531423, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1374689928089531423, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5345,12 +5343,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1505529625527955365, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505529625527955365, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505529625527955365, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.65
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1505529625527955365, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.19
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505529625527955365, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.464
       objectReference: {fileID: 0}
     - target: {fileID: 5836930774537257518, guid: 12d2a3ced61a6714ea5cc9ee2452920b, type: 3}
       propertyPath: m_PresetInfoIsWorld
