@@ -66,12 +66,12 @@ public class UIItemScrap : UIItem
         //if (slot.isFree) Debug.Log("free");
         //slot.currentItem = null;
         ClearOldSlot();
-        inventory.UpdateKredit(scrapItemCount * 5);
-        Debug.Log("продал металлолом за: " + scrapItemCount * 5);
+        inventory.UpdateKredit(scrapItemCount * price * 0.3f);
+        Debug.Log("продал металлолом за: " + System.Math.Round(scrapItemCount * price * 0.3f, 0));
         Destroy(gameObject);
     }
     public override string ReturnCharacter()
     {
-        return "character: sell for 5kr";
+        return "character: for sell";
     }
 }

@@ -59,12 +59,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a526a88139000245959de13db8bbaa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Blaster
   type: Gun
-  price: 35000
+  price: 25000
   group: {fileID: 0}
   itemPrefab: {fileID: 5592315639535918989, guid: 07c099eebeed7234a9df32358ce255c9, type: 3}
   itemColor: {r: 0.3137255, g: 0.76862746, b: 0.15686275, a: 1}
+  trashPanel: {fileID: 0}
 --- !u!225 &8715579660949815575
 CanvasGroup:
   m_ObjectHideFlags: 0

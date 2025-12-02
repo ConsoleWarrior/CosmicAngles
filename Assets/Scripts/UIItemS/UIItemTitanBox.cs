@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 
 public class UIItemTitanBox : UIItem
 {
@@ -96,7 +95,7 @@ public class UIItemTitanBox : UIItem
                 else
                 {
                     target.GetComponent<UIItemTitanBox>().itemCount += itemCount;
-                    ClearOldSlot() ;
+                    ClearOldSlot();
                     Destroy(this.gameObject);
                     return;
                 }
@@ -115,92 +114,14 @@ public class UIItemTitanBox : UIItem
         transform.localPosition = Vector3.zero;
         group.blocksRaycasts = true;
     }
-    //public override void OnEndDrag(PointerEventData eventData)
-    //{
-    //    if (eventData != null && eventData.pointerEnter != null)
-    //    {
-    //        var target = eventData.pointerEnter.gameObject;
 
-    //        var slot = target.GetComponent<UISlot>();
-
-    //        if (startSlotTransform.GetComponent<UISlotShop>() != null) //если ты в магазине пробуешь купить
-    //        {
-    //            if (price <= inventory.kredit)
-    //            {
-    //                if (slot != null && slot.number == 99)
-    //                {
-    //                    if (slot.currentItem != null && slot.currentItem.GetComponent<UIItemTitanBox>() != null)
-    //                    {
-    //                        inventory.UpdateKredit(-price);
-    //                        slot.currentItem.GetComponent<UIItemTitanBox>().itemCount += itemCount;
-    //                        ClearOldSlot();
-    //                        return;
-    //                    }
-    //                    if (slot.isFree)
-    //                    {
-    //                        inventory.UpdateKredit(-price);
-    //                        ClearOldSlot();
-    //                        return;
-    //                    }
-    //                }
-    //                else
-    //                {
-    //                    Debug.Log("не слот для покупки");
-    //                    ReturnBack();
-    //                    return;
-    //                }
-    //            }
-    //            else
-    //            {
-    //                Debug.Log("нехватает денег");
-    //                ReturnBack();
-    //                return;
-    //            }
-    //        }
-
-    //        if (target.GetComponent<CosmoportPanel>() != null || target.GetComponent<UISlotShop>() != null)
-    //        {
-    //            SellScrap();
-    //            return;
-    //        }
-
-    //        if (slot != null)
-    //        {
-    //            if (slot.isFree && slot.cell == null)
-    //            {
-    //                slot.isFree = false;
-    //                if (startSlotTransform.GetComponent<UISlot>() != null) startSlotTransform.GetComponent<UISlot>().isFree = true;
-    //                slot.currentItem = this;
-    //                ClearOldSlot();
-    //                Debug.Log("переместили titan");
-    //            }
-    //            else
-    //            {
-    //                ReturnBack();
-    //                Debug.Log("занят или слот корабля");
-    //            }
-    //        }
-    //        else
-    //        {
-    //            ReturnBack();
-    //            Debug.Log("Нет UISlot");
-    //        }
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("нет ивент даты");
-    //        ReturnBack();
-    //    }
-    //    transform.localPosition = Vector3.zero;
-    //    group.blocksRaycasts = true;
-    //}
     public override void SellScrap()
     {
         var slot = startSlotTransform.GetComponent<UISlot>();
         slot.isFree = true;
         slot.currentItem = null;
-        inventory.UpdateKredit(itemCount * 5000);
-        Debug.Log("продал TitanBox за: " + itemCount * 5);
+        inventory.UpdateKredit(itemCount * price * 0.3f);
+        Debug.Log("продал TitanBox за: " + itemCount * price * 0.3f);
         Destroy(gameObject);
     }
     public override string ReturnCharacter()

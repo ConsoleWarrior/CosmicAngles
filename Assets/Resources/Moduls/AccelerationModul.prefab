@@ -131,10 +131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab67b0c3e39fbf4a80e044ebc2fdc30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelerationSpeed: 20
-  currentTank: 3000
-  fullTank: 3000
-  refillValues: 3
+  accelerationSpeed: 12
+  currentTank: 500
+  fullTank: 500
+  refillValues: 5
   activateSprite: {fileID: 7258987490339741438}
 --- !u!212 &6775692162401514243
 SpriteRenderer:

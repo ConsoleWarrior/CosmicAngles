@@ -195,10 +195,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: Merchandise
-  price: 15
+  price: 20
   group: {fileID: 0}
   itemPrefab: {fileID: 1516075339228139234, guid: b8a529c85f7fb9e4cbf77fa64e49b810, type: 3}
   itemColor: {r: 0.6075471, g: 0.6075471, b: 0.6075471, a: 1}
+  trashPanel: {fileID: 0}
   scrapItemCount: 0
   tmpScrap: {fileID: 6310567689464555530}
 --- !u!114 &1744822936692149924

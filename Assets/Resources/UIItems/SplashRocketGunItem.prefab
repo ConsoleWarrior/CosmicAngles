@@ -60,10 +60,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: Gun
-  price: 25000
+  price: 20000
   group: {fileID: 0}
   itemPrefab: {fileID: 94014597344632202, guid: c6f83da58ee91134db3b3fa81ae9791e, type: 3}
   itemColor: {r: 0.50980395, g: 0.5058824, b: 0.50980395, a: 1}
+  trashPanel: {fileID: 0}
 --- !u!225 &7611162976054135678
 CanvasGroup:
   m_ObjectHideFlags: 0

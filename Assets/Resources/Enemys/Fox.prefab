@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 500
   currentHp: 500
-  speed: 5
+  speed: 3.7
   atackDistance: 15
   fireDistance: 11
   hpBar: {fileID: 5930086913290594805}

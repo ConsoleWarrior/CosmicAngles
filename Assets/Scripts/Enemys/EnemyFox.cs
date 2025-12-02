@@ -64,6 +64,7 @@ public class EnemyFox : Enemy
         var count = 0;
         while (dist < fireDistance & count < 20)
         {
+            if (player == null) break;
             audioManager.SoundPlay1();
             var bullet = gunBulletPool.Get();
             bullet.transform.position = transform.position;
@@ -76,9 +77,12 @@ public class EnemyFox : Enemy
             count++;
             yield return new WaitForSeconds(reloadTime);
         }
-        poz = new(transform.position.x + Random.Range(-3, 4), transform.position.y + Random.Range(-3, 4));
+        if (dist < fireDistance)
+        {
+            foxFlag = true;
+            poz = new(transform.position.x + Random.Range(-3, 4), transform.position.y + Random.Range(-3, 4));
+        }
         fireFlag = false;
-        foxFlag = true;
     }
 
     public override void Level0()
