@@ -1553,7 +1553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede006aaf9270074f93112f28f26d2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kredit: 100
+  kredit: 9999999
   tmpKredit: {fileID: 1936960106}
   inventoryGrid: {fileID: 1717957669}
 --- !u!4 &148060770
