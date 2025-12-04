@@ -57,9 +57,11 @@ public class Player : MonoBehaviour
             {
                 animator.SetBool("IsMoving", true);
             }
+            if(!audioManager.a.isPlaying)audioManager.SoundPlay1();
         }
         else if (Input.GetMouseButton(1))
         {
+            audioManager.a.Stop();
             Vector3 objPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             objPosition.z = transform.position.z;
             transform.position = Vector3.MoveTowards(transform.position, objPosition, 2 * Time.deltaTime);// speed/2
@@ -72,5 +74,6 @@ public class Player : MonoBehaviour
             Vector3 deltaMovement = oldPosition - transform.position;
             backGround.position = new Vector2(backGround.position.x + deltaMovement.x * 0.06f, backGround.position.y + deltaMovement.y * 0.06f);
         }
+        else audioManager.a.Stop();
     }
 }

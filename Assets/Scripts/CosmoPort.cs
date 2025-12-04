@@ -6,6 +6,8 @@ public class Cosmoport : MonoBehaviour
     [SerializeField] Pause pause;
     [SerializeField] RepairBlok repairBlok;
     public int number;
+    [SerializeField] AudioManager audioManager;
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,6 +17,7 @@ public class Cosmoport : MonoBehaviour
             pause.PauseOpenInventory();
             panel.SetActive(true);
             repairBlok.OutputRepairAndRefillCost();
+            audioManager.SoundPlay0();
             //pause.cosmoPortPanels[number].SetActive(true);
         }
     }

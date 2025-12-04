@@ -33,7 +33,7 @@ public class Pause : MonoBehaviour
     {
         if (player == null) player = GameObject.FindGameObjectWithTag("Player").transform;
         player.rotation = Quaternion.identity;
-
+        player.gameObject.GetComponent<Player>().audioManager.a.Stop();
         var slot = player.gameObject.GetComponent<Player>().core.slot;
         slot.transform.Find("LockImg").gameObject.SetActive(true);
         slot.transform.Find("LockImg").SetAsLastSibling();
