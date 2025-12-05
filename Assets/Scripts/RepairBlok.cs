@@ -62,7 +62,7 @@ public class RepairBlok : MonoBehaviour
         {
             x += cell.CalculateRepairHPCost();
         }
-        if (tempValues.accelerationModule != null) x += tempValues.accelerationModule.CostRefillFullTank();
+        //if (tempValues.accelerationModule != null) x += tempValues.accelerationModule.CostRefillFullTank();
         return (float)System.Math.Round(x * repair1HPCost, 0);
     }
     public void OutputRepairAndRefillCost()
