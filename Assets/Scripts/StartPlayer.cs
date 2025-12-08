@@ -12,6 +12,8 @@ public class StartPlayer : MonoBehaviour
     [SerializeField] AudioManager audioManager;
     public Transform shipGrid;
     public RepairBlok repairBlok;
+    public Transform bar;
+
     public GameObject buyButton;
     public GameObject buyButton2;
     public GameObject buyButton3;
@@ -34,6 +36,7 @@ public class StartPlayer : MonoBehaviour
         player.backGround = background;
         player.audioManager = audioManager;
         repairBlok.RefreshCells(player);
+        obj.GetComponentInChildren<Accelerator>().bar = bar;
     }
     void TransferShipData(GameObject newPlayer)
     {

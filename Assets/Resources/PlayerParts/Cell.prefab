@@ -52,11 +52,11 @@ MonoBehaviour:
   maxHp: 100
   currentHp: 100
   armorThickness: 0
+  isDestroyed: 0
   module: {fileID: 0}
   inventory: {fileID: 0}
   slot: {fileID: 0}
   audioManager: {fileID: 924434633579842045}
-  isDestroyed: 0
 --- !u!212 &8446761863488875479
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -179,6 +179,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5026734790525555273}
     m_Modifications:
+    - target: {fileID: 4916845144204500388, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
+      propertyPath: m_Volume
+      value: 0.55
+      objectReference: {fileID: 0}
     - target: {fileID: 4946381566672173599, guid: 5b20cd22c3277414582ee9677e1560bd, type: 3}
       propertyPath: sound.Array.size
       value: 2

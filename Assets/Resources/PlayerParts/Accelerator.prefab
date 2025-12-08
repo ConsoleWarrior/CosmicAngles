@@ -101,9 +101,10 @@ MonoBehaviour:
   accelerationSpeed: 6
   currentTank: 100
   fullTank: 100
-  refillValues: 5
+  refillValues: 1
   activateSprite: {fileID: 4924548354201346349}
   audioManager: {fileID: 6001224541933167263}
+  bar: {fileID: 0}
 --- !u!1001 &1724230216580110464
 PrefabInstance:
   m_ObjectHideFlags: 0

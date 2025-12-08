@@ -21,7 +21,7 @@ public class Cell : MonoBehaviour
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
         player = transform.parent.GetComponent<Player>();
         shipGrid = GameObject.FindGameObjectWithTag("StartPlayer").GetComponent<StartPlayer>().shipGrid;
-        audioManager.a.volume = 0.7f;
+        //audioManager.a.volume = 0.7f;
 
         for (int i = 0; i < shipGrid.childCount; i++)
         {

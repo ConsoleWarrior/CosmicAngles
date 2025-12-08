@@ -11,14 +11,13 @@ public class Accelerator : MonoBehaviour
     [SerializeField] SpriteRenderer activateSprite;
     [SerializeField] AudioManager audioManager;
     Player player;
-    float temp;
+    public Transform bar;
+    //float temp;
+
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        temp = player.speed;
-        //GameObject.FindGameObjectWithTag("Inventory").GetComponentInChildren<TempValues>().accelerationModule = this;
-
+        player = transform.parent.GetComponent<Player>();
         StartCoroutine(Refill());
     }
     void Update()
@@ -26,18 +25,16 @@ public class Accelerator : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && currentTank > 0)
         {
             currentTank -= Time.deltaTime * 10;
-            //player.speed = accelerationSpeed;
             player.transform.Translate(0, accelerationSpeed * Time.deltaTime, 0);
             activateSprite.enabled = true;
-            if(!audioManager.a.isPlaying)audioManager.SoundPlay0();
+            if (!audioManager.a.isPlaying) audioManager.SoundPlay0();
         }
-        else //if (player.speed != temp)
+        else
         {
-            //player.speed = temp;
             activateSprite.enabled = false;
             audioManager.a.Stop();
         }
-        //else audioManager.a.Stop();
+        bar.localScale = new(currentTank / fullTank, 1, 0);
     }
 
 
@@ -45,20 +42,23 @@ public class Accelerator : MonoBehaviour
     {
         while (true)
         {
+            if (currentTank < 0)
+            {
+                yield return new WaitForSeconds(3);
+                currentTank = 10;
+                continue;
+            }
             if (currentTank < fullTank) currentTank += refillValues;
             if (currentTank > fullTank) currentTank = fullTank;
-            //transform.GetComponent<SpriteRenderer>().color = new Color(currentTank / fullTank, currentTank / fullTank, currentTank / fullTank, 1);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.2f);
         }
     }
 
     public void RefillFullTank()
     {
-        //tempValues = GameObject.FindGameObjectWithTag("Inventory").GetComponentInChildren<TempValues>();
-        //tempValues.currentTank = tank;
         currentTank = fullTank;
-        //transform.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
     }
+
     //public void PushDownAndroidButton()
     //{
     //    if (currentTank > 0)

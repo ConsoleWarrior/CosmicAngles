@@ -6,8 +6,6 @@ using UnityEngine.Pool;
 public class TurelG : MonoBehaviour
 {
     Transform player;
-
-
     private bool fireFlag = false;
     [SerializeField] float bulletSpeed;
     [SerializeField] float reloadTime;
@@ -16,7 +14,7 @@ public class TurelG : MonoBehaviour
     float dist;
     [SerializeField] float atackDistance;
     [SerializeField] AudioManager audioManager;
-
+    [SerializeField] Transform mouth;
     void Start()
     {
         //try
@@ -28,20 +26,32 @@ public class TurelG : MonoBehaviour
         gunBulletPool = managerObj.flyBulletPool;
         audioManager.a.volume = 0.3f;
     }
+
     void FixedUpdate()
     {
         if (player == null) player = GameObject.FindGameObjectWithTag("Player").transform;
         dist = Vector3.Distance(player.position, transform.position);
-        if (!fireFlag)
+        if (dist < atackDistance)
         {
-            if (dist > 0 && dist < atackDistance)
+            Vector2 direction = (player.position - transform.position).normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+            if (!fireFlag)
             {
                 fireFlag = true;
-                //Atack();
                 StartCoroutine(Fire());
-
             }
         }
+        //if (!fireFlag)
+        //{
+        //    if (dist > 0 && dist < atackDistance)
+        //    {
+        //        fireFlag = true;
+        //        //Atack();
+        //        StartCoroutine(Fire());
+
+        //    }
+        //}
         else if (dist > atackDistance)
         {
             fireFlag = false;
@@ -49,13 +59,13 @@ public class TurelG : MonoBehaviour
         }
     }
 
-    public void Atack()
-    {
-        StartCoroutine(Fire());
-        Vector2 direction = (player.position - transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle - 90);
-    }
+    //public void Atack()
+    //{
+    //    StartCoroutine(Fire());
+    //    //Vector2 direction = (player.position - transform.position).normalized;
+    //    //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    //    //transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+    //}
 
     IEnumerator Fire()
     {
@@ -66,8 +76,8 @@ public class TurelG : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, angle - 90);
             audioManager.SoundPlay0();
             var bullet = gunBulletPool.Get();
-            bullet.transform.position = transform.position;
-            bullet.transform.rotation = transform.rotation;
+            bullet.transform.position = mouth.position;
+            //bullet.transform.rotation = transform.rotation;
             var blt = bullet.GetComponent<Bullet>();
             blt.damage = damage;
             blt.gunBulletPool = gunBulletPool;
